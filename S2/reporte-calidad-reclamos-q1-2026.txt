@@ -1,0 +1,141 @@
+================================================================================
+                         SON DEL CAUCA S.A.S.
+              REPORTE DE CALIDAD Y RECLAMOS — Q1 2026
+                      (Enero - Marzo 2026)
+================================================================================
+
+Fecha:          02 de abril de 2026
+Elaborado por:  Ing. Laura Marcela Ríos — Jefe de Calidad
+Clasificación:  Uso interno — Gerencia Comercial y Operaciones
+Versión:        Final
+
+--------------------------------------------------------------------------------
+1. RESUMEN DE INDICADORES
+--------------------------------------------------------------------------------
+
+| Indicador                          | Q1 2026 | Q4 2025 | Variación |
+|------------------------------------|---------|---------|-----------|
+| Total reclamos recibidos           | 18      | 14      | +28,6%    |
+| Reclamos severidad Alta/Crítica    | 5       | 2       | +150%     |
+| Reclamos resueltos                 | 14      | 13      | —         |
+| Reclamos en proceso                | 4       | 1       | —         |
+| Tiempo promedio resolución (días)  | 8,3     | 6,1     | +36%      |
+| Tasa reclamo por contenedor export.| 3,2%    | 2,1%    | +1,1 pp   |
+| Notas de crédito emitidas          | 7       | 4       | +75%      |
+| Valor notas de crédito (USD)       | $14.820 | $6.340  | +133,9%   |
+
+ALERTA: El incremento en reclamos de alta severidad y el valor de notas
+de crédito requieren atención inmediata. Se identifica concentración en
+destino Países Bajos (8 de 18 reclamos) y en calibre 48 de Limón Tahití.
+
+--------------------------------------------------------------------------------
+2. DETALLE DE RECLAMOS
+--------------------------------------------------------------------------------
+
+| #  | Fecha      | Cliente                    | Fruta    | Calibre | Destino       | Tipo Reclamo              | Severidad | Estado    | Resolución                          |
+|----|------------|----------------------------|----------|---------|---------------|---------------------------|-----------|-----------|-------------------------------------|
+| 01 | 2026-01-08 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Manchas en corteza        | Alta      | Resuelto  | Nota crédito USD 2.100              |
+| 02 | 2026-01-12 | Tropical Fruits LLC        | Tahití   | 54      | USA (Miami)   | Calibre mixto en caja     | Media     | Resuelto  | Reempaque sin costo próximo envío   |
+| 03 | 2026-01-15 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Fruta blanda al arribo    | Crítica   | Resuelto  | Nota crédito USD 3.450 + análisis   |
+| 04 | 2026-01-22 | Citrus Chile SpA           | Valencia | 72      | Chile         | Coloración desigual       | Baja      | Resuelto  | Explicación técnica aceptada        |
+| 05 | 2026-01-28 | Al Waha Trading FZE        | Tahití   | 54      | EAU (Dubái)   | Etiquetas incorrectas     | Baja      | Resuelto  | Corrección en siguiente embarque    |
+| 06 | 2026-02-03 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Residuos agroquímicos     | Crítica   | Resuelto  | Nota crédito USD 4.200 + auditoría  |
+| 07 | 2026-02-05 | London Citrus Ltd          | Valencia | 88      | Reino Unido   | Daño mecánico (golpes)    | Media     | Resuelto  | Ajuste en proceso empaque           |
+| 08 | 2026-02-10 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Pudrición en tránsito     | Alta      | Resuelto  | Nota crédito USD 1.870 + revisión cadena frío |
+| 09 | 2026-02-14 | Tropical Fruits LLC        | Tahití   | 42      | USA (Houston) | Peso neto bajo            | Media     | Resuelto  | Compensación en volumen próximo envío |
+| 10 | 2026-02-18 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Manchas en corteza        | Alta      | En proceso| Investigación fitosanitaria activa   |
+| 11 | 2026-02-22 | Nihon Fruits Co. Ltd       | Tahití   | 54      | Japón         | Documentación fitosanit.  | Baja      | Resuelto  | Reenvío certificados corregidos      |
+| 12 | 2026-02-28 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Calibre fuera de rango    | Media     | Resuelto  | Descuento 5% en factura             |
+| 13 | 2026-03-04 | Citrus Chile SpA           | Valencia | 72      | Chile         | Fruta verde (color break) | Media     | Resuelto  | Ajuste en punto de corte cosecha    |
+| 14 | 2026-03-08 | Fresh Direct Europe B.V.   | Tahití   | 48      | Países Bajos  | Fruta blanda al arribo    | Alta      | En proceso| Revisión de temperatura contenedor   |
+| 15 | 2026-03-12 | London Citrus Ltd          | Valencia | 88      | Reino Unido   | Calibre mixto en caja     | Baja      | Resuelto  | Reempaque en destino                |
+| 16 | 2026-03-15 | Fresh Direct Europe B.V.   | Tahití   | 54      | Países Bajos  | Decoloración post-cosecha | Media     | En proceso| Análisis de tratamiento postcosecha  |
+| 17 | 2026-03-20 | Al Waha Trading FZE        | Tahití   | 54      | EAU (Dubái)   | Aroma atípico             | Media     | En proceso| Muestra enviada a laboratorio        |
+| 18 | 2026-03-25 | Tropical Fruits LLC        | Valencia | 64      | USA (Miami)   | Daño por frío             | Alta      | Resuelto  | Nota crédito USD 3.200              |
+
+--------------------------------------------------------------------------------
+3. ANÁLISIS POR DESTINO
+--------------------------------------------------------------------------------
+
+| Destino        | Reclamos | % del total | Severidad Alta/Crítica |
+|----------------|----------|-------------|------------------------|
+| Países Bajos   | 8        | 44,4%       | 4                      |
+| USA            | 3        | 16,7%       | 1                      |
+| Chile          | 2        | 11,1%       | 0                      |
+| Reino Unido    | 2        | 11,1%       | 0                      |
+| EAU            | 2        | 11,1%       | 0                      |
+| Japón          | 1        | 5,6%        | 0                      |
+
+ANOMALÍA CRÍTICA — PAÍSES BAJOS: Fresh Direct Europe B.V. concentra 8 de
+18 reclamos (44%). De estos, 4 son de severidad Alta o Crítica. El cliente
+representa el 28% de nuestro volumen de exportación de Tahití. Riesgo
+comercial: el cliente ha mencionado posible cambio a proveedor peruano si
+no se estabilizan los niveles de calidad.
+
+Acciones en curso:
+  - Auditoría especial de la cadena de frío en la ruta Tierralta → Cartagena
+    → Rotterdam (contenedores reefer a 8°C ± 0,5°C)
+  - Revisión de protocolos de tratamiento postcosecha para calibre 48
+  - Visita del Jefe de Calidad a Rotterdam programada para abril 15-18
+
+--------------------------------------------------------------------------------
+4. ANÁLISIS POR CALIBRE
+--------------------------------------------------------------------------------
+
+| Calibre | Reclamos | Fruta    | Tipos de reclamo principales           |
+|---------|----------|----------|----------------------------------------|
+| 48      | 7        | Tahití   | Manchas, pudrición, blandura, residuos |
+| 54      | 4        | Tahití   | Calibre mixto, decoloración, aroma     |
+| 72      | 2        | Valencia | Coloración, color break                |
+| 88      | 2        | Valencia | Daño mecánico, calibre mixto           |
+| 42      | 1        | Tahití   | Peso neto bajo                         |
+| 64      | 1        | Valencia | Daño por frío                          |
+| Sin esp.| 1        | Tahití   | Etiquetas                              |
+
+ANOMALÍA — CALIBRE 48 TAHITÍ: Concentra el 39% de los reclamos. Este
+calibre es el de mayor valor comercial (USD 22-24/caja FOB) y el más
+demandado por clientes europeos. La hipótesis es que la fruta calibre 48,
+al ser de mayor tamaño, es más susceptible a daño mecánico en la línea
+de empaque y a deterioro en tránsitos largos (28-32 días a Europa).
+
+Acción recomendada: ajustar presión de rodillos en la línea de selección
+para calibres grandes y reducir temperatura de pre-enfriamiento de 10°C
+a 8°C antes del empaque.
+
+--------------------------------------------------------------------------------
+5. NOTAS DE CRÉDITO EMITIDAS
+--------------------------------------------------------------------------------
+
+| # Reclamo | Cliente                  | Monto USD | Motivo                  |
+|-----------|--------------------------|-----------|-------------------------|
+| 01        | Fresh Direct Europe B.V. | $2.100    | Manchas en corteza      |
+| 03        | Fresh Direct Europe B.V. | $3.450    | Fruta blanda            |
+| 06        | Fresh Direct Europe B.V. | $4.200    | Residuos agroquímicos   |
+| 08        | Fresh Direct Europe B.V. | $1.870    | Pudrición en tránsito   |
+| 12        | Fresh Direct Europe B.V. | $    —    | Descuento 5% (no NC)    |
+| 18        | Tropical Fruits LLC      | $3.200    | Daño por frío           |
+|-----------|--------------------------|-----------| ----------------------- |
+| TOTAL     |                          | $14.820   |                         |
+
+El 78% del valor de notas de crédito corresponde a Fresh Direct Europe.
+
+--------------------------------------------------------------------------------
+6. PLAN DE ACCIÓN Q2 2026
+--------------------------------------------------------------------------------
+
+1. Auditoría integral cadena de frío Tierralta-Cartagena-Rotterdam
+   Responsable: Laura Ríos | Fecha: Abril 2026
+2. Recalibración línea de selección para calibres 42 y 48
+   Responsable: Ing. Andrés Montoya (Planta) | Fecha: Abril 10
+3. Revisión protocolo aplicación agroquímicos pre-cosecha (Finca San José)
+   Responsable: Ing. Fabio Herrera (Agronomía) | Fecha: Abril 15
+4. Visita a Fresh Direct Europe — Rotterdam
+   Responsable: Laura Ríos + Dir. Comercial | Fecha: Abril 15-18
+5. Implementar trazabilidad QR por caja para contenedores a Europa
+   Responsable: Jefe de Empaque | Fecha: Mayo 2026
+6. Meta Q2: reducir tasa de reclamos por contenedor de 3,2% a <2,0%
+
+================================================================================
+                    Fin del reporte — Página 1 de 1
+          Son del Cauca S.A.S. — Documento de uso interno
+================================================================================

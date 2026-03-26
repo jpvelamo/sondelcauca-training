@@ -1,0 +1,104 @@
+================================================================================
+                         SON DEL CAUCA S.A.S.
+               PIPELINE DE EXPORTACIÓN — Marzo 2026
+================================================================================
+
+Fecha:          28 de marzo de 2026
+Elaborado por:  Andrés Felipe Giraldo — Director Comercial
+Clasificación:  Uso interno — Gerencia General y Comercial
+Versión:        Actualización mensual
+
+--------------------------------------------------------------------------------
+1. RESUMEN DEL PIPELINE
+--------------------------------------------------------------------------------
+
+| Etapa        | # Prospectos | Volumen (ton/año) | Valor est. (USD/año) |
+|--------------|-------------|-------------------|----------------------|
+| Prospección  | 4           | 2.850             | $1.425.000           |
+| Negociación  | 4           | 2.100             | $1.155.000           |
+| Propuesta    | 3           | 1.680             | $907.200             |
+| Cierre       | 3           | 1.520             | $836.000             |
+|--------------|-------------|-------------------|----------------------|
+| TOTAL        | 14          | 8.150             | $4.323.200           |
+
+Pipeline ponderado (por probabilidad): USD $2.041.640
+Meta anual de nuevos contratos: USD $2.500.000
+Avance vs. meta: 81,7% del pipeline necesario
+
+--------------------------------------------------------------------------------
+2. DETALLE DEL PIPELINE
+--------------------------------------------------------------------------------
+
+| #  | País          | Cliente                      | Fruta    | Vol (ton) | Etapa        | Valor USD   | Prob. | Contacto              | Próximo paso                         |
+|----|---------------|------------------------------|----------|-----------|--------------|-------------|-------|-----------------------|--------------------------------------|
+| 01 | Países Bajos  | Van Oers United B.V.         | Tahití   | 800       | Cierre       | $440.000    | 90%   | Pieter van Dijk       | Firma contrato — abril 5             |
+| 02 | USA           | Sun Pacific Inc.             | Tahití   | 520       | Cierre       | $286.000    | 85%   | Michael Torres        | Envío muestra final — abril 2        |
+| 03 | Chile         | Comercial Frutícola del Sur  | Valencia | 200       | Cierre       | $110.000    | 80%   | Rodrigo Méndez        | Aprobación fitosanitaria SAG         |
+| 04 | Reino Unido   | Orchard Fresh Ltd            | Tahití   | 600       | Propuesta    | $330.000    | 60%   | Sarah Mitchell        | Revisión de propuesta — abril 10     |
+| 05 | EAU           | Gulf Citrus Trading LLC      | Tahití   | 480       | Propuesta    | $249.600    | 55%   | Ahmed Al-Rashid       | Reunión virtual — abril 8            |
+| 06 | Japón         | Nihon Premium Fruits Ltd     | Tahití   | 600       | Propuesta    | $327.600    | 50%   | Kenji Yamamoto        | Auditoría de planta — mayo 2026      |
+| 07 | USA           | Fresh Del Monte (división)   | Valencia | 400       | Negociación  | $220.000    | 45%   | Carolina Vásquez      | Presentación a comité — abril 15     |
+| 08 | Países Bajos  | Greenyard Fresh N.V.         | Tahití   | 350       | Negociación  | $192.500    | 40%   | Hans de Groot         | Segunda reunión — abril 12           |
+| 09 | Reino Unido   | Morrisons (proveedor directo)| Valencia | 450       | Negociación  | $247.500    | 35%   | James Whitfield       | Visita a fincas — mayo 2026          |
+| 10 | Chile         | Cencosud (importación dir.)  | Tahití   | 900       | Negociación  | $495.000    | 30%   | Valentina Rojas       | Envío de muestras + certificados     |
+| 11 | EAU           | Barakat Group                | Valencia | 350       | Prospección  | $175.000    | 20%   | Omar Hassan           | Contacto inicial vía feria Gulfood   |
+| 12 | Japón         | Aeon Retail (a través de trader) | Tahití | 1.200  | Prospección  | $660.000    | 15%   | Takeshi Nakamura      | Reunión en Fruit Logistica Shanghái  |
+| 13 | USA           | Costco (vía broker Pandol)   | Tahití   | 800       | Prospección  | $400.000    | 15%   | David Pandol          | Presentación catálogo — mayo 2026    |
+| 14 | Países Bajos  | Albert Heijn (vía Bakker)    | Valencia | 500       | Prospección  | $190.000    | 10%   | Willem Bakker         | Primer contacto por correo           |
+
+--------------------------------------------------------------------------------
+3. RESUMEN POR PAÍS
+--------------------------------------------------------------------------------
+
+| País          | # Prospectos | Vol. total (ton) | Valor total (USD) | Val. ponderado |
+|---------------|-------------|-------------------|--------------------|----------------|
+| Países Bajos  | 3           | 1.650             | $822.500           | $474.500       |
+| USA           | 3           | 1.720             | $886.000           | $463.100       |
+| Chile         | 2           | 1.100             | $605.000           | $236.500       |
+| Reino Unido   | 2           | 1.050             | $577.500           | $284.550       |
+| EAU           | 2           | 830               | $424.600           | $172.080       |
+| Japón         | 2           | 1.800             | $987.600           | $262.800       |
+
+Países Bajos y USA representan el 46% del valor ponderado del pipeline.
+Japón es alto potencial pero baja probabilidad — el mercado requiere
+certificaciones JAS y auditorías extensivas (6-12 meses de lead time).
+
+--------------------------------------------------------------------------------
+4. OPORTUNIDADES CLAVE
+--------------------------------------------------------------------------------
+
+A. VAN OERS UNITED (Países Bajos) — USD $440k — 90% probabilidad
+   Contrato por 800 ton/año de Tahití calibre 48/54. Ya pasamos auditoría
+   GLOBALG.A.P. y envío de muestras. Firma prevista para primera semana de
+   abril. Este contrato reemplaza parcialmente volumen de Fresh Direct Europe
+   (cliente con problemas de calidad en Q1 — ver reporte de reclamos).
+
+B. SUN PACIFIC (USA) — USD $286k — 85% probabilidad
+   Cadena de distribución en Costa Este. Requieren Tahití calibre 42/48
+   todo el año. Muestra final en tránsito. Si cierra, sería nuestro segundo
+   cliente en USA después de Tropical Fruits LLC.
+
+C. NIHON PREMIUM FRUITS (Japón) — USD $327k — 50% probabilidad
+   Alta exigencia pero alto valor (precio FOB 15-20% superior a Europa).
+   Condicionado a auditoría de planta en mayo. Debemos invertir aprox.
+   USD $25.000 en adecuaciones de planta para cumplir estándares JAS.
+   Decisión pendiente de aprobación de Gerencia General.
+
+--------------------------------------------------------------------------------
+5. RIESGOS Y NOTAS
+--------------------------------------------------------------------------------
+
+- Fresh Direct Europe (cliente actual, Países Bajos): relación deteriorada
+  por reclamos de calidad en Q1 (8 reclamos, USD $14.820 en notas de crédito).
+  Riesgo de pérdida de 1.200 ton/año. Van Oers compensaría parcialmente.
+- Tipo de cambio: COP se ha fortalecido 4,2% en Q1 (de $4.380 a $4.196 por
+  USD). Impacta margen de exportación en aprox. 2,8 puntos porcentuales.
+- Feria Fruit Logistica Shanghái (junio 2026): clave para avanzar prospectos
+  de Japón y abrir EAU. Presupuesto de participación: USD $18.000.
+- Capacidad de planta: si cierran los prospectos en etapa Cierre + Propuesta,
+  necesitaremos un turno adicional en la línea de empaque (~15 operarios).
+
+================================================================================
+                    Fin del reporte — Página 1 de 1
+          Son del Cauca S.A.S. — Documento de uso interno
+================================================================================

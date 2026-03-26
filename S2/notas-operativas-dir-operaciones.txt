@@ -1,0 +1,224 @@
+================================================================================
+                         SON DEL CAUCA S.A.S.
+           NOTAS OPERATIVAS SEMANALES — DIR. DE OPERACIONES
+                         Q1 2026 (Semanas 1-4)
+================================================================================
+
+Autor:          Ing. Carlos Andrés Mejía — Director de Operaciones
+Distribución:   Gerencia General, Dir. Comercial, Dir. Financiero
+Clasificación:  Uso interno
+
+================================================================================
+SEMANA 1 — 6 al 10 de enero de 2026
+================================================================================
+
+KPIs de la semana:
+  - Toneladas despachadas:        641 ton (Tahití 438, Valencia 203)
+  - Tasa de rechazo en planta:    8,7%
+  - Eficiencia línea empaque:     87,3% (meta: 90%)
+  - Horas campo (cosecha):        1.240 h
+  - Contenedores exportados:      12 (8 Tahití, 4 Valencia)
+
+Resumen operativo:
+Inicio de año sin novedades mayores. Las cuadrillas de cosecha arrancaron
+el lunes 6 con dotación completa (148 de 152 operarios — 4 incapacidades
+por EPS). La línea de empaque operó en turno único de 6:00 a 14:00.
+
+Finca El Porvenir reportó rendimientos de cosecha por encima del promedio
+(7,4 ton/ha en Tahití), consistente con la fertilización de cierre de
+Q4 2025. Finca Los Naranjos sigue siendo la estrella: 8,2 ton/ha.
+
+La calibradora óptica nueva (instalada en diciembre) está funcionando bien.
+Redujimos el error de clasificación por calibre del 4,1% al 1,8%. El
+Ing. Montoya reporta que aún se está afinando el módulo de detección de
+manchas — por ahora opera en modo conservador (rechaza más de lo necesario).
+
+Incidencias:
+  - Camión refrigerado #SDC-07 presentó falla en el compresor en ruta
+    Tierralta → Cartagena. Carga de 18 ton de Tahití mantuvo cadena de
+    frío gracias a transferencia a camión de respaldo. Sin pérdida.
+  - Falta de cajas de cartón corrugado tipo exportación. Inventario para
+    5 días. Se aceleró pedido a Smurfit Kappa (entrega estimada enero 14).
+
+Clima:
+  Temperaturas normales (28-32°C). Lluvias leves (45mm acumulado). Sin
+  alertas.
+
+Recomendaciones:
+  Aprobar contratación de 8 operarios temporales para cubrir el pico de
+  cosecha esperado en febrero-marzo. Costo estimado: $12,8M COP/mes.
+
+--------------------------------------------------------------------------------
+
+================================================================================
+SEMANA 2 — 13 al 17 de enero de 2026
+================================================================================
+
+KPIs de la semana:
+  - Toneladas despachadas:        698 ton (Tahití 479, Valencia 219)
+  - Tasa de rechazo en planta:    9,1%
+  - Eficiencia línea empaque:     89,1% (meta: 90%)
+  - Horas campo (cosecha):        1.380 h
+  - Contenedores exportados:      14 (9 Tahití, 5 Valencia)
+
+Resumen operativo:
+Buena semana. Superamos las 690 toneladas despachadas por primera vez desde
+octubre 2025. La eficiencia de la línea de empaque subió a 89,1%, casi en
+meta. El Ing. Montoya ajustó la velocidad de la banda transportadora de
+1,2 m/s a 1,4 m/s sin afectar calidad de selección.
+
+Llegaron las cajas de Smurfit Kappa — inventario normalizado para 15 días.
+
+El Ing. Fabio Herrera (Agronomía) completó el monitoreo fitosanitario
+mensual. Todas las fincas en verde excepto Finca La Esperanza, donde
+detectó síntomas iniciales de Phytophthora en el lote 7 (42 ha de Tahití).
+Se programó tratamiento preventivo con fosetil aluminio para la semana 3.
+
+Finca San José: el capataz Hernán Zapata reportó que el sistema de riego
+por goteo del lote 4 tiene 3 válvulas defectuosas. Reparación programada
+para sábado 18. Costo: $2,4M COP.
+
+Incidencias:
+  - Un operario de cosecha (Diego Patiño, Finca Villa María) sufrió caída
+    desde escalera. Fractura leve en muñeca izquierda. Atendido en clínica
+    de Montería. Incapacidad 15 días. Se reforzó charla de seguridad en
+    altura para todas las cuadrillas.
+
+Clima:
+  Normal. Acumulado de lluvia: 52mm. Sin alertas.
+
+Recomendaciones:
+  Autorizar compra de 12 escaleras de aluminio tipo tijera (modelo nuevo
+  con base estabilizadora) para reemplazar las de madera. Inversión:
+  $8,4M COP. Mejora seguridad y eficiencia.
+
+--------------------------------------------------------------------------------
+
+================================================================================
+SEMANA 3 — 20 al 24 de enero de 2026
+================================================================================
+
+KPIs de la semana:
+  - Toneladas despachadas:        712 ton (Tahití 491, Valencia 221)
+  - Tasa de rechazo en planta:    8,4%
+  - Eficiencia línea empaque:     91,2% (meta: 90%) ✓
+  - Horas campo (cosecha):        1.410 h
+  - Contenedores exportados:      14 (10 Tahití, 4 Valencia)
+
+Resumen operativo:
+Semana récord: 712 toneladas despachadas y eficiencia de planta por encima
+de meta por primera vez en Q1. La línea de empaque superó el 91% gracias al
+ajuste de velocidad de banda y a la reducción de paradas por cambio de
+calibre (implementamos prealistamiento de rodillos).
+
+Se aplicó tratamiento de fosetil aluminio en Finca La Esperanza lote 7.
+Cobertura completa de las 42 ha. Costo de tratamiento: $18,6M COP
+(producto + aplicación con drone). Seguimiento programado en semana 6.
+
+Los 8 operarios temporales aprobados en semana 1 ya están contratados e
+integrados a las cuadrillas de Finca El Porvenir (4) y Finca San José (4).
+
+Finca Villa María: el Ing. Herrera reportó que los lotes de naranja
+Valencia están entrando en pico de maduración 2 semanas antes de lo
+previsto. Esto es positivo pero requiere coordinar capacidad de transporte
+adicional para las semanas 5-8.
+
+Incidencias:
+  - Ninguna incidencia relevante.
+
+Clima:
+  Se registró granizo leve (15 minutos) en Finca Villa María el miércoles
+  22. Impacto menor: aproximadamente 12 toneladas de Tahití con daño
+  cosmético reclasificadas de Exportación a Nacional. Pérdida estimada
+  en valor: $4,2M COP.
+
+Recomendaciones:
+  Coordinar con logística la disponibilidad de 2 camiones refrigerados
+  adicionales para el pico de Valencia en semanas 5-8. Cotizar con
+  TransCosta Ltda.
+
+--------------------------------------------------------------------------------
+
+================================================================================
+SEMANA 4 — 27 al 31 de enero de 2026
+================================================================================
+
+KPIs de la semana:
+  - Toneladas despachadas:        583 ton (Tahití 402, Valencia 181)
+  - Tasa de rechazo en planta:    14,2% ⚠
+  - Eficiencia línea empaque:     62,4% ⚠ (meta: 90%)
+  - Horas campo (cosecha):        1.290 h
+  - Contenedores exportados:      11 (7 Tahití, 4 Valencia)
+
+INCIDENTE CRÍTICO — FALLA EN LÍNEA DE EMPAQUE
+
+El martes 28 de enero a las 09:40 se presentó una falla mecánica crítica
+en el motor principal de la línea de selección y empaque de la planta de
+Tierralta. El rodamiento del eje central del transportador de rodillos
+colapsó, causando desalineación de la banda y daño en 14 rodillos de la
+sección de clasificación por calibre.
+
+Cronología:
+  09:40 — Alarma de vibración excesiva. Ing. Montoya ordena parada.
+  10:15 — Diagnóstico: rodamiento eje central destruido + rodillos dañados.
+  10:30 — Se contacta a proveedor (MaqAgro S.A.) para repuestos.
+  14:00 — MaqAgro confirma: rodamiento disponible en Medellín, rodillos
+           deben fabricarse. Tiempo estimado: 48 horas.
+  15:00 — Se activa protocolo de contingencia: empaque manual con 24
+           operarios de cuadrillas de cosecha redistribuidos.
+  Miércoles 29 y jueves 30 — Operación en modo manual. Capacidad reducida
+           al 35% de la línea automatizada. Tasa de error de clasificación
+           manual: 12% (vs. 1,8% automatizada).
+  Viernes 31, 06:00 — Llegada de repuestos. Inicio de reparación.
+  Viernes 31, 16:30 — Línea operativa al 100%. Pruebas exitosas.
+
+Impacto:
+  - Producción perdida: ~180 toneladas no empacadas en los 3 días
+  - 2 contenedores de exportación retrasados (Fresh Direct Europe, Tropical
+    Fruits LLC). Se notificó a clientes. Sin penalidad contractual.
+  - Costo de reparación: $28,4M COP (repuestos $19,2M + mano de obra
+    $5,8M + transporte urgente desde Medellín $3,4M)
+  - Fruta en espera durante la falla: 45 toneladas almacenadas en cuarto
+    frío. De estas, 8 toneladas (18%) se degradaron de Exportación a
+    Nacional por exceso de tiempo en almacenamiento.
+  - Sobretiempo del personal: 186 horas extra a $18.500 COP/h = $3,4M COP
+
+Causa raíz: El rodamiento del eje central tenía 14 meses de operación (vida
+útil recomendada: 12 meses). El mantenimiento preventivo programado para
+diciembre 2025 se pospuso por la presión de producción de fin de año.
+
+Tasa de rechazo de la semana: 14,2% — el pico se debe al empaque manual
+que generó más daño mecánico en la fruta y más errores de clasificación.
+
+Clima:
+  Normal. Sin eventos relevantes.
+
+Recomendaciones URGENTES:
+  1. Implementar mantenimiento preventivo estricto con calendario inamovible.
+     NUNCA posponer por presión de producción. El costo de esta falla
+     ($31,8M COP directos + ~$52M COP en fruta degradada y oportunidad
+     perdida) supera 10x el costo del mantenimiento preventivo ($3,2M COP).
+  2. Mantener inventario de repuestos críticos en planta: 2 rodamientos
+     eje central + 20 rodillos de clasificación. Inversión: $14M COP.
+  3. Evaluar contrato de mantenimiento con MaqAgro que incluya respuesta
+     en 12 horas (actual: 48h). Costo adicional estimado: $8M COP/año.
+  4. Documentar el protocolo de contingencia manual para futuras fallas.
+     Asignar al Ing. Montoya como responsable.
+
+================================================================================
+Notas generales del mes de enero:
+
+Cierre de enero: 2.634 toneladas despachadas (meta mensual: 2.800 ton).
+Cumplimiento: 94,1%. La brecha se explica casi en su totalidad por la falla
+de planta en semana 4.
+
+Temas pendientes para febrero:
+  - Seguimiento fitosanitario Finca La Esperanza lote 7 (semana 6)
+  - Pico de cosecha de Valencia (semanas 5-8) — transporte coordinado
+  - Recepción de escaleras nuevas de aluminio
+  - Definición de calendario de mantenimiento preventivo inamovible
+
+                     Ing. Carlos Andrés Mejía
+                     Director de Operaciones
+                     Son del Cauca S.A.S.
+================================================================================

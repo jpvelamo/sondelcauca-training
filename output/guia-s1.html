@@ -802,7 +802,7 @@ footer {
 <div class="tab-bar">
   <div class="container">
     <div class="tab active" data-session="1">S1 — IA + Prompting</div>
-    <div class="tab locked" data-session="2">S2 — Google AI Ecosystem <span class="lock-icon">&#128274;</span></div>
+    <div class="tab" data-session="2">S2 — Google AI Ecosystem</div>
     <div class="tab locked" data-session="3">S3 — Make Automation <span class="lock-icon">&#128274;</span></div>
     <div class="tab locked" data-session="4">S4 — Proyecto Final <span class="lock-icon">&#128274;</span></div>
   </div>
@@ -1700,15 +1700,762 @@ Formato visual con flujo claro de izquierda a derecha o de arriba a abajo.">Copi
 
 </div><!-- end session-panel 1 -->
 
-<!-- ══════════════════════════════════════ SESSION 2 PLACEHOLDER ═══════════════════════════════════ -->
+<!-- ══════════════════════════════════════ SESSION 2 ═══════════════════════════════════════════════ -->
 <div class="session-panel" data-session="2">
-  <div class="coming-soon">
-    <div class="cs-icon">&#128274;</div>
-    <h2><span class="gradient-text">Google AI Ecosystem</span></h2>
-    <p>Herramientas de IA integradas en tu flujo de trabajo diario con Google Workspace.</p>
-    <p style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--muted);">Se habilitara antes de la Sesion 2</p>
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="badge">Sesion 2</span>
+        <span class="badge-muted">15 participantes</span>
+      </div>
+      <h1>Google AI<br><span class="gradient-text">Ecosystem</span></h1>
+      <p class="hero-sub">Sesion 2 &middot; Programa de IA y Automatizacion</p>
+      <p class="hero-date">Abril 2026</p>
+
+      <div class="outcomes">
+        <p class="outcomes-label">Al finalizar esta sesion podras</p>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <div class="oc-icon">&#129302;</div>
+            <div class="oc-text">Crear agentes personalizados (Gems) para automatizar tareas recurrentes</div>
+          </div>
+          <div class="outcome-card">
+            <div class="oc-icon">&#128736;</div>
+            <div class="oc-text">Usar IA integrada en Gmail, Sheets, Drive y Meet para ser mas productivo</div>
+          </div>
+          <div class="outcome-card">
+            <div class="oc-icon">&#128218;</div>
+            <div class="oc-text">Construir notebooks inteligentes con NotebookLM para analizar informacion y generar activos</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="cta-link" href="https://gemini.google.com" target="_blank" rel="noopener">Abrir Gemini &rarr;</a>
+    </div>
   </div>
-</div>
+
+  <!-- ══════════════════════ SECCION 01 — QUE ES UN AGENTE ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 01</p>
+        <h2 class="section-title">&iquest;Que es un Agente?</h2>
+        <p class="section-desc">La anatomia de un asistente de IA con proposito.</p>
+      </div>
+
+      <p class="content-text">Un <strong>agente de IA</strong> no es ciencia ficcion. Es un software que tiene tres componentes clave:</p>
+
+      <div class="gem-grid" style="margin-top:24px;">
+        <div class="gem-card">
+          <p class="gem-area">Componente 1</p>
+          <p class="gem-name">&#127919; Objetivo</p>
+          <p class="gem-desc">Lo que el agente busca lograr. Sin objetivo claro, no hay agente &mdash; hay un chatbot. Ejemplo: "Generar informes ejecutivos para junta directiva."</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Componente 2</p>
+          <p class="gem-name">&#128295; Herramientas</p>
+          <p class="gem-desc">Lo que puede usar para cumplir su objetivo: buscar en web, leer archivos, conectarse a apps, ejecutar codigo, acceder a bases de datos.</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Componente 3</p>
+          <p class="gem-name">&#128737; Guardrails</p>
+          <p class="gem-desc">Las reglas que no puede romper: tono, formato, que NO hacer, limites de alcance. Evitan que el agente se salga del camino.</p>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:24px;">
+        <p class="tip-label">Analogia</p>
+        <p>Piensa en un agente como un empleado nuevo: le das un <strong>rol claro</strong> (objetivo), le das <strong>acceso a las herramientas</strong> que necesita, y le explicas <strong>las reglas de la empresa</strong> (guardrails). Un Gem en Gemini es exactamente eso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 02 — GEMS EN GEMINI ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 02</p>
+        <h2 class="section-title">Gems en Gemini</h2>
+        <p class="section-desc">Crea tus propios agentes personalizados dentro de Gemini.</p>
+      </div>
+
+      <h3>Como crear un Gem</h3>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>Abre <strong>gemini.google.com</strong> &rarr; Menu lateral &rarr; <strong>Gem Manager</strong> &rarr; <strong>Crear nuevo Gem</strong></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>Dale un <strong>nombre</strong> descriptivo (ej: "Ingeniero de Prompts")</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>Escribe las <strong>instrucciones</strong> &mdash; aqui es donde defines su objetivo, contexto, reglas y formato de output</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div><strong>Pruebalo</strong> con un caso real y ajusta las instrucciones segun los resultados</div>
+        </div>
+      </div>
+
+      <!-- ── EJ 2.1: Gem Ingeniero de Prompts ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 2.1</span>
+          <span class="exercise-title">Gem: Ingeniero de Prompts</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128161; Gemini &gt; Gem Manager</span>
+          <p>Crea un Gem que convierta ideas vagas en prompts estructurados usando los 5 componentes que aprendiste en S1. Sigue los pasos y copia las instrucciones:</p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Nombre: <strong>Ingeniero de Prompts</strong></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Pega las siguientes instrucciones:</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Eres un experto en prompt engineering. Tu objetivo es ayudar al usuario a transformar ideas vagas o solicitudes simples en prompts altamente efectivos.
+
+PROCESO:
+1. El usuario te describe lo que necesita (puede ser vago o especifico).
+2. Tu le haces maximo 3 preguntas clave para entender el contexto completo.
+3. Con las respuestas, generas un prompt optimizado usando estos 5 componentes:
+   - ROL: Quien debe ser la IA para esta tarea
+   - PROPOSITO: Que debe lograr exactamente
+   - CONTEXTO: Informacion relevante, datos, restricciones del negocio
+   - RESTRICCIONES: Que NO debe hacer, limites, formato requerido
+   - OUTPUT: Como debe verse la respuesta (formato, extension, tono)
+
+REGLAS:
+- Siempre incluye los 5 componentes en el prompt generado.
+- Usa lenguaje natural y profesional, no tecnico.
+- Contextualiza para la industria del usuario cuando sea posible.
+- Si la tarea es compleja, sugiere dividirla en pasos (Chain of Thought).
+- Al final, agrega la frase: "Antes de responder, hazme las preguntas que necesites para darme la mejor respuesta posible."
+- Responde en el mismo idioma del usuario.
+
+FORMATO DE OUTPUT:
+Entrega el prompt final dentro de un bloque claramente delimitado, listo para copiar y pegar.</div>
+            <button class="copy-btn" data-text="Eres un experto en prompt engineering. Tu objetivo es ayudar al usuario a transformar ideas vagas o solicitudes simples en prompts altamente efectivos.
+
+PROCESO:
+1. El usuario te describe lo que necesita (puede ser vago o específico).
+2. Tú le haces máximo 3 preguntas clave para entender el contexto completo.
+3. Con las respuestas, generas un prompt optimizado usando estos 5 componentes:
+   - ROL: Quién debe ser la IA para esta tarea
+   - PROPÓSITO: Qué debe lograr exactamente
+   - CONTEXTO: Información relevante, datos, restricciones del negocio
+   - RESTRICCIONES: Qué NO debe hacer, límites, formato requerido
+   - OUTPUT: Cómo debe verse la respuesta (formato, extensión, tono)
+
+REGLAS:
+- Siempre incluye los 5 componentes en el prompt generado.
+- Usa lenguaje natural y profesional, no técnico.
+- Contextualiza para la industria del usuario cuando sea posible.
+- Si la tarea es compleja, sugiere dividirla en pasos (Chain of Thought).
+- Al final, agrega la frase: &quot;Antes de responder, hazme las preguntas que necesites para darme la mejor respuesta posible.&quot;
+- Responde en el mismo idioma del usuario.
+
+FORMATO DE OUTPUT:
+Entrega el prompt final dentro de un bloque claramente delimitado, listo para copiar y pegar.">Copiar</button>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Prueba tu Gem con esta solicitud: <em>"Necesito analizar los reclamos de calidad del ultimo trimestre"</em></div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">&iquest;El prompt generado usa los 5 componentes?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 2.2: Gem Analista de Junta ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 2.2</span>
+          <span class="exercise-title">Gem: Analista de Informes para Junta Directiva</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128161; Gemini &gt; Gem Manager</span>
+          <p>Crea un Gem que tome datos operativos crudos y genere un informe ejecutivo estructurado para la junta directiva de Son del Cauca.</p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Nombre: <strong>Analista de Junta Directiva</strong></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Pega las siguientes instrucciones:</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Eres un analista ejecutivo senior especializado en agroindustria. Tu objetivo es transformar datos operativos crudos en informes ejecutivos claros y accionables para la junta directiva.
+
+CONTEXTO DE LA EMPRESA:
+- Son del Cauca: comercializadora de citricos colombiana
+- Productos: Limon Tahiti (850ha, 20k ton/anio), Naranja Valencia (350ha, 12k ton/anio), Madera reforestada (Melina/Teca), Palma africana
+- Operaciones en Antioquia y Cordoba, Colombia
+- Exportacion a Europa, USA, Chile, UK, Emiratos Arabes
+- Planta de empaque con tecnologia de punta
+
+PROCESO:
+1. El usuario te entrega datos crudos (tablas, notas operativas, reportes parciales, cifras sueltas).
+2. Tu los analizas y generas un informe ejecutivo estructurado.
+
+FORMATO DEL INFORME:
+1. RESUMEN EJECUTIVO (3-5 bullets con los hallazgos mas importantes)
+2. KPIs CLAVE (tabla con indicador, valor actual, meta, tendencia con flechas)
+3. HALLAZGOS CRITICOS (maximo 3, con datos de soporte)
+4. RIESGOS Y ALERTAS (semaforo: rojo/amarillo/verde con descripcion)
+5. RECOMENDACIONES (acciones concretas con responsable sugerido y plazo)
+6. ANEXO: Datos de soporte (tablas detalladas)
+
+REGLAS:
+- Lenguaje ejecutivo: directo, sin jerga tecnica innecesaria.
+- Siempre incluir la fuente del dato (de que reporte o tabla sale).
+- No inventar cifras. Si no tienes el dato, indicalo como "[dato pendiente]".
+- Separar hechos de interpretaciones.
+- Las recomendaciones deben ser accionables, no genericas.
+- Usar formato de moneda COP para valores nacionales, USD para exportacion.
+- Tendencias: usar simbolos claros (mejora, estable, deterioro).
+- Responde en espanol.</div>
+            <button class="copy-btn" data-text="Eres un analista ejecutivo senior especializado en agroindustria. Tu objetivo es transformar datos operativos crudos en informes ejecutivos claros y accionables para la junta directiva.
+
+CONTEXTO DE LA EMPRESA:
+- Son del Cauca: comercializadora de cítricos colombiana
+- Productos: Limón Tahití (850ha, 20k ton/año), Naranja Valencia (350ha, 12k ton/año), Madera reforestada (Melina/Teca), Palma africana
+- Operaciones en Antioquia y Córdoba, Colombia
+- Exportación a Europa, USA, Chile, UK, Emiratos Árabes
+- Planta de empaque con tecnología de punta
+
+PROCESO:
+1. El usuario te entrega datos crudos (tablas, notas operativas, reportes parciales, cifras sueltas).
+2. Tú los analizas y generas un informe ejecutivo estructurado.
+
+FORMATO DEL INFORME:
+1. RESUMEN EJECUTIVO (3-5 bullets con los hallazgos más importantes)
+2. KPIs CLAVE (tabla con indicador, valor actual, meta, tendencia con flechas)
+3. HALLAZGOS CRÍTICOS (máximo 3, con datos de soporte)
+4. RIESGOS Y ALERTAS (semáforo: rojo/amarillo/verde con descripción)
+5. RECOMENDACIONES (acciones concretas con responsable sugerido y plazo)
+6. ANEXO: Datos de soporte (tablas detalladas)
+
+REGLAS:
+- Lenguaje ejecutivo: directo, sin jerga técnica innecesaria.
+- Siempre incluir la fuente del dato (de qué reporte o tabla sale).
+- No inventar cifras. Si no tienes el dato, indicarlo como &quot;[dato pendiente]&quot;.
+- Separar hechos de interpretaciones.
+- Las recomendaciones deben ser accionables, no genéricas.
+- Usar formato de moneda COP para valores nacionales, USD para exportación.
+- Tendencias: usar símbolos claros (↑ mejora, → estable, ↓ deterioro).
+- Responde en español.">Copiar</button>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Prueba tu Gem copiando y pegando datos de los CSVs de la sesion anterior (operaciones-fincas.csv o reclamos-calidad.csv)</div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">&iquest;El informe tiene los 6 componentes?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 2.3: Prueba tus Gems ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 2.3</span>
+          <span class="exercise-title">Prueba tus Gems con casos reales</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128161; Gemini &gt; Tus Gems</span>
+          <p>Ahora pon a prueba ambos Gems con solicitudes reales de tu dia a dia.</p>
+
+          <h3 style="margin-top:20px;">Prueba 1: Ingeniero de Prompts</h3>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Necesito que me ayudes a crear un prompt para analizar por que la Finca La Esperanza tuvo una caida del 31% en rendimiento este trimestre comparado con Q4 2025. Tengo los datos de produccion semanal.</div>
+            <button class="copy-btn" data-text="Necesito que me ayudes a crear un prompt para analizar por qué la Finca La Esperanza tuvo una caída del 31% en rendimiento este trimestre comparado con Q4 2025. Tengo los datos de producción semanal.">Copiar</button>
+          </div>
+
+          <h3 style="margin-top:20px;">Prueba 2: Analista de Junta</h3>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Datos del Q1 2026:
+- Produccion total: 5,840 ton Tahiti + 2,450 ton Valencia
+- Tasa de rechazo promedio: 12.4% (meta: 10%)
+- Reclamos de calidad: 18 en Q1 (vs 11 en Q4 2025)
+- Cliente con mas reclamos: Fresh Direct Europe (Netherlands) — 8 reclamos
+- Exportaciones en pipeline: USD $4.3M total, $2.0M ponderado
+- Incidente critico: falla en linea de empaque semana 4, 3 dias de operacion manual
+- Madera: margen bruto negativo (-0.8% vs 28% presupuestado) por retraso en permisos forestales
+
+Genera el informe para la junta directiva de Son del Cauca.</div>
+            <button class="copy-btn" data-text="Datos del Q1 2026:
+- Producción total: 5,840 ton Tahití + 2,450 ton Valencia
+- Tasa de rechazo promedio: 12.4% (meta: 10%)
+- Reclamos de calidad: 18 en Q1 (vs 11 en Q4 2025)
+- Cliente con más reclamos: Fresh Direct Europe (Netherlands) — 8 reclamos
+- Exportaciones en pipeline: USD $4.3M total, $2.0M ponderado
+- Incidente crítico: falla en línea de empaque semana 4, 3 días de operación manual
+- Madera: margen bruto negativo (-0.8% vs 28% presupuestado) por retraso en permisos forestales
+
+Genera el informe para la junta directiva de Son del Cauca.">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 03 — IA EN GOOGLE WORKSPACE ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 03</p>
+        <h2 class="section-title">IA en Google Workspace</h2>
+        <p class="section-desc">Gemini integrado en las herramientas que ya usas todos los dias.</p>
+      </div>
+
+      <div class="tip-box" style="margin-bottom:32px;">
+        <p class="tip-label">Nota</p>
+        <p>Estas funciones requieren Google Workspace con Gemini habilitado. Si tu cuenta aun no lo tiene activo, puedes activarlo desde <strong>gemini.google.com</strong> y llamar a las herramientas desde ahi.</p>
+      </div>
+
+      <!-- Gmail + Meet -->
+      <h3>&#9993; Gmail + Meet</h3>
+      <div class="gem-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:32px;">
+        <div class="gem-card">
+          <p class="gem-area">Gmail</p>
+          <p class="gem-name">Correo inteligente</p>
+          <p class="gem-desc"><strong>Resumenes de hilos:</strong> Gemini resume conversaciones largas en bullets clave.<br><strong>Redaccion:</strong> Escribe respuestas completas desde un borrador rapido.<br><strong>Busqueda:</strong> Encuentra correos por contenido semantico, no solo palabras clave.<br><strong>Traduccion:</strong> Traduce correos completos con un click.</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Meet</p>
+          <p class="gem-name">Reuniones con IA</p>
+          <p class="gem-desc"><strong>Notas automaticas:</strong> Genera un resumen de la reunion con puntos clave.<br><strong>Captions traducidos:</strong> Subtitulos en tiempo real en el idioma que elijas.<br><strong>Action items:</strong> Lista de tareas y compromisos post-reunion.</p>
+        </div>
+      </div>
+
+      <!-- Sheets -->
+      <h3>&#128202; Sheets</h3>
+      <div class="gem-grid" style="margin-bottom:32px;">
+        <div class="gem-card">
+          <p class="gem-area">Funcion</p>
+          <p class="gem-name">=AI()</p>
+          <p class="gem-desc">Haz preguntas sobre tus datos directamente en una celda. Ejemplo: <code>=AI("&iquest;Cual fue la finca con mayor rendimiento?", A1:H200)</code></p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Asistente</p>
+          <p class="gem-name">Boton Gemini</p>
+          <p class="gem-desc">Analiza rangos completos, genera formulas complejas, identifica tendencias y outliers. Todo en lenguaje natural.</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Visual</p>
+          <p class="gem-name">Graficos con IA</p>
+          <p class="gem-desc">Pide graficos y tablas dinamicas en lenguaje natural: "Grafica el rendimiento por finca del ultimo trimestre."</p>
+        </div>
+      </div>
+
+      <!-- Drive -->
+      <h3>&#128193; Drive</h3>
+      <div class="gem-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:16px;">
+        <div class="gem-card">
+          <p class="gem-area">Busqueda</p>
+          <p class="gem-name">Buscar por contenido</p>
+          <p class="gem-desc">Encuentra archivos por lo que dicen, no solo por el nombre. Ejemplo: "&iquest;En que documento esta el presupuesto de madera para Q1 2026?"</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Analisis</p>
+          <p class="gem-name">Resumir y navegar</p>
+          <p class="gem-desc">Resume documentos largos sin abrirlos. Pregunta por informacion que esta distribuida en multiples archivos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 04 — NOTEBOOKLM ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 04</p>
+        <h2 class="section-title">NotebookLM</h2>
+        <p class="section-desc">Tu propio experto que solo responde con base en las fuentes que tu le das.</p>
+      </div>
+
+      <!-- Teoria: RAG -->
+      <div class="theory-toggle"><h3>&#129504; &iquest;Que es RAG? La tecnologia detras de NotebookLM</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text"><strong>RAG</strong> (Retrieval-Augmented Generation) es la tecnologia que hace que NotebookLM sea diferente a un chatbot normal. En lugar de responder desde su entrenamiento general, funciona asi:</p>
+        <div class="gem-grid" style="margin:20px 0;">
+          <div class="gem-card">
+            <p class="gem-area">Paso 1</p>
+            <p class="gem-name">&#128229; Cargas fuentes</p>
+            <p class="gem-desc">PDFs, paginas web, videos de YouTube, archivos de Google Drive. Estas son las unicas fuentes de verdad para tu notebook.</p>
+          </div>
+          <div class="gem-card">
+            <p class="gem-area">Paso 2</p>
+            <p class="gem-name">&#128269; Busca en tus fuentes</p>
+            <p class="gem-desc">Cuando haces una pregunta, el sistema busca en tus documentos los fragmentos mas relevantes. No inventa &mdash; recupera.</p>
+          </div>
+          <div class="gem-card">
+            <p class="gem-area">Paso 3</p>
+            <p class="gem-name">&#128161; Genera con citas</p>
+            <p class="gem-desc">Genera una respuesta fundamentada en los fragmentos encontrados, con citas que puedes verificar. Si no esta en las fuentes, te lo dice.</p>
+          </div>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">&iquest;Por que importa?</p>
+          <p>NotebookLM alucina mucho menos que un chatbot normal porque <strong>solo responde con lo que le diste</strong>. No inventa &mdash; cita. Esto lo hace ideal para analizar documentos internos de la empresa donde la precision es critica.</p>
+        </div>
+      </div>
+
+      <!-- Teoria: Fuentes y Outputs -->
+      <div class="theory-toggle"><h3>&#128218; Fuentes, chat y outputs</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text"><strong>Fuentes soportadas:</strong></p>
+        <div class="gem-grid" style="grid-template-columns: repeat(4, 1fr); margin:16px 0;">
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:28px;">&#128196;</p>
+            <p class="gem-name" style="font-size:14px;">PDFs</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:28px;">&#127760;</p>
+            <p class="gem-name" style="font-size:14px;">Websites</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:28px;">&#127909;</p>
+            <p class="gem-name" style="font-size:14px;">YouTube</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:28px;">&#128194;</p>
+            <p class="gem-name" style="font-size:14px;">Google Drive</p>
+          </div>
+        </div>
+        <p class="content-text" style="margin-top:20px;"><strong>Outputs que puedes generar:</strong></p>
+        <div class="gem-grid" style="grid-template-columns: repeat(5, 1fr); margin:16px 0;">
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:24px;">&#128202;</p>
+            <p class="gem-desc" style="font-size:12px;">Presentaciones</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:24px;">&#127908;</p>
+            <p class="gem-desc" style="font-size:12px;">Podcasts</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:24px;">&#127916;</p>
+            <p class="gem-desc" style="font-size:12px;">Videos</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:24px;">&#128200;</p>
+            <p class="gem-desc" style="font-size:12px;">Infografias</p>
+          </div>
+          <div class="gem-card" style="text-align:center; padding:16px;">
+            <p style="font-size:24px;">&#128221;</p>
+            <p class="gem-desc" style="font-size:12px;">Reportes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.1: Deep Research para crear Gems ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.1</span>
+          <span class="exercise-title">Deep Research para crear Gems</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128218; NotebookLM &gt; Deep Research</span>
+          <p>Usa la funcion de <strong>Investigacion Profunda</strong> de NotebookLM para capturar automaticamente las mejores fuentes sobre creacion de agentes de IA. Luego usa esas fuentes para generar instrucciones de Gems.</p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Abre <strong>notebooklm.google.com</strong> &rarr; Crea un nuevo Notebook</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Abre la ventana de <strong>Deep Research</strong> y lanza esta investigacion:</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Quiero que busques informacion sobre como hacer las mejores instrucciones personalizadas para asistentes de inteligencia artificial. Quiero que saques la informacion de guias oficiales de las empresas de referencia como Anthropic, OpenAI y Google/Gemini. Enfocate en mejores practicas para definir: rol, objetivo, reglas, formato de output y ejemplos.</div>
+            <button class="copy-btn" data-text="Quiero que busques información sobre cómo hacer las mejores instrucciones personalizadas para asistentes de inteligencia artificial. Quiero que saques la información de guías oficiales de las empresas de referencia como Anthropic, OpenAI y Google/Gemini. Enfócate en mejores prácticas para definir: rol, objetivo, reglas, formato de output y ejemplos.">Copiar</button>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Importa todas las fuentes que NotebookLM encuentre. Luego usa este prompt en el chat del notebook:</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Genera las instrucciones personalizadas para generar un Gem experto en crear instrucciones personalizadas, con el objetivo de que esta gem me ayude a crear futuros asistentes de inteligencia artificial, ya sea en Gemini, ChatGPT o Claude. Output en formato Markdown y en espanol.</div>
+            <button class="copy-btn" data-text="Genera las instrucciones personalizadas para generar un Gem experto en crear instrucciones personalizadas, con el objetivo de que esta gem me ayude a crear futuros asistentes de inteligencia artificial, ya sea en Gemini, ChatGPT o Claude. Output en formato Markdown y en español.">Copiar</button>
+          </div>
+
+          <div class="tip-box">
+            <p class="tip-label">Tip</p>
+            <p>Este ejercicio combina dos superpoderes: Deep Research para capturar fuentes confiables + NotebookLM para sintetizar esas fuentes en algo accionable. El resultado es un Gem meta &mdash; un agente que crea otros agentes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.2: Q&A Multi-Documento ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.2</span>
+          <span class="exercise-title">Analisis de Informacion Interna: Q&amp;A Multi-Documento</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128218; NotebookLM &rarr; Cargar Documentos</span>
+          <p>Descarga y carga estos documentos en un Notebook para analizar la operacion de Q1 2026 de Son del Cauca:</p>
+
+          <div class="download-grid">
+            <a class="download-card" href="../S2/informe-produccion-q1-2026.txt" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">informe-produccion-q1-2026.txt</div>
+              <div class="dl-desc">Produccion por finca Q1</div>
+            </a>
+            <a class="download-card" href="../S2/reporte-calidad-reclamos-q1-2026.txt" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">reporte-calidad-reclamos-q1-2026.txt</div>
+              <div class="dl-desc">Reclamos de calidad Q1</div>
+            </a>
+            <a class="download-card" href="../S2/pipeline-exportacion-mar-2026.txt" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">pipeline-exportacion-mar-2026.txt</div>
+              <div class="dl-desc">Pipeline de exportacion</div>
+            </a>
+            <a class="download-card" href="../S2/notas-operativas-dir-operaciones.txt" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">notas-operativas-dir-operaciones.txt</div>
+              <div class="dl-desc">Notas semanales Dir. Ops</div>
+            </a>
+            <a class="download-card" href="../S2/presupuesto-vs-real-q1-2026.txt" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">presupuesto-vs-real-q1-2026.txt</div>
+              <div class="dl-desc">Presupuesto vs Real Q1</div>
+            </a>
+          </div>
+
+          <p style="margin-top:20px;">Una vez cargados los 5 documentos, usa estos prompts para interrogar tu notebook:</p>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">&iquest;Cual finca tuvo el mayor rendimiento por hectarea en Q1 2026 y cual tuvo el peor? &iquest;Que factores explican la diferencia?</div>
+            <button class="copy-btn" data-text="¿Cuál finca tuvo el mayor rendimiento por hectárea en Q1 2026 y cuál tuvo el peor? ¿Qué factores explican la diferencia?">Copiar</button>
+          </div>
+
+          <div class="iteration-list">
+            <div class="iteration-item">
+              <span class="iter-num">1</span>
+              <div class="iteration-prompt">&iquest;Que tipo de reclamo fue mas frecuente en Q1 y en que fruta? &iquest;Hay un cliente o destino que concentre una proporcion inusual de reclamos?
+                <button class="copy-btn" data-text="¿Qué tipo de reclamo fue más frecuente en Q1 y en qué fruta? ¿Hay un cliente o destino que concentre una proporción inusual de reclamos?">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">2</span>
+              <div class="iteration-prompt">Compara el presupuesto vs real de cada linea de negocio. &iquest;Cual tuvo la mayor desviacion negativa y por que?
+                <button class="copy-btn" data-text="Compara el presupuesto vs real de cada línea de negocio. ¿Cuál tuvo la mayor desviación negativa y por qué?">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">3</span>
+              <div class="iteration-prompt">&iquest;Que recomienda el Director de Operaciones para el proximo trimestre? &iquest;Sus recomendaciones son consistentes con los datos de produccion y calidad?
+                <button class="copy-btn" data-text="¿Qué recomienda el Director de Operaciones para el próximo trimestre? ¿Sus recomendaciones son consistentes con los datos de producción y calidad?">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">4</span>
+              <div class="iteration-prompt">Si la tendencia de reclamos de Fresh Direct Europe continua, &iquest;cual es el riesgo para el pipeline de exportacion? Cuantifica el impacto en USD.
+                <button class="copy-btn" data-text="Si la tendencia de reclamos de Fresh Direct Europe continúa, ¿cuál es el riesgo para el pipeline de exportación? Cuantifica el impacto en USD.">Copiar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-box">
+            <p class="tip-label">Por que funciona</p>
+            <p>NotebookLM cruza informacion entre los 5 documentos para responder. Ninguna de estas preguntas se puede contestar con un solo archivo &mdash; necesitas el contexto completo. Esto es el poder real de RAG aplicado a datos internos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.3: Deep Research Agronomico ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.3</span>
+          <span class="exercise-title">Deep Research: Manejo Agronomico de Citricos</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128218; NotebookLM &gt; Deep Research</span>
+          <p>Usa Deep Research para crear un notebook completo sobre mejores practicas agronomicas. NotebookLM capturara las fuentes automaticamente.</p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Crea un nuevo Notebook en <strong>notebooklm.google.com</strong></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Abre <strong>Deep Research</strong> y lanza esta investigacion:</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Investiga las mejores practicas actuales (2025-2026) en manejo agronomico de cultivos de citricos, especificamente limon Tahiti y naranja Valencia en condiciones tropicales colombianas. Incluye:
+
+1. Manejo integrado de plagas y enfermedades (enfasis en Phytophthora, HLB/Greening, acaro del tostado)
+2. Practicas de fertilizacion y nutricion por etapa fenologica
+3. Manejo de riego y drenaje en zonas con lluvias atipicas
+4. Tecnicas de poda y renovacion de lotes con baja productividad
+5. Innovaciones tecnologicas aplicables: drones, sensores de suelo, monitoreo satelital
+6. Certificaciones y estandares relevantes para exportacion (GlobalGAP, HACCP)
+
+Busca en fuentes academicas, publicaciones de Agrosavia, ICA, FAO y centros de investigacion citricola.</div>
+            <button class="copy-btn" data-text="Investiga las mejores prácticas actuales (2025-2026) en manejo agronómico de cultivos de cítricos, específicamente limón Tahití y naranja Valencia en condiciones tropicales colombianas. Incluye:
+
+1. Manejo integrado de plagas y enfermedades (énfasis en Phytophthora, HLB/Greening, ácaro del tostado)
+2. Prácticas de fertilización y nutrición por etapa fenológica
+3. Manejo de riego y drenaje en zonas con lluvias atípicas
+4. Técnicas de poda y renovación de lotes con baja productividad
+5. Innovaciones tecnológicas aplicables: drones, sensores de suelo, monitoreo satelital
+6. Certificaciones y estándares relevantes para exportación (GlobalGAP, HACCP)
+
+Busca en fuentes académicas, publicaciones de Agrosavia, ICA, FAO y centros de investigación citrícola.">Copiar</button>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Importa todas las fuentes. Luego explora los outputs disponibles: genera una <strong>presentacion</strong>, un <strong>podcast</strong> o una <strong>infografia</strong> desde el Studio de NotebookLM.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.4: Plugin YouTube ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.4</span>
+          <span class="exercise-title">Plugin YouTube &rarr; NotebookLM</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#127909; Extension de Chrome</span>
+          <p>Instala la extension <strong>YouTube to NotebookLM</strong> para importar videos directamente a tus notebooks. Ideal para capturar contenido de canales educativos, tutoriales o conferencias.</p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Instala la extension: <a href="https://chromewebstore.google.com/detail/youtube-to-notebooklm/kobncfkmjelbefaoohoblamnbackjggk" target="_blank" rel="noopener" style="color:var(--accent);">YouTube to NotebookLM</a></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Ve a YouTube y busca videos sobre un tema relevante para tu trabajo (ej: "manejo de citricos Colombia", "exportacion de limon Tahiti", "agroindustria 2026")</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Haz click en el boton de NotebookLM que aparece en el video &rarr; <strong>Create Notebook</strong> o <strong>Choose Notebook</strong></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <div>Repite con 3-5 videos. Puedes importar videos individuales, playlists completas o resultados de busqueda</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">5</div>
+              <div>Abre tu notebook y hazle preguntas sobre el contenido de todos los videos</div>
+            </div>
+          </div>
+
+          <div class="tip-box">
+            <p class="tip-label">Tip</p>
+            <p>La extension tambien funciona como web clipper general &mdash; puedes enviar cualquier pagina web a NotebookLM, no solo videos de YouTube.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.5: Genera Outputs ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.5</span>
+          <span class="exercise-title">Genera outputs desde tu Notebook</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128218; NotebookLM &gt; Studio</span>
+          <p>Desde cualquiera de los notebooks que creaste (EJ 4.1, 4.2, 4.3 o 4.4), explora los diferentes formatos de output en el <strong>Studio</strong> de NotebookLM:</p>
+
+          <div class="gem-grid" style="grid-template-columns: repeat(5, 1fr); margin:20px 0;">
+            <div class="gem-card" style="text-align:center; padding:16px;">
+              <p style="font-size:28px;">&#128202;</p>
+              <p class="gem-name" style="font-size:13px;">Presentacion</p>
+            </div>
+            <div class="gem-card" style="text-align:center; padding:16px;">
+              <p style="font-size:28px;">&#127908;</p>
+              <p class="gem-name" style="font-size:13px;">Podcast</p>
+            </div>
+            <div class="gem-card" style="text-align:center; padding:16px;">
+              <p style="font-size:28px;">&#127916;</p>
+              <p class="gem-name" style="font-size:13px;">Video</p>
+            </div>
+            <div class="gem-card" style="text-align:center; padding:16px;">
+              <p style="font-size:28px;">&#128200;</p>
+              <p class="gem-name" style="font-size:13px;">Infografia</p>
+            </div>
+            <div class="gem-card" style="text-align:center; padding:16px;">
+              <p style="font-size:28px;">&#128221;</p>
+              <p class="gem-name" style="font-size:13px;">Reporte</p>
+            </div>
+          </div>
+
+          <p>Elige el notebook que mas contenido tenga y genera al menos <strong>2 outputs diferentes</strong>. Compara los resultados.</p>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Genera una presentacion ejecutiva de 10 slides sobre los hallazgos clave de este notebook. La audiencia es la junta directiva de una empresa agroindustrial. Incluye datos especificos, tendencias y recomendaciones accionables.</div>
+            <button class="copy-btn" data-text="Genera una presentación ejecutiva de 10 slides sobre los hallazgos clave de este notebook. La audiencia es la junta directiva de una empresa agroindustrial. Incluye datos específicos, tendencias y recomendaciones accionables.">Copiar</button>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">&iquest;Que tan util fue el output generado? (1-5)</span>
+            <div class="rating-dots">
+              <div class="rating-dot" data-val="1">1</div>
+              <div class="rating-dot" data-val="2">2</div>
+              <div class="rating-dot" data-val="3">3</div>
+              <div class="rating-dot" data-val="4">4</div>
+              <div class="rating-dot" data-val="5">5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- end session-panel 2 -->
 
 <!-- ══════════════════════════════════════ SESSION 3 PLACEHOLDER ═══════════════════════════════════ -->
 <div class="session-panel" data-session="3">

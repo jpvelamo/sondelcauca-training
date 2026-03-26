@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA y Automatización para el Agro — Sesión 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0A0C;
+  --bg-card: #111111;
+  --bg-card-hover: #171717;
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(68,243,152,0.4);
+  --text: #F5F3EF;
+  --muted: #86868b;
+  --green: #44F398;
+  --accent: #44F398;
+  --accent-glow: rgba(68,243,152,0.12);
+  --accent-dim: rgba(68,243,152,0.3);
+  --error: #f87171;
+  --font-h: 'Space Grotesk', sans-serif;
+  --font-b: 'Inter Tight', sans-serif;
+  --font-m: 'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-b);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* SLIDES */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* LOGO WATERMARK */
+.logo {
+  position: fixed;
+  top: 28px; left: 36px;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  opacity: 0.25;
+  z-index: 100;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+}
+.logo .x { color: var(--green); }
+
+/* PROGRESS DOTS */
+.progress {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 100;
+}
+.progress .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.progress .dot.active {
+  background: var(--green);
+  box-shadow: 0 0 8px var(--accent-dim);
+}
+
+/* COUNTER */
+.counter {
+  position: fixed;
+  bottom: 24px; right: 36px;
+  font-family: var(--font-m);
+  font-size: 12px;
+  color: var(--muted);
+  z-index: 100;
+}
+
+/* KEYBOARD HINTS */
+.hints {
+  position: fixed;
+  bottom: 24px; left: 36px;
+  font-family: var(--font-m);
+  font-size: 11px;
+  color: rgba(255,255,255,0.15);
+  z-index: 100;
+}
+
+/* CURSOR HIDE */
+body.hide-cursor, body.hide-cursor * { cursor: none !important; }
+
+/* TYPOGRAPHY */
+.title-xl {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 64px;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-align: center;
+}
+.title-lg {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-align: center;
+}
+.title-md {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-align: center;
+}
+.subtitle {
+  font-family: var(--font-b);
+  font-size: 18px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 650px;
+}
+.accent { color: var(--green); }
+.error-text { color: var(--error); }
+
+/* BADGES */
+.badge-row { display: flex; gap: 12px; margin-top: 24px; }
+.badge {
+  font-family: var(--font-m);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
+  border: 1px solid var(--border-accent);
+  color: var(--green);
+  border-radius: 0;
+  background: var(--accent-glow);
+}
+
+/* CARDS */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 28px 24px;
+  transition: background 0.2s;
+}
+.card:hover { background: var(--bg-card-hover); }
+.card-grid { display: grid; gap: 16px; width: 100%; max-width: 1000px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.g5 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+.card-title {
+  font-family: var(--font-h);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.card-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+}
+.card-icon-sm {
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: block;
+}
+.card-highlight {
+  border-color: var(--border-accent);
+  background: var(--accent-glow);
+}
+
+/* SECTION DIVIDERS */
+.slide.divider { justify-content: center; }
+.divider-num {
+  font-family: var(--font-m);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+.divider-title {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 56px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  line-height: 1.1;
+}
+.divider-hook {
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 20px;
+  text-align: center;
+  max-width: 550px;
+  line-height: 1.6;
+}
+.divider-hook strong { color: var(--text); }
+.divider-line {
+  width: 60px;
+  height: 3px;
+  background: var(--green);
+  margin-top: 28px;
+}
+
+/* COMPARE */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+.compare-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  border-radius: 0;
+}
+.compare-panel.highlight { border-color: var(--border-accent); }
+.compare-label {
+  font-family: var(--font-m);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* BULLET LIST */
+.bullet-list {
+  list-style: none;
+  max-width: 700px;
+  width: 100%;
+}
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.bullet-list li:last-child { border-bottom: none; }
+.bl-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+
+/* CALLOUT */
+.callout {
+  background: var(--accent-glow);
+  border-left: 3px solid var(--green);
+  padding: 16px 24px;
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--text);
+  max-width: 800px;
+  width: 100%;
+  border-radius: 0;
+  line-height: 1.5;
+}
+.callout strong { color: var(--green); }
+
+/* CTA */
+.cta-box {
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  padding: 24px 40px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 0;
+}
+.cta-url {
+  font-family: var(--font-m);
+  font-size: 22px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* TAGS */
+.tag-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+.tag {
+  font-family: var(--font-m);
+  font-size: 12px;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 0;
+}
+
+/* SLIDE LABEL */
+.slide-label {
+  font-family: var(--font-m);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-family: var(--font-b);
+  font-size: 16px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 1000px;
+  align-items: start;
+}
+
+/* FLOW STEPS */
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 1000px;
+}
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.flow-step:last-child { border-bottom: none; }
+.flow-num {
+  font-family: var(--font-m);
+  font-size: 14px;
+  color: var(--green);
+  font-weight: 600;
+  width: 32px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.flow-label {
+  font-family: var(--font-h);
+  font-weight: 600;
+  font-size: 16px;
+}
+.flow-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* FLOW ARROW */
+.flow-arrow {
+  font-size: 28px;
+  color: var(--green);
+  opacity: 0.6;
+}
+
+/* NUMBERED LIST */
+.num-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.num-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.num-list li:last-child { border-bottom: none; }
+.num-badge {
+  font-family: var(--font-m);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+/* RAG FLOW */
+.rag-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 900px;
+}
+.rag-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+.rag-step-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.rag-step-title {
+  font-family: var(--font-h);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.rag-step-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.rag-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: var(--green);
+  padding: 0 8px;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .slide { padding: 40px 28px; }
+  .title-xl { font-size: 36px; }
+  .title-lg { font-size: 30px; }
+  .title-md { font-size: 24px; }
+  .divider-title { font-size: 36px; }
+  .card-grid.g2, .card-grid.g3, .card-grid.g4, .card-grid.g5,
+  .compare, .two-col { grid-template-columns: 1fr; }
+  .rag-flow { flex-direction: column; }
+  .rag-arrow { transform: rotate(90deg); padding: 8px 0; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(68,243,152,0.3); }
+  50% { box-shadow: 0 0 20px 4px rgba(68,243,152,0.15); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.slide.active .title-xl,
+.slide.active .title-md,
+.slide.active .title-lg {
+  animation: fadeUp 0.7s ease both;
+}
+.slide.active .subtitle,
+.slide.active .section-subtitle,
+.slide.active .slide-label {
+  animation: fadeIn 0.6s ease 0.15s both;
+}
+.slide.active .card,
+.slide.active .compare-panel,
+.slide.active .rag-step {
+  animation: scaleIn 0.5s ease both;
+}
+.slide.active .card:nth-child(1),
+.slide.active .rag-step:nth-child(1) { animation-delay: 0.15s; }
+.slide.active .card:nth-child(2) { animation-delay: 0.25s; }
+.slide.active .card:nth-child(3),
+.slide.active .rag-step:nth-child(3) { animation-delay: 0.35s; }
+.slide.active .card:nth-child(4) { animation-delay: 0.45s; }
+.slide.active .card:nth-child(5) { animation-delay: 0.55s; }
+.slide.active .compare-panel:nth-child(1) { animation-delay: 0.15s; }
+.slide.active .compare-panel:nth-child(2) { animation-delay: 0.3s; }
+.slide.active .callout {
+  animation: fadeUp 0.5s ease 0.4s both;
+}
+.slide.active .badge-row {
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+/* Divider animations */
+.slide.divider.active .divider-num { animation: fadeIn 0.5s ease 0.1s both; }
+.slide.divider.active .divider-title { animation: fadeUp 0.7s ease 0.2s both; }
+.slide.divider.active .divider-hook { animation: fadeIn 0.6s ease 0.5s both; }
+.slide.divider.active .divider-line { animation: scaleIn 0.4s ease 0.7s both; }
+
+/* Pulse on highlight cards */
+.card-highlight { animation: pulse 3s ease infinite !important; }
+
+/* Float on divider line */
+.divider-line { animation: float 4s ease infinite; }
+
+/* CTA glow */
+.cta-box { animation: pulse 2.5s ease infinite; }
+
+/* Tag row stagger */
+.slide.active .tag { animation: scaleIn 0.3s ease both; }
+.slide.active .tag:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .tag:nth-child(2) { animation-delay: 0.15s; }
+.slide.active .tag:nth-child(3) { animation-delay: 0.2s; }
+.slide.active .tag:nth-child(4) { animation-delay: 0.25s; }
+.slide.active .tag:nth-child(5) { animation-delay: 0.3s; }
+.slide.active .tag:nth-child(6) { animation-delay: 0.35s; }
+.slide.active .tag:nth-child(7) { animation-delay: 0.4s; }
+
+/* Bullet list stagger */
+.slide.active .bullet-list li { animation: fadeUp 0.4s ease both; }
+.slide.active .bullet-list li:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .bullet-list li:nth-child(2) { animation-delay: 0.2s; }
+.slide.active .bullet-list li:nth-child(3) { animation-delay: 0.3s; }
+.slide.active .bullet-list li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Num list stagger */
+.slide.active .num-list li { animation: fadeUp 0.4s ease both; }
+.slide.active .num-list li:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .num-list li:nth-child(2) { animation-delay: 0.2s; }
+.slide.active .num-list li:nth-child(3) { animation-delay: 0.3s; }
+.slide.active .num-list li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Flow step stagger */
+.slide.active .flow-step { animation: fadeUp 0.4s ease both; }
+.slide.active .flow-step:nth-child(1) { animation-delay: 0.15s; }
+.slide.active .flow-step:nth-child(2) { animation-delay: 0.25s; }
+.slide.active .flow-step:nth-child(3) { animation-delay: 0.35s; }
+
+/* RAG step stagger */
+.slide.active .rag-step:nth-child(2) { animation-delay: 0.25s; }
+.slide.active .rag-arrow { animation: fadeIn 0.3s ease 0.3s both; }
+</style>
+</head>
+<body>
+
+<!-- LOGO WATERMARK -->
+<div class="logo">kyto<span class="x">&times;</span>sondelcauca</div>
+
+<!-- PROGRESS DOTS -->
+<div class="progress" id="progress"></div>
+
+<!-- COUNTER -->
+<div class="counter" id="counter"></div>
+
+<!-- KEYBOARD HINTS -->
+<div class="hints">&larr; &rarr; &nbsp; SPACE &nbsp; F</div>
+
+
+<!-- ========== SLIDE 1: TITLE ========== -->
+<div class="slide active">
+  <div class="slide-label">Son del Cauca &times; Kyto</div>
+  <h1 class="title-xl">IA y Automatización<br>para el <span class="accent">Agro</span></h1>
+  <p class="subtitle" style="margin-top: 16px;">Sesión 2 &middot; Google AI Ecosystem</p>
+  <div class="badge-row">
+    <span class="badge">SESIÓN 2</span>
+    <span class="badge">15 PARTICIPANTES</span>
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 2: RECAP + AGENDA ========== -->
+<div class="slide">
+  <div class="slide-label">Agenda</div>
+  <h2 class="title-lg">&iquest;Dónde <span class="accent">vamos</span>?</h2>
+  <div class="section-subtitle">Lo que vimos y lo que viene hoy</div>
+  <div class="compare">
+    <div class="compare-panel">
+      <div class="compare-label" style="color: var(--muted);">S1 Recap</div>
+      <ul class="bullet-list">
+        <li><span class="bl-icon">🧠</span><span>Los LLMs predicen la siguiente palabra — no &laquo;piensan&raquo;</span></li>
+        <li><span class="bl-icon">🎯</span><span>Prompt engineering: los 5 componentes para resultados consistentes</span></li>
+        <li><span class="bl-icon">✨</span><span>Gemini superpowers: Google Search, archivos, multimodal</span></li>
+      </ul>
+    </div>
+    <div class="compare-panel highlight">
+      <div class="compare-label" style="color: var(--green);">Hoy: S2</div>
+      <ul class="bullet-list">
+        <li><span class="bl-icon">🤖</span><span><strong style="color:var(--green)">Gems</strong> — Tu primer agente de IA</span></li>
+        <li><span class="bl-icon">📧</span><span><strong style="color:var(--green)">IA en el Workspace</strong> — Gmail, Sheets, Drive, Meet</span></li>
+        <li><span class="bl-icon">📓</span><span><strong style="color:var(--green)">NotebookLM</strong> — Tu experto personal con RAG</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 3: DIVIDER — AGENTES ========== -->
+<div class="slide divider">
+  <div class="divider-num">Sección 01</div>
+  <div class="divider-title">Tu primer <span class="accent">agente</span> de IA</div>
+  <div class="divider-hook">Un agente no es ciencia ficción. Es un asistente con un objetivo claro, herramientas específicas y reglas que no puede romper. <strong>Hoy vas a crear el tuyo.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ========== SLIDE 4: ¿QUÉ ES UN AGENTE? ========== -->
+<div class="slide">
+  <div class="slide-label">Agentes</div>
+  <h2 class="title-lg">Anatomía de un <span class="accent">agente</span></h2>
+  <div class="section-subtitle">Los tres pilares que convierten un chatbot en un agente</div>
+  <div class="card-grid g3">
+    <div class="card">
+      <span class="card-icon">🎯</span>
+      <div class="card-title">Objetivo</div>
+      <div class="card-text">Lo que el agente busca lograr. Sin objetivo claro, no hay agente — hay un chatbot.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔧</span>
+      <div class="card-title">Herramientas</div>
+      <div class="card-text">Lo que puede usar: buscar en web, leer archivos, conectarse a apps, ejecutar código.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🛡️</span>
+      <div class="card-title">Guardrails</div>
+      <div class="card-text">Las reglas que no puede romper: tono, formato, qué NO hacer, límites de alcance.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Un Gem en Gemini es tu primer agente:</strong> le defines objetivo, le das contexto y le pones reglas.
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 5: GEMS EN GEMINI ========== -->
+<div class="slide">
+  <div class="slide-label">Gems</div>
+  <h2 class="title-lg">Gems: tu <span class="accent">agente</span> en Gemini</h2>
+  <div class="section-subtitle">Cómo crear un Gem en 4 pasos</div>
+  <div class="two-col">
+    <div>
+      <ul class="num-list">
+        <li><span class="num-badge">1</span><span>Abre Gemini &rarr; <strong>Gem Manager</strong></span></li>
+        <li><span class="num-badge">2</span><span>Dale un <strong>nombre</strong> y un <strong>objetivo</strong></span></li>
+        <li><span class="num-badge">3</span><span>Escribe las <strong>instrucciones</strong> (el &laquo;cerebro&raquo;)</span></li>
+        <li><span class="num-badge">4</span><span><strong>Pruébalo</strong> y ajusta</span></li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="card card-highlight">
+        <span class="card-icon-sm">🧪</span>
+        <div class="card-title">Ingeniero de Prompts</div>
+        <div class="card-text">Convierte ideas vagas en prompts estructurados con los 5 componentes</div>
+      </div>
+      <div class="card card-highlight">
+        <span class="card-icon-sm">📊</span>
+        <div class="card-title">Analista de Junta</div>
+        <div class="card-text">Genera informes ejecutivos desde datos crudos para la junta directiva</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 6: DIVIDER — WORKSPACE AI ========== -->
+<div class="slide divider">
+  <div class="divider-num">Sección 02</div>
+  <div class="divider-title">IA en el <span class="accent">Workspace</span></div>
+  <div class="divider-hook">Gmail, Sheets, Drive, Meet — ya tienen IA integrada. <strong>Solo hay que activarla.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ========== SLIDE 7: GMAIL + MEET ========== -->
+<div class="slide">
+  <div class="slide-label">Gmail + Meet</div>
+  <h2 class="title-lg">Gemini en <span class="accent">Gmail</span> y <span class="accent">Meet</span></h2>
+  <div class="section-subtitle">IA integrada en tu correo y reuniones</div>
+  <div class="compare">
+    <div class="compare-panel">
+      <div class="compare-label" style="color: var(--green);">Gmail</div>
+      <ul class="bullet-list">
+        <li><span class="bl-icon">✉️</span><span>Resúmenes de hilos largos</span></li>
+        <li><span class="bl-icon">✍️</span><span>Redacción de respuestas</span></li>
+        <li><span class="bl-icon">🔍</span><span>Búsqueda inteligente</span></li>
+        <li><span class="bl-icon">🌐</span><span>Traducción de correos</span></li>
+      </ul>
+    </div>
+    <div class="compare-panel">
+      <div class="compare-label" style="color: var(--green);">Meet</div>
+      <ul class="bullet-list">
+        <li><span class="bl-icon">📝</span><span>Notas automáticas de la reunión</span></li>
+        <li><span class="bl-icon">💬</span><span>Captions traducidos en tiempo real</span></li>
+        <li><span class="bl-icon">📋</span><span>Resumen y action items post-call</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Tip:</strong> Activa Gemini desde la barra lateral de Gmail para probarlo.
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 8: SHEETS ========== -->
+<div class="slide">
+  <div class="slide-label">Sheets</div>
+  <h2 class="title-lg">Gemini en <span class="accent">Sheets</span></h2>
+  <div class="section-subtitle">Análisis de datos con lenguaje natural</div>
+  <div class="card-grid g3">
+    <div class="card">
+      <span class="card-icon">🧮</span>
+      <div class="card-title">Función =AI()</div>
+      <div class="card-text">Haz preguntas sobre tus datos directamente en una celda</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🤖</span>
+      <div class="card-title">Botón Gemini</div>
+      <div class="card-text">Analiza, resume y genera fórmulas complejas con un click</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <div class="card-title">Visualización</div>
+      <div class="card-text">Pide gráficos y tablas dinámicas en lenguaje natural</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Ejemplo:</strong> <code style="font-family: var(--font-m); color: var(--green);">=AI("&iquest;Cuál fue la finca con mayor rendimiento en Q1?", A1:H200)</code>
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 9: DRIVE ========== -->
+<div class="slide">
+  <div class="slide-label">Drive</div>
+  <h2 class="title-lg">Gemini en <span class="accent">Drive</span></h2>
+  <div class="section-subtitle">Encuentra información sin abrir archivos</div>
+  <div class="card-grid g3">
+    <div class="card">
+      <span class="card-icon">🔎</span>
+      <div class="card-title">Búsqueda por contenido</div>
+      <div class="card-text">Encuentra archivos por lo que dicen, no solo por el nombre</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📄</span>
+      <div class="card-title">Resúmenes</div>
+      <div class="card-text">Resume documentos largos sin abrirlos</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🗂️</span>
+      <div class="card-title">Navegación inteligente</div>
+      <div class="card-text">Pregunta por información across múltiples archivos</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Ejemplo:</strong> &laquo;&iquest;En qué documento está el presupuesto de madera para Q1 2026?&raquo;
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 10: DIVIDER — NOTEBOOKLM ========== -->
+<div class="slide divider">
+  <div class="divider-num">Sección 03</div>
+  <div class="divider-title"><span class="accent">NotebookLM</span></div>
+  <div class="divider-hook">Tu propio experto que solo lee lo que tú le das. <strong>Cero alucinaciones sobre tus datos.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ========== SLIDE 11: RAG ========== -->
+<div class="slide">
+  <div class="slide-label">RAG</div>
+  <h2 class="title-lg">La tecnología detrás: <span class="accent">RAG</span></h2>
+  <p class="section-subtitle">Retrieval-Augmented Generation</p>
+  <div class="rag-flow">
+    <div class="rag-step">
+      <span class="rag-step-icon">📥</span>
+      <div class="rag-step-title">Cargas fuentes</div>
+      <div class="rag-step-desc">PDFs, webs, videos, docs</div>
+    </div>
+    <div class="rag-arrow">&rarr;</div>
+    <div class="rag-step">
+      <span class="rag-step-icon">🔍</span>
+      <div class="rag-step-title">Busca en tus fuentes</div>
+      <div class="rag-step-desc">Solo responde con lo que le diste</div>
+    </div>
+    <div class="rag-arrow">&rarr;</div>
+    <div class="rag-step">
+      <span class="rag-step-icon">💡</span>
+      <div class="rag-step-title">Genera respuesta</div>
+      <div class="rag-step-desc">Fundamentada, con citas</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 28px;">
+    Por eso <strong>NotebookLM alucina mucho menos:</strong> no inventa — cita. Si no está en las fuentes, lo dice.
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 12: NOTEBOOKLM OVERVIEW ========== -->
+<div class="slide">
+  <div class="slide-label">NotebookLM</div>
+  <h2 class="title-lg">NotebookLM: <span class="accent">fuentes &rarr; conocimiento</span></h2>
+  <div class="section-subtitle">Sube tus fuentes y obtén productos de conocimiento</div>
+  <div class="card-grid g4" style="margin-bottom: 16px;">
+    <div class="card" style="text-align: center; padding: 20px 16px;">
+      <span class="card-icon">📄</span>
+      <div class="card-title" style="font-size: 15px;">PDFs</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 20px 16px;">
+      <span class="card-icon">🌐</span>
+      <div class="card-title" style="font-size: 15px;">Websites</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 20px 16px;">
+      <span class="card-icon">🎥</span>
+      <div class="card-title" style="font-size: 15px;">YouTube</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 20px 16px;">
+      <span class="card-icon">📂</span>
+      <div class="card-title" style="font-size: 15px;">Google Drive</div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 24px; color: var(--green); opacity: 0.6; margin: 4px 0;">&#8595;</div>
+  <div class="card-grid g5">
+    <div class="card" style="text-align: center; padding: 18px 12px;">
+      <span class="card-icon-sm">📊</span>
+      <div class="card-title" style="font-size: 13px;">Presentaciones</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 18px 12px;">
+      <span class="card-icon-sm">🎙️</span>
+      <div class="card-title" style="font-size: 13px;">Podcasts</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 18px 12px;">
+      <span class="card-icon-sm">🎬</span>
+      <div class="card-title" style="font-size: 13px;">Videos</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 18px 12px;">
+      <span class="card-icon-sm">📈</span>
+      <div class="card-title" style="font-size: 13px;">Infografías</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 18px 12px;">
+      <span class="card-icon-sm">📝</span>
+      <div class="card-title" style="font-size: 13px;">Reportes</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 20px;">
+    <strong>Deep Research:</strong> lanza una investigación y NotebookLM captura las fuentes automáticamente. También funciona con el plugin de YouTube para analizar videos directamente.
+  </div>
+</div>
+
+
+<!-- ========== SLIDE 13: CLOSING ========== -->
+<div class="slide">
+  <h2 class="title-xl">🚀 Hora de <span class="accent">practicar</span></h2>
+  <p class="subtitle" style="margin-top: 16px;">Abre Gemini y NotebookLM. Crea tus Gems, explora el Workspace y construye tu primer notebook.</p>
+  <div style="display: flex; gap: 20px; margin-top: 24px;">
+    <div class="cta-box">
+      <div class="cta-url">gemini.google.com</div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-url">notebooklm.google.com</div>
+    </div>
+  </div>
+  <div class="tag-row">
+    <span class="tag">Gems</span>
+    <span class="tag">Workspace AI</span>
+    <span class="tag">Gmail</span>
+    <span class="tag">Sheets</span>
+    <span class="tag">Drive</span>
+    <span class="tag">NotebookLM</span>
+    <span class="tag">RAG</span>
+  </div>
+</div>
+
+
+<script>
+// ========================================
+// NAVIGATION
+// ========================================
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+function updateUI() {
+  const dots = document.querySelectorAll('.progress .dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+}
+
+function goTo(n) {
+  if (n < 0 || n >= total) return;
+  slides[current].classList.remove('active');
+  current = n;
+  slides.forEach(s => s.classList.remove('active'));
+  slides[current].classList.add('active');
+  updateUI();
+}
+
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+// Build progress dots
+const progressEl = document.getElementById('progress');
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  progressEl.appendChild(dot);
+}
+updateUI();
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+  else if (e.key === 'ArrowDown') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); prev(); }
+  else if (e.key.toLowerCase() === 'f') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+});
+
+// Click navigation
+document.addEventListener('click', e => {
+  if (e.target.closest('.progress') || e.target.closest('.cta-box')) return;
+  const x = e.clientX / window.innerWidth;
+  if (x > 0.5) next(); else prev();
+});
+
+// Double-click fullscreen
+document.addEventListener('dblclick', () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+});
+
+// ========================================
+// AUTO-HIDE CURSOR
+// ========================================
+let cursorTimer;
+function showCursor() {
+  document.body.classList.remove('hide-cursor');
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => document.body.classList.add('hide-cursor'), 3000);
+}
+document.addEventListener('mousemove', showCursor);
+document.addEventListener('mousedown', showCursor);
+showCursor();
+</script>
+</body>
+</html>

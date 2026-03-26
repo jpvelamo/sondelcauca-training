@@ -1,0 +1,229 @@
+================================================================================
+                         SON DEL CAUCA S.A.S.
+            PRESUPUESTO vs. REAL — Q1 2026 (Ene-Mar)
+================================================================================
+
+Fecha:          04 de abril de 2026
+Elaborado por:  Diana Carolina Restrepo — Directora Financiera
+Clasificación:  Confidencial — Junta Directiva y Gerencia General
+Versión:        Preliminar (sujeto a cierre contable abril 10)
+
+--------------------------------------------------------------------------------
+1. RESUMEN EJECUTIVO P&L CONSOLIDADO (Cifras en millones COP)
+--------------------------------------------------------------------------------
+
+| Concepto                  | Presupuesto Q1 | Real Q1    | Var. $     | Var. %   |
+|---------------------------|----------------|------------|------------|----------|
+| INGRESOS TOTALES          | $12.480        | $12.894    | +$414      | +3,3%    |
+| COSTOS DIRECTOS TOTALES   | ($7.986)       | ($8.212)   | (-$226)    | +2,8%    |
+| MARGEN BRUTO              | $4.494         | $4.682     | +$188      | +4,2%    |
+| Margen bruto %            | 36,0%          | 36,3%      |            | +0,3 pp  |
+| GASTOS OPERATIVOS         | ($2.890)       | ($3.148)   | (-$258)    | +8,9%    |
+| EBITDA                    | $1.604         | $1.534     | (-$70)     | -4,4%    |
+| Margen EBITDA %           | 12,9%          | 11,9%      |            | -1,0 pp  |
+| Depreciación y amort.     | ($480)         | ($486)     | (-$6)      | +1,3%    |
+| UTILIDAD OPERACIONAL      | $1.124         | $1.048     | (-$76)     | -6,8%    |
+| Gastos financieros        | ($320)         | ($298)     | +$22       | -6,9%    |
+| UTILIDAD ANTES DE IMP.    | $804           | $750       | (-$54)     | -6,7%    |
+
+Resultado: Ingresos por encima de presupuesto (+3,3%), pero gastos
+operativos elevados (+8,9%) arrastran la utilidad operacional 6,8% por
+debajo de meta. El sobrecosto operativo se concentra en la reparación
+de emergencia de la planta de empaque ($31,8M) y en costos de transporte
+no presupuestados ($18,5M por camiones adicionales para pico de Valencia).
+
+--------------------------------------------------------------------------------
+2. DETALLE POR LÍNEA DE NEGOCIO
+--------------------------------------------------------------------------------
+
+=== 2.1 LIMÓN TAHITÍ (Cifras en millones COP) ===
+
+| Concepto              | Presupuesto Q1 | Real Q1    | Var. $    | Var. %   |
+|-----------------------|----------------|------------|-----------|----------|
+| Volumen (ton)         | 5.800          | 5.657      | -143      | -2,5%    |
+| Precio prom. (COP/kg)| $1.180         | $1.248     | +$68      | +5,8%    |
+| INGRESOS              | $6.844         | $7.060     | +$216     | +3,2%    |
+|   - Exportación       | $5.132         | $5.508     | +$376     | +7,3%    |
+|   - Nacional          | $1.364         | $1.210     | (-$154)   | -11,3%   |
+|   - Industria         | $348           | $342       | (-$6)     | -1,7%    |
+| COSTOS DIRECTOS       | ($4.106)       | ($4.158)   | (-$52)    | +1,3%    |
+|   - Cosecha y campo   | ($1.682)       | ($1.640)   | +$42      | -2,5%    |
+|   - Empaque y planta  | ($1.218)       | ($1.294)   | (-$76)    | +6,2%    |
+|   - Transporte y log. | ($724)         | ($756)     | (-$32)    | +4,4%    |
+|   - Insumos agrícolas | ($482)         | ($468)     | +$14      | -2,9%    |
+| MARGEN BRUTO          | $2.738         | $2.902     | +$164     | +6,0%    |
+| Margen bruto %        | 40,0%          | 41,1%      |           | +1,1 pp  |
+
+Análisis: Limón Tahití SOBREPERFORMÓ presupuesto en ingresos (+$216M)
+gracias al precio promedio de exportación superior al proyectado. La
+demanda europea y norteamericana mantuvo precios FOB altos (USD $22-24/caja
+vs. $20-21 presupuestados). El menor volumen (-143 ton) fue más que
+compensado por el mejor precio.
+
+El sobrecosto en empaque y planta refleja la reparación de emergencia de
+la línea de selección ($31,8M) y el overtime de personal durante los 3
+días de operación manual.
+
+=== 2.2 NARANJA VALENCIA (Cifras en millones COP) ===
+
+| Concepto              | Presupuesto Q1 | Real Q1    | Var. $    | Var. %   |
+|-----------------------|----------------|------------|-----------|----------|
+| Volumen (ton)         | 2.500          | 2.443      | -57       | -2,3%    |
+| Precio prom. (COP/kg)| $980           | $964       | (-$16)    | -1,6%    |
+| INGRESOS              | $2.450         | $2.355     | (-$95)    | -3,9%    |
+|   - Exportación       | $1.568         | $1.506     | (-$62)    | -4,0%    |
+|   - Nacional          | $686           | $658       | (-$28)    | -4,1%    |
+|   - Industria         | $196           | $191       | (-$5)     | -2,6%    |
+| COSTOS DIRECTOS       | ($1.568)       | ($1.594)   | (-$26)    | +1,7%    |
+|   - Cosecha y campo   | ($650)         | ($662)     | (-$12)    | +1,8%    |
+|   - Empaque y planta  | ($468)         | ($481)     | (-$13)    | +2,8%    |
+|   - Transporte y log. | ($280)         | ($298)     | (-$18)    | +6,4%    |
+|   - Insumos agrícolas | ($170)         | ($153)     | +$17      | -10,0%   |
+| MARGEN BRUTO          | $882           | $761       | (-$121)   | -13,7%   |
+| Margen bruto %        | 36,0%          | 32,3%      |           | -3,7 pp  |
+
+Análisis: Valencia por debajo de presupuesto en ingresos (-$95M) y margen
+(-$121M). El precio FOB cayó por mayor oferta de Valencia española en el
+mercado europeo en Q1. Adicionalmente, el pico de maduración adelantado
+obligó a despachar más volumen al mercado nacional (menor precio) en lugar
+de programar para exportación.
+
+El sobrecosto de transporte (+$18M) corresponde a los 2 camiones
+refrigerados adicionales contratados con TransCosta Ltda. para el pico
+adelantado.
+
+=== 2.3 MADERA (Melina y Teca) (Cifras en millones COP) ===
+
+| Concepto              | Presupuesto Q1 | Real Q1    | Var. $    | Var. %   |
+|-----------------------|----------------|------------|-----------|----------|
+| Volumen (m³)          | 3.200          | 2.140      | -1.060    | -33,1%   |
+| Precio prom. (COP/m³)| $520.000       | $498.000   | (-$22.000)| -4,2%    |
+| INGRESOS              | $1.664         | $1.066     | (-$598)   | -35,9%   |
+| COSTOS DIRECTOS       | ($1.198)       | ($1.074)   | +$124     | -10,3%   |
+|   - Tala y transporte | ($680)         | ($612)     | +$68      | -10,0%   |
+|   - Procesamiento     | ($348)         | ($324)     | +$24      | -6,9%    |
+|   - Silvicultura      | ($170)         | ($138)     | +$32      | -18,8%   |
+| MARGEN BRUTO          | $466           | ($8)       | (-$474)   | -101,7%  |
+| Margen bruto %        | 28,0%          | -0,8%      |           | -28,8 pp |
+
+ANOMALÍA CRÍTICA — MADERA: La línea de madera reportó margen bruto
+NEGATIVO de -$8M en Q1. El volumen despachado fue solo el 67% del
+presupuestado, y el precio cayó 4,2%.
+
+Causas identificadas:
+  1. Retraso en permisos de aprovechamiento forestal de la CRA (Corporación
+     Autónoma Regional) para 480 ha de Melina en la zona de Tierralta.
+     El permiso, que debía otorgarse en diciembre 2025, sigue en trámite.
+     Esto bloqueó la tala de 800 m³ presupuestados.
+  2. Caída de precio de Melina en el mercado local por sobreoferta de
+     plantaciones del Urabá antioqueño.
+  3. El principal comprador de Teca (Maderas del Darién S.A.) redujo sus
+     pedidos en un 40% por desaceleración en el sector construcción.
+
+Acciones:
+  - Gestión acelerada del permiso CRA — reunión con el director regional
+    programada para abril 8.
+  - Explorar mercado de exportación de Teca (India, China) donde los
+    precios son 2-3x superiores al mercado local.
+  - Reducir gastos de silvicultura al mínimo de mantenimiento hasta que
+    se recupere el volumen.
+
+=== 2.4 PALMA AFRICANA (Cifras en millones COP) ===
+
+| Concepto              | Presupuesto Q1 | Real Q1    | Var. $    | Var. %   |
+|-----------------------|----------------|------------|-----------|----------|
+| Volumen fruto (ton)   | 4.800          | 5.180      | +380      | +7,9%    |
+| Precio prom. (COP/ton)| $318.000      | $268.000   | (-$50.000)| -15,7%   |
+| INGRESOS              | $1.522         | $1.388     | (-$134)   | -8,8%    |
+| COSTOS DIRECTOS       | ($1.114)       | ($1.086)   | +$28      | -2,5%    |
+|   - Cosecha y campo   | ($534)         | ($548)     | (-$14)    | +2,6%    |
+|   - Transporte a plant| ($312)         | ($284)     | +$28      | -9,0%    |
+|   - Insumos y mant.   | ($268)         | ($254)     | +$14      | -5,2%    |
+| MARGEN BRUTO          | $408           | $302       | (-$106)   | -26,0%   |
+| Margen bruto %        | 26,8%          | 21,8%      |           | -5,0 pp  |
+
+Análisis: Volumen por encima de presupuesto (+7,9%) pero precio del fruto
+de palma cayó 15,7% vs. presupuesto. El precio internacional del aceite de
+palma bajó por inventarios altos en Malasia e Indonesia. El mayor volumen
+no compensó la caída de precio.
+
+Nota: Son del Cauca vende fruto fresco a plantas extractoras (no tiene
+planta propia). El precio es referenciado al mercado de Fedepalma.
+
+--------------------------------------------------------------------------------
+3. GASTOS OPERATIVOS CONSOLIDADOS (Cifras en millones COP)
+--------------------------------------------------------------------------------
+
+| Concepto                     | Presupuesto Q1 | Real Q1  | Var. $   | Var. %  |
+|------------------------------|----------------|----------|----------|---------|
+| Nómina administrativa        | $1.240         | $1.262   | (-$22)   | +1,8%   |
+| Servicios profesionales      | $180           | $196     | (-$16)   | +8,9%   |
+| Mantenimiento y reparaciones | $320           | $486     | (-$166)  | +51,9%  |
+| Servicios públicos y TI      | $148           | $152     | (-$4)    | +2,7%   |
+| Seguros                      | $210           | $210     | $0       | 0,0%    |
+| Viáticos y representación    | $86            | $112     | (-$26)   | +30,2%  |
+| Otros gastos operativos      | $706           | $730     | (-$24)   | +3,4%   |
+|------------------------------|----------------|----------|----------|---------|
+| TOTAL GASTOS OPERATIVOS      | $2.890         | $3.148   | (-$258)  | +8,9%   |
+
+La desviación se concentra en:
+  - Mantenimiento (+$166M): incluye reparación de emergencia de línea de
+    empaque ($31,8M), mantenimiento correctivo de camiones ($14M), y
+    tratamiento fitosanitario extraordinario en Finca La Esperanza ($18,6M).
+  - Viáticos (+$26M): viaje no presupuestado a Rotterdam para gestión de
+    calidad con Fresh Direct Europe (2 personas, 5 días).
+
+--------------------------------------------------------------------------------
+4. FLUJO DE CAJA DESTACADO
+--------------------------------------------------------------------------------
+
+| Concepto                     | Presupuesto Q1 | Real Q1  | Nota            |
+|------------------------------|----------------|----------|-----------------|
+| Saldo inicial de caja        | $1.820         | $1.820   |                 |
+| Cobros de cartera             | $11.940        | $11.486  | Retraso Fresh Direct |
+| Pagos a proveedores           | ($8.200)       | ($8.540) | Repuestos emerg.|
+| Nómina y prestaciones         | ($2.180)       | ($2.210) |                 |
+| Servicio de deuda             | ($420)         | ($420)   |                 |
+| SALDO FINAL ESTIMADO          | $2.960         | $2.136   |                 |
+
+NOTA: Fresh Direct Europe tiene facturas vencidas por USD $42.800
+(~$180M COP) con más de 45 días. Se ha gestionado cobro; el cliente
+condiciona pago a resolución de reclamos de calidad pendientes.
+
+--------------------------------------------------------------------------------
+5. INDICADORES CLAVE (RESUMEN)
+--------------------------------------------------------------------------------
+
+| Indicador                    | Meta Q1  | Real Q1  | Status |
+|------------------------------|----------|----------|--------|
+| Ingresos totales             | $12.480M | $12.894M | ✓      |
+| Margen bruto %               | 36,0%    | 36,3%    | ✓      |
+| EBITDA                       | $1.604M  | $1.534M  | ✗      |
+| Utilidad operacional         | $1.124M  | $1.048M  | ✗      |
+| Días cartera promedio        | 38       | 44       | ✗      |
+| Costo por tonelada cítricos  | $698k    | $710k    | ✗      |
+
+--------------------------------------------------------------------------------
+6. RECOMENDACIONES PARA JUNTA DIRECTIVA
+--------------------------------------------------------------------------------
+
+1. MADERA: Evaluar continuidad de la línea de negocio en el mediano plazo.
+   Q1 cerró en punto de equilibrio negativo. Si el permiso CRA no se
+   resuelve en abril, el acumulado semestral será crítico. Solicitar
+   análisis de desinversión parcial al Dir. Financiero.
+
+2. MANTENIMIENTO PLANTA: Aprobar presupuesto extraordinario de $22M COP
+   para inventario de repuestos críticos y contrato de mantenimiento
+   preventivo con MaqAgro S.A. (respuesta 12h).
+
+3. CARTERA: Escalar gestión de cobro con Fresh Direct Europe. Si no hay
+   pago en abril, suspender despachos y redirigir volumen a Van Oers
+   (prospecto en cierre).
+
+4. PALMA: Monitorear precio mensualmente. Si continúa la tendencia bajista,
+   evaluar contratos forward con plantas extractoras para fijar precio Q3.
+
+================================================================================
+          Fin del reporte — Documento confidencial
+   Son del Cauca S.A.S. — Solo para Junta Directiva y Gerencia
+================================================================================

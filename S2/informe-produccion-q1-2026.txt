@@ -1,0 +1,175 @@
+================================================================================
+                         SON DEL CAUCA S.A.S.
+                   INFORME DE PRODUCCIÓN — Q1 2026
+                      (Enero - Marzo 2026)
+================================================================================
+
+Fecha:          31 de marzo de 2026
+Elaborado por:  Ing. Carlos Andrés Mejía — Director de Operaciones
+Clasificación:  Uso interno — Gerencia y Junta Directiva
+Versión:        Final
+
+--------------------------------------------------------------------------------
+1. RESUMEN EJECUTIVO
+--------------------------------------------------------------------------------
+
+El primer trimestre de 2026 cerró con una producción total de 8.247 toneladas
+de cítricos (Limón Tahití + Naranja Valencia), representando un cumplimiento
+del 94,3% frente al presupuesto de 8.750 toneladas. La brecha se explica
+principalmente por lluvias atípicas en febrero que afectaron la cosecha en
+Finca San José y Finca Villa María, y por un brote de Phytophthora en el
+lote 7 de Finca La Esperanza que redujo el rendimiento en un 31%.
+
+En comparación con Q4 2025, la producción total aumentó un 6,2%, impulsada
+por la entrada en plena producción de los lotes nuevos de Finca Los Naranjos.
+
+El porcentaje de fruta calidad Exportación subió a 68,4% (vs. 64,1% en Q4
+2025), gracias a las mejoras implementadas en la línea de selección de la
+planta de empaque de Tierralta.
+
+--------------------------------------------------------------------------------
+2. PRODUCCIÓN POR FINCA — LIMÓN TAHITÍ
+--------------------------------------------------------------------------------
+
+Hectáreas totales en producción: 823 ha (de 850 ha instaladas; 27 ha en
+renovación en Finca El Porvenir).
+
+| Finca              | Hectáreas | Ton Q1 2026 | Rend. (ton/ha) | vs. Q4 2025 |
+|--------------------|-----------|-------------|----------------|-------------|
+| Finca El Porvenir  | 210       | 1.524       | 7,26           | +4,8%       |
+| Finca La Esperanza | 195       | 1.198       | 6,14           | -12,3%      |
+| Finca San José     | 178       | 1.087       | 6,11           | -8,7%       |
+| Finca Villa María  | 140       | 1.036       | 7,40           | +2,1%       |
+| Finca Los Naranjos | 100       | 812         | 8,12           | +18,6%      |
+|--------------------|-----------|-------------|----------------|-------------|
+| TOTAL TAHITÍ       | 823       | 5.657       | 6,87           | +3,4%       |
+
+Notas:
+- Finca La Esperanza: rendimiento anormalmente bajo (6,14 ton/ha vs.
+  promedio histórico de 7,8 ton/ha). Causa identificada: brote de
+  Phytophthora en lote 7 (42 ha), detectado en semana 6. Se aplicó
+  tratamiento con fosetil aluminio. Recuperación esperada para Q2.
+- Finca Los Naranjos: rendimiento sobresaliente (8,12 ton/ha) gracias a
+  lotes jóvenes (3er año de producción) con densidad de siembra optimizada
+  (278 árboles/ha vs. 250 en fincas antiguas).
+
+--------------------------------------------------------------------------------
+3. PRODUCCIÓN POR FINCA — NARANJA VALENCIA
+--------------------------------------------------------------------------------
+
+Hectáreas totales en producción: 338 ha (de 350 ha instaladas; 12 ha con
+replante en Finca San José).
+
+| Finca              | Hectáreas | Ton Q1 2026 | Rend. (ton/ha) | vs. Q4 2025 |
+|--------------------|-----------|-------------|----------------|-------------|
+| Finca El Porvenir  | 95        | 728         | 7,66           | +5,2%       |
+| Finca La Esperanza | 85        | 614         | 7,22           | -3,1%       |
+| Finca San José     | 78        | 489         | 6,27           | -6,8%       |
+| Finca Villa María  | 80        | 612         | 7,65           | +4,3%       |
+|--------------------|-----------|-------------|----------------|-------------|
+| TOTAL VALENCIA     | 338       | 2.443       | 7,23           | +1,2%       |
+
+Nota: Finca Los Naranjos no tiene naranja Valencia. Está 100% dedicada a
+Limón Tahití.
+
+Finca San José presentó el rendimiento más bajo en Valencia (6,27 ton/ha).
+Factores: (1) lluvias de 340mm en febrero (promedio histórico: 180mm) que
+generaron encharcamiento en lotes bajos (lotes 3 y 4), y (2) retraso en
+la aplicación de fertilizante foliar por falta de disponibilidad de
+operarios durante semana 8.
+
+--------------------------------------------------------------------------------
+4. DISTRIBUCIÓN POR CALIDAD
+--------------------------------------------------------------------------------
+
+                        LIMÓN TAHITÍ
+| Calidad      | Toneladas | %      | vs. Q4 2025 |
+|--------------|-----------|--------|-------------|
+| Exportación  | 3.936     | 69,6%  | +5,1 pp     |
+| Nacional     | 1.245     | 22,0%  | -3,2 pp     |
+| Industria    | 476       | 8,4%   | -1,9 pp     |
+|--------------|-----------|--------|-------------|
+| Total        | 5.657     | 100%   |             |
+
+                       NARANJA VALENCIA
+| Calidad      | Toneladas | %      | vs. Q4 2025 |
+|--------------|-----------|--------|-------------|
+| Exportación  | 1.588     | 65,0%  | +3,8 pp     |
+| Nacional     | 659       | 27,0%  | -1,4 pp     |
+| Industria    | 196       | 8,0%   | -2,4 pp     |
+|--------------|-----------|--------|-------------|
+| Total        | 2.443     | 100%   |             |
+
+El incremento en calidad Exportación se atribuye a:
+  - Calibración de la línea óptica de selección (instalada en diciembre 2025)
+  - Capacitación a cuadrillas de cosecha sobre técnicas de corte limpio
+  - Reducción de tiempo entre cosecha y empaque (de 18h promedio a 12h)
+
+ANOMALÍA: Finca San José reportó una tasa de rechazo del 19,4% en Tahití
+(vs. promedio de fincas del 8,4%). Investigación en curso — se sospecha
+contaminación por agroquímico en lote 5. Se enviaron muestras a laboratorio.
+
+--------------------------------------------------------------------------------
+5. INCIDENCIAS CLIMÁTICAS
+--------------------------------------------------------------------------------
+
+| Semana | Evento                          | Fincas afectadas         | Impacto      |
+|--------|---------------------------------|--------------------------|--------------|
+| 3      | Granizo leve (15 min)           | Finca Villa María        | Menor — 12 ton con daño cosmético |
+| 7-8    | Lluvias atípicas (340mm feb)    | Finca San José, Villa María | Alto — encharcamiento, retrasos de cosecha |
+| 10     | Vientos fuertes (70 km/h)       | Finca La Esperanza       | Medio — caída de fruta verde (est. 8 ton) |
+| 12     | Sequía relativa (45mm vs 120mm) | Todas                    | Monitoreo — riego suplementario activado |
+
+El fenómeno de lluvias atípicas en febrero fue el evento de mayor impacto.
+Se acumularon 340mm en Finca San José (estación meteorológica propia) vs.
+un promedio histórico de 180mm para el mes. Esto generó:
+  - 4 días de suspensión de cosecha por acceso a lotes
+  - Encharcamiento en 28 ha de lotes bajos (San José lotes 3 y 4)
+  - Incremento de incidencia de antracnosis en fruta cosechada post-lluvia
+
+Recomendación: evaluar inversión en drenaje subsuperficial para lotes
+críticos de San José. Cotización solicitada a Hidroconsulta S.A. por
+$145 millones COP.
+
+--------------------------------------------------------------------------------
+6. COMPARATIVO Q1 2026 vs. Q4 2025
+--------------------------------------------------------------------------------
+
+| Indicador                    | Q4 2025   | Q1 2026   | Variación |
+|------------------------------|-----------|-----------|-----------|
+| Producción total (ton)       | 7.765     | 8.100     | +4,3%     |
+| Tahití (ton)                 | 5.471     | 5.657     | +3,4%     |
+| Valencia (ton)               | 2.294     | 2.443     | +6,5%     |
+| Rendimiento Tahití (ton/ha)  | 6,65      | 6,87      | +3,3%     |
+| Rendimiento Valencia (ton/ha)| 7,14      | 7,23      | +1,3%     |
+| % Exportación (mix)          | 64,1%     | 68,4%     | +4,3 pp   |
+| Tasa rechazo planta empaque  | 11,2%     | 9,8%      | -1,4 pp   |
+| Costo cosecha (COP/ton)      | $186.400  | $178.200  | -4,4%     |
+| Hrs máquina empaque           | 2.840     | 3.120     | +9,9%     |
+
+Tendencia general positiva. Los dos puntos de atención son:
+  1. Finca La Esperanza — requiere seguimiento fitosanitario estricto en Q2
+  2. Finca San José — plan de drenaje y recuperación de suelos
+
+--------------------------------------------------------------------------------
+7. METAS Q2 2026
+--------------------------------------------------------------------------------
+
+- Producción objetivo: 9.200 ton (pico de cosecha estacional)
+- % Exportación objetivo: 72%
+- Recuperación de Finca La Esperanza lote 7 al 90% de rendimiento histórico
+- Inicio de obras de drenaje en Finca San José (si aprueba Junta)
+- Incorporación de 27 ha renovadas en Finca El Porvenir (Tahití)
+
+--------------------------------------------------------------------------------
+8. ANEXOS
+--------------------------------------------------------------------------------
+
+- Anexo A: Detalle semanal de cosecha por lote (disponible en carpeta compartida)
+- Anexo B: Informe fitosanitario Finca La Esperanza — Lab. Agrícola del Valle
+- Anexo C: Cotización drenaje subsuperficial — Hidroconsulta S.A.
+
+================================================================================
+                    Fin del informe — Página 1 de 1
+          Son del Cauca S.A.S. — Documento de uso interno
+================================================================================
