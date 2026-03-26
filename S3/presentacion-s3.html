@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatizaciones con Make — Sesión 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0A0C;
+  --bg-card: #111111;
+  --bg-card-hover: #171717;
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(68,243,152,0.4);
+  --text: #F5F3EF;
+  --muted: #86868b;
+  --green: #44F398;
+  --accent: #44F398;
+  --accent-glow: rgba(68,243,152,0.12);
+  --accent-dim: rgba(68,243,152,0.3);
+  --error: #f87171;
+  --font-h: 'Space Grotesk', sans-serif;
+  --font-b: 'Inter Tight', sans-serif;
+  --font-m: 'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-b);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 60px 80px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.slide.active { opacity: 1; pointer-events: auto; }
+
+.logo {
+  position: fixed; top: 28px; left: 36px;
+  font-family: var(--font-h); font-weight: 700; font-size: 16px;
+  color: var(--text); opacity: 0.25; z-index: 100;
+  letter-spacing: -0.02em; pointer-events: none;
+}
+.logo .x { color: var(--green); }
+
+.progress {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 100;
+}
+.progress .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); transition: all 0.3s ease; cursor: pointer;
+}
+.progress .dot.active { background: var(--green); box-shadow: 0 0 8px var(--accent-dim); }
+
+.counter {
+  position: fixed; bottom: 24px; right: 36px;
+  font-family: var(--font-m); font-size: 12px; color: var(--muted); z-index: 100;
+}
+.hints {
+  position: fixed; bottom: 24px; left: 36px;
+  font-family: var(--font-m); font-size: 11px; color: rgba(255,255,255,0.15); z-index: 100;
+}
+
+body.hide-cursor, body.hide-cursor * { cursor: none !important; }
+
+.title-xl { font-family: var(--font-h); font-weight: 700; font-size: 64px; letter-spacing: -0.04em; line-height: 1.05; text-align: center; }
+.title-lg { font-family: var(--font-h); font-weight: 700; font-size: 48px; letter-spacing: -0.03em; line-height: 1.1; text-align: center; }
+.title-md { font-family: var(--font-h); font-weight: 700; font-size: 36px; letter-spacing: -0.03em; line-height: 1.15; text-align: center; }
+.subtitle { font-family: var(--font-b); font-size: 18px; color: var(--muted); text-align: center; line-height: 1.6; max-width: 650px; }
+.accent { color: var(--green); }
+
+.badge-row { display: flex; gap: 12px; margin-top: 24px; }
+.badge { font-family: var(--font-m); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 8px 18px; border: 1px solid var(--border-accent); color: var(--green); border-radius: 0; background: var(--accent-glow); }
+
+.slide-label { position: absolute; top: 28px; right: 36px; font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); opacity: 0.5; }
+
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0; padding: 28px 24px; transition: background 0.2s; }
+.card:hover { background: var(--bg-card-hover); }
+.card-grid { display: grid; gap: 16px; width: 100%; max-width: 1000px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card-title { font-family: var(--font-h); font-weight: 600; font-size: 18px; margin-bottom: 8px; }
+.card-text { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.card-highlight { border-color: var(--border-accent); background: var(--accent-glow); }
+
+.slide.divider { justify-content: center; }
+.divider-num { font-family: var(--font-m); font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; opacity: 0.7; }
+.divider-title { font-family: var(--font-h); font-weight: 700; font-size: 56px; letter-spacing: -0.03em; text-align: center; line-height: 1.1; }
+.divider-hook { font-size: 18px; color: var(--muted); margin-top: 20px; text-align: center; max-width: 550px; line-height: 1.6; }
+.divider-hook strong { color: var(--text); }
+.divider-line { width: 60px; height: 3px; background: var(--green); margin-top: 28px; }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 1000px; }
+.compare-panel { background: var(--bg-card); border: 1px solid var(--border); padding: 28px 24px; border-radius: 0; }
+.compare-panel.bad { border-color: rgba(248,113,113,0.3); }
+.compare-panel.good { border-color: var(--border-accent); }
+.compare-label { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+
+.callout { background: var(--accent-glow); border-left: 3px solid var(--green); padding: 16px 24px; margin-top: 20px; font-size: 15px; color: var(--text); max-width: 800px; width: 100%; border-radius: 0; line-height: 1.5; }
+.callout strong { color: var(--green); }
+
+.connector-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.connector-chip { padding: 8px 16px; background: var(--bg-card); border: 1px solid var(--border); font-size: 13px; font-family: var(--font-m); border-radius: 0; }
+
+.cta-box { background: var(--accent-glow); border: 1px solid var(--border-accent); padding: 24px 40px; text-align: center; margin-top: 20px; border-radius: 0; }
+.cta-url { font-family: var(--font-m); font-size: 22px; color: var(--green); font-weight: 500; }
+
+.tag-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+.tag { font-family: var(--font-m); font-size: 12px; padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); border-radius: 0; }
+
+/* ── 3R's ── */
+.r-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; max-width: 900px; width: 100%; margin-top: 24px; }
+.r-card { background: var(--bg-card); border: 1px solid var(--border); padding: 32px 24px; text-align: center; border-radius: 0; transition: all 0.3s ease; }
+.r-card.active-r { border-color: var(--border-accent); background: var(--accent-glow); }
+.r-icon { font-size: 40px; margin-bottom: 16px; }
+.r-label { font-family: var(--font-h); font-weight: 700; font-size: 28px; margin-bottom: 8px; }
+.r-desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+/* ── Calendar ── */
+.calendar-grid { display: grid; grid-template-columns: 80px repeat(5, 1fr); gap: 2px; max-width: 900px; width: 100%; margin-top: 16px; }
+.cal-header { background: var(--bg-card); padding: 10px 8px; font-family: var(--font-m); font-size: 11px; text-align: center; color: var(--muted); border: 1px solid var(--border); }
+.cal-time { padding: 10px 8px; font-family: var(--font-m); font-size: 11px; text-align: right; color: var(--muted); display: flex; align-items: center; justify-content: flex-end; }
+.cal-block { padding: 8px 10px; font-size: 11px; line-height: 1.3; border: 1px solid var(--border); border-radius: 0; }
+.cal-block.manual { background: rgba(248,113,113,0.08); border-color: rgba(248,113,113,0.2); color: var(--error); }
+.cal-block.auto { background: var(--accent-glow); border-color: var(--border-accent); color: var(--green); }
+.cal-block.mixed { background: rgba(255,255,255,0.03); color: var(--muted); }
+
+/* ── Analogy slides ── */
+.analogy-wrap {
+  display: flex; align-items: center; gap: 48px;
+  max-width: 900px; width: 100%;
+}
+.analogy-visual {
+  flex: 0 0 200px; height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 120px; line-height: 1;
+}
+.analogy-body { flex: 1; }
+.analogy-term {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--green); margin-bottom: 8px;
+}
+.analogy-title {
+  font-family: var(--font-h); font-weight: 700; font-size: 40px;
+  letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px;
+}
+.analogy-desc {
+  font-size: 18px; color: var(--muted); line-height: 1.6; max-width: 500px;
+}
+.analogy-example {
+  margin-top: 20px; padding: 14px 20px;
+  background: var(--accent-glow); border-left: 3px solid var(--green);
+  font-size: 14px; line-height: 1.5; border-radius: 0;
+}
+.analogy-example strong { color: var(--green); }
+
+/* ── Make flow ── */
+.make-flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+.make-module { background: var(--bg-card); border: 1px solid var(--border); padding: 16px 18px; border-radius: 0; text-align: center; min-width: 130px; }
+.make-module .mod-icon { font-size: 24px; margin-bottom: 6px; }
+.make-module .mod-name { font-family: var(--font-h); font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.make-module .mod-desc { font-size: 11px; color: var(--muted); }
+.make-module.mod-trigger { border-color: rgba(68,243,152,0.3); background: rgba(68,243,152,0.06); }
+.make-module.mod-ai { border-color: rgba(129,140,248,0.4); background: rgba(129,140,248,0.06); }
+.make-module.mod-filter { border-color: rgba(251,191,36,0.4); background: rgba(251,191,36,0.06); }
+.make-arrow { color: var(--muted); font-size: 18px; padding: 0 6px; }
+
+/* ── JSON visual ── */
+.json-visual {
+  background: var(--bg-card); border: 1px solid var(--border);
+  padding: 32px; border-radius: 0; max-width: 500px; width: 100%;
+  font-family: var(--font-m); font-size: 16px; line-height: 2;
+}
+.json-key { color: var(--muted); }
+.json-val { color: var(--green); }
+.json-str { color: #f9a8d4; }
+
+@media (max-width: 768px) {
+  .slide { padding: 40px 24px; }
+  .title-xl { font-size: 36px; }
+  .title-lg { font-size: 30px; }
+  .title-md { font-size: 24px; }
+  .divider-title { font-size: 36px; }
+  .g2, .g3, .g4, .compare, .r-grid { grid-template-columns: 1fr; }
+  .calendar-grid { display: none; }
+  .analogy-wrap { flex-direction: column; gap: 24px; text-align: center; }
+  .analogy-visual { flex: none; height: auto; font-size: 80px; }
+  .analogy-desc { max-width: 100%; }
+  .make-flow { flex-direction: column; }
+  .make-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<div class="logo">kyto<span class="x">&times;</span>sondelcauca</div>
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter"></div>
+<div class="hints">&larr; &rarr; navegar &middot; F fullscreen</div>
+
+
+<!-- ═══════════ SLIDE 1 — TITLE ═══════════ -->
+<div class="slide active">
+  <div class="title-xl">Automatizaciones con<br><span class="accent">Make</span></div>
+  <div class="subtitle" style="margin-top:16px;">Sesi&oacute;n 3 &middot; Programa de IA y Automatizaci&oacute;n</div>
+  <div class="badge-row">
+    <div class="badge">SESI&Oacute;N 3 DE 4</div>
+    <div class="badge">100% PR&Aacute;CTICO</div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 2 — HOY VAMOS A... ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Agenda</div>
+  <div class="title-md" style="margin-bottom:28px;">Hoy vamos a&hellip;</div>
+  <div class="card-grid g3" style="max-width:900px;">
+    <div class="card" style="text-align:center;">
+      <div class="card-icon">&#129504;</div>
+      <div class="card-title">Entender</div>
+      <div class="card-text">Qu&eacute; automatizar y c&oacute;mo identificar oportunidades en tu d&iacute;a a d&iacute;a</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="card-icon">&#128268;</div>
+      <div class="card-title">Aprender</div>
+      <div class="card-text">Los conceptos b&aacute;sicos que necesitas para construir automatizaciones</div>
+    </div>
+    <div class="card card-highlight" style="text-align:center;">
+      <div class="card-icon">&#9889;</div>
+      <div class="card-title" style="color:var(--green);">Construir</div>
+      <div class="card-text" style="color:var(--text);">Dos flujos reales en Make: uno determinístico y uno con IA</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 3 — DIVIDER: AUTOMATIZACIÓN ═══════════ -->
+<div class="slide divider">
+  <div class="divider-num">Secci&oacute;n 01</div>
+  <div class="divider-title">&iquest;Qu&eacute; <span class="accent">automatizar</span>?</div>
+  <div class="divider-hook">El 60% del tiempo de un profesional se gasta en tareas que una m&aacute;quina podr&iacute;a hacer. <strong>Hoy aprendemos a recuperar ese tiempo.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ═══════════ SLIDE 4 — SIN vs CON AUTOMATIZACIÓN ═══════════ -->
+<div class="slide">
+  <div class="slide-label">El antes y el despu&eacute;s</div>
+  <div class="title-md" style="margin-bottom:24px;">Sin vs con <span class="accent">automatizaci&oacute;n</span></div>
+  <div class="compare" style="max-width:800px;">
+    <div class="compare-panel bad">
+      <div class="compare-label" style="color:var(--error);">&#128564; MANUAL</div>
+      <div class="card-text" style="line-height:2;">
+        1. Abro el Excel de cumplea&ntilde;os<br>
+        2. Busco qui&eacute;n cumple hoy<br>
+        3. Abro Gmail<br>
+        4. Redacto el mensaje<br>
+        5. Env&iacute;o<br>
+        6. Repito 15 veces al mes
+      </div>
+    </div>
+    <div class="compare-panel good">
+      <div class="compare-label" style="color:var(--green);">&#9889; AUTOMATIZADO</div>
+      <div class="card-text" style="line-height:2;">
+        1. Configuro el flujo una vez<br>
+        2. Make revisa el Excel cada d&iacute;a<br>
+        3. Si alguien cumple &rarr; env&iacute;a email<br>
+        4. Yo no hago nada<br>
+        <br>
+        <strong style="color:var(--green);">~4 horas/mes recuperadas</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 5 — FRAMEWORK 3 R'S ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Framework</div>
+  <div class="title-md" style="margin-bottom:8px;">Las <span class="accent">3 R&rsquo;s</span></div>
+  <div class="subtitle" style="margin-bottom:24px;">Si cumple las tres, es candidata a automatizar.</div>
+  <div class="r-grid">
+    <div class="r-card" id="r1">
+      <div class="r-icon">&#128257;</div>
+      <div class="r-label" style="color:var(--green);">Repetitivo</div>
+      <div class="r-desc">&iquest;Lo haces m&aacute;s de 2 veces por semana?</div>
+    </div>
+    <div class="r-card" id="r2">
+      <div class="r-icon">&#128220;</div>
+      <div class="r-label" style="color:var(--green);">Reglas</div>
+      <div class="r-desc">&iquest;Sigue l&oacute;gica clara? &ldquo;Si pasa X, haz Y.&rdquo;</div>
+    </div>
+    <div class="r-card" id="r3">
+      <div class="r-icon">&#129302;</div>
+      <div class="r-label" style="color:var(--green);">sin Razonamiento</div>
+      <div class="r-desc">&iquest;No necesita criterio humano complejo?</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:24px;">
+    <strong>Test r&aacute;pido:</strong> &iquest;Se lo podr&iacute;as explicar a un pasante para que lo haga sin tomar decisiones? Entonces es automatizable.
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 6 — AUDITORÍA DE CALENDARIO ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Auditor&iacute;a</div>
+  <div class="title-md" style="margin-bottom:8px;">&iquest;D&oacute;nde se va tu <span class="accent">tiempo</span>?</div>
+  <div class="subtitle" style="margin-bottom:16px;">Registra tus actividades 2 semanas. Marca las que cumplen las 3 R&rsquo;s.</div>
+  <div class="calendar-grid">
+    <div class="cal-header"></div>
+    <div class="cal-header">LUN</div>
+    <div class="cal-header">MAR</div>
+    <div class="cal-header">MI&Eacute;</div>
+    <div class="cal-header">JUE</div>
+    <div class="cal-header">VIE</div>
+    <div class="cal-time">8:00</div>
+    <div class="cal-block manual">Revisar emails y reenviar</div>
+    <div class="cal-block mixed">Reuni&oacute;n equipo</div>
+    <div class="cal-block manual">Digitar facturas</div>
+    <div class="cal-block mixed">Reuni&oacute;n equipo</div>
+    <div class="cal-block manual">Consolidar datos fincas</div>
+    <div class="cal-time">9:00</div>
+    <div class="cal-block manual">Copiar datos comerciales</div>
+    <div class="cal-block manual">Cruzar compras vs presupuesto</div>
+    <div class="cal-block auto">&#9889; Automatizable</div>
+    <div class="cal-block manual">Informe de cosechas</div>
+    <div class="cal-block manual">Reporte semanal junta</div>
+    <div class="cal-time">10:00</div>
+    <div class="cal-block auto">&#9889; Automatizable</div>
+    <div class="cal-block manual">Actualizar pipeline</div>
+    <div class="cal-block mixed">Llamada proveedor</div>
+    <div class="cal-block auto">&#9889; Automatizable</div>
+    <div class="cal-block manual">Correos de seguimiento</div>
+  </div>
+  <div class="callout" style="margin-top:16px;">
+    <strong>Tarea:</strong> Haz esto con tu calendario real esta semana. Las celdas en <span style="color:var(--error);">rojo</span> son tus quick wins.
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 7 — DIVIDER: CONCEPTOS ═══════════ -->
+<div class="slide divider">
+  <div class="divider-num">Secci&oacute;n 02</div>
+  <div class="divider-title">Los <span class="accent">ingredientes</span></div>
+  <div class="divider-hook">7 conceptos con analog&iacute;as simples. <strong>Si entiendes pedir domicilio, entiendes automatizaci&oacute;n.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ═══════════ SLIDE 8 — TRIGGER ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 1</div>
+  <div class="analogy-wrap">
+    <div class="analogy-visual">&#128276;</div>
+    <div class="analogy-body">
+      <div class="analogy-term">Trigger (Disparador)</div>
+      <div class="analogy-title">La <span class="accent">alarma</span> que arranca todo</div>
+      <div class="analogy-desc">Como la alarma del celular: suena a una hora espec&iacute;fica y te hace actuar. Sin alarma, no pasa nada.</div>
+      <div class="analogy-example">
+        <strong>En Son del Cauca:</strong> &ldquo;Todos los lunes a las 7 AM&rdquo; o &ldquo;Cuando llega un email con la palabra Reclamo&rdquo;
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 9 — ACCIÓN ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 2</div>
+  <div class="analogy-wrap">
+    <div class="analogy-visual">&#9881;&#65039;</div>
+    <div class="analogy-body">
+      <div class="analogy-term">Acci&oacute;n</div>
+      <div class="analogy-title">Las <span class="accent">manos</span> que hacen el trabajo</div>
+      <div class="analogy-desc">Son&oacute; la alarma &mdash; ahora hay que hacer algo. Cada paso del flujo es una acci&oacute;n: crear, leer, enviar, mover.</div>
+      <div class="analogy-example">
+        <strong>En Son del Cauca:</strong> Crear una fila en Sheets, enviar un email, actualizar el estado de un prospecto
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 10 — DECISIÓN ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 3</div>
+  <div class="analogy-wrap">
+    <div class="analogy-visual">&#128704;</div>
+    <div class="analogy-body">
+      <div class="analogy-term">Decisi&oacute;n (Filtro / Router)</div>
+      <div class="analogy-title">La <span class="accent">bifurcaci&oacute;n</span> en el camino</div>
+      <div class="analogy-desc">Como un sem&aacute;foro: si est&aacute; en verde, sigue. Si est&aacute; en rojo, para. Un flujo puede tomar diferentes caminos seg&uacute;n la situaci&oacute;n.</div>
+      <div class="analogy-example">
+        <strong>En Son del Cauca:</strong> Si el reclamo es Alta severidad &rarr; notificar gerente. Si es Baja &rarr; solo registrar.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 11 — API ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 4</div>
+  <div class="analogy-wrap">
+    <div class="analogy-visual">&#127869;</div>
+    <div class="analogy-body">
+      <div class="analogy-term">API</div>
+      <div class="analogy-title">El <span class="accent">men&uacute;</span> del restaurante</div>
+      <div class="analogy-desc">T&uacute; no entras a la cocina &mdash; miras el men&uacute;, pides, y te traen el plato. La API es el men&uacute;: te dice qu&eacute; puedes pedir y c&oacute;mo pedirlo.</div>
+      <div class="analogy-example">
+        <strong>En Make:</strong> Cuando conectas Google Sheets, Make usa su API para leer y escribir filas &mdash; t&uacute; solo arrastras campos.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 12 — WEBHOOK ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 5</div>
+  <div class="analogy-wrap">
+    <div class="analogy-visual">&#128246;</div>
+    <div class="analogy-body">
+      <div class="analogy-term">Webhook</div>
+      <div class="analogy-title">El <span class="accent">timbre</span> de la puerta</div>
+      <div class="analogy-desc">En vez de ir al buz&oacute;n cada hora a ver si lleg&oacute; algo, el timbre te avisa en el momento. Un webhook es una URL que recibe una notificaci&oacute;n instant&aacute;nea.</div>
+      <div class="analogy-example">
+        <strong>En Son del Cauca:</strong> Un formulario de reclamo en la web env&iacute;a los datos a Make en el instante que alguien lo llena.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 13 — JSON ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 6</div>
+  <div class="title-md" style="margin-bottom:8px;">JSON: la <span class="accent">ficha t&eacute;cnica</span></div>
+  <div class="subtitle" style="margin-bottom:24px;">El idioma universal en que las apps se pasan datos. Solo pares de nombre&nbsp;:&nbsp;valor.</div>
+  <div class="json-visual">
+    <span class="json-key">{</span><br>
+    &nbsp;&nbsp;<span class="json-key">"empresa"</span>: <span class="json-str">"Son del Cauca"</span>,<br>
+    &nbsp;&nbsp;<span class="json-key">"fruta"</span>: <span class="json-str">"Lim&oacute;n Tahit&iacute;"</span>,<br>
+    &nbsp;&nbsp;<span class="json-key">"toneladas"</span>: <span class="json-val">42.5</span>,<br>
+    &nbsp;&nbsp;<span class="json-key">"exportable"</span>: <span class="json-val">true</span><br>
+    <span class="json-key">}</span>
+  </div>
+  <div class="callout" style="margin-top:20px;">
+    <strong>Buena noticia:</strong> En Make nunca escribes JSON a mano. Solo arrastras campos visualmente. Pero saber qu&eacute; es te ayuda a entender qu&eacute; pasa por dentro.
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 14 — CONECTORES ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Concepto 7</div>
+  <div class="title-md" style="margin-bottom:12px;">Conectores: <span class="accent">nativos</span> vs HTTP</div>
+  <div class="subtitle" style="margin-bottom:24px;">+1,500 apps listas para usar. Si no est&aacute;, HTTP Request lo resuelve.</div>
+  <div class="compare" style="max-width:860px;">
+    <div class="compare-panel good">
+      <div class="compare-label" style="color:var(--green);">&#9989; NATIVO &mdash; enchufar y listo</div>
+      <div class="card-text" style="margin-bottom:16px;">Solo autorizas tu cuenta. Cero configuraci&oacute;n t&eacute;cnica.</div>
+      <div class="connector-grid">
+        <div class="connector-chip">Google Sheets</div>
+        <div class="connector-chip">Gmail</div>
+        <div class="connector-chip">Slack</div>
+        <div class="connector-chip">Calendar</div>
+        <div class="connector-chip">Drive</div>
+        <div class="connector-chip">Notion</div>
+        <div class="connector-chip">WhatsApp</div>
+        <div class="connector-chip">HubSpot</div>
+      </div>
+    </div>
+    <div class="compare-panel">
+      <div class="compare-label" style="color:var(--muted);">&#128295; HTTP &mdash; para todo lo dem&aacute;s</div>
+      <div class="card-text" style="margin-bottom:16px;">T&uacute; configuras la URL y los datos. M&aacute;s flexible, un poco m&aacute;s t&eacute;cnico.</div>
+      <div class="connector-grid">
+        <div class="connector-chip">Gemini API</div>
+        <div class="connector-chip">ERPs internos</div>
+        <div class="connector-chip">Cualquier API</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 15 — DIVIDER: MANOS A LA OBRA ═══════════ -->
+<div class="slide divider">
+  <div class="divider-num">Secci&oacute;n 03</div>
+  <div class="divider-title">Manos a <span class="accent">la obra</span></div>
+  <div class="divider-hook">Dos flujos reales. Uno con l&oacute;gica pura, otro con inteligencia artificial. <strong>Abran Make.</strong></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ═══════════ SLIDE 16 — EJERCICIO 1: CUMPLEAÑOS ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Ejercicio 1</div>
+  <div class="title-md" style="margin-bottom:8px;">Flujo <span class="accent">Determin&iacute;stico</span></div>
+  <div class="subtitle" style="margin-bottom:20px;">Emails de cumplea&ntilde;os autom&aacute;ticos &mdash; cero intervenci&oacute;n humana.</div>
+  <div class="make-flow">
+    <div class="make-module mod-trigger">
+      <div class="mod-icon">&#128197;</div>
+      <div class="mod-name">Schedule</div>
+      <div class="mod-desc">Todos los d&iacute;as 7 AM</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module">
+      <div class="mod-icon">&#128196;</div>
+      <div class="mod-name">Sheets</div>
+      <div class="mod-desc">Buscar cumplea&ntilde;os hoy</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module mod-filter">
+      <div class="mod-icon">&#128256;</div>
+      <div class="mod-name">Filtro</div>
+      <div class="mod-desc">&iquest;Hay cumplea&ntilde;eros?</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module">
+      <div class="mod-icon">&#9993;&#65039;</div>
+      <div class="mod-name">Gmail</div>
+      <div class="mod-desc">Enviar felicitaci&oacute;n</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Determin&iacute;stico =</strong> siempre hace lo mismo ante la misma condici&oacute;n. Si hoy = cumplea&ntilde;os &rarr; env&iacute;a email. Sin IA, pura l&oacute;gica.
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 17 — EJERCICIO 2: AGÉNTICO ═══════════ -->
+<div class="slide">
+  <div class="slide-label">Ejercicio 2</div>
+  <div class="title-md" style="margin-bottom:8px;">Flujo <span class="accent">Ag&eacute;ntico</span></div>
+  <div class="subtitle" style="margin-bottom:20px;">Enriquecimiento inteligente de prospectos con Gemini.</div>
+  <div class="make-flow">
+    <div class="make-module mod-trigger">
+      <div class="mod-icon">&#128196;</div>
+      <div class="mod-name">Sheets</div>
+      <div class="mod-desc">Fila &ldquo;Pendiente&rdquo;</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module mod-ai">
+      <div class="mod-icon">&#129302;</div>
+      <div class="mod-name">Gemini</div>
+      <div class="mod-desc">Investigar empresa</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module">
+      <div class="mod-icon">&#128196;</div>
+      <div class="mod-name">Sheets</div>
+      <div class="mod-desc">Escribir resultados</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module mod-filter">
+      <div class="mod-icon">&#128256;</div>
+      <div class="mod-name">Router</div>
+      <div class="mod-desc">Fit &ge; 7?</div>
+    </div>
+    <div class="make-arrow">&rarr;</div>
+    <div class="make-module">
+      <div class="mod-icon">&#9993;&#65039;</div>
+      <div class="mod-name">Gmail</div>
+      <div class="mod-desc">Alertar ventas</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Ag&eacute;ntico =</strong> el resultado var&iacute;a seg&uacute;n el contexto. Gemini investiga cada empresa y produce un an&aacute;lisis &uacute;nico. <strong>Automatizaci&oacute;n + inteligencia.</strong>
+  </div>
+</div>
+
+
+<!-- ═══════════ SLIDE 18 — CLOSING ═══════════ -->
+<div class="slide">
+  <div class="title-xl" style="margin-bottom:12px;">&#128640; Hora de <span class="accent">automatizar</span></div>
+  <div class="subtitle" style="margin-bottom:24px;">Abran Make y sigan la gu&iacute;a paso a paso.</div>
+  <div class="cta-box">
+    <div style="font-size:13px;color:var(--muted);margin-bottom:8px;font-family:var(--font-m);">ABRE MAKE</div>
+    <div class="cta-url">make.com</div>
+  </div>
+  <div class="tag-row">
+    <div class="tag">Triggers</div>
+    <div class="tag">Acciones</div>
+    <div class="tag">APIs</div>
+    <div class="tag">Conectores</div>
+    <div class="tag">Gemini</div>
+  </div>
+</div>
+
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+function updateUI() {
+  document.querySelectorAll('.progress .dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+}
+
+function goTo(n) {
+  if (n < 0 || n >= total) return;
+  slides[current].classList.remove('active');
+  current = n;
+  slides.forEach(s => s.classList.remove('active'));
+  slides[current].classList.add('active');
+  updateUI();
+}
+
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+const progressEl = document.getElementById('progress');
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  progressEl.appendChild(dot);
+}
+updateUI();
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+  else if (e.key === 'ArrowDown') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); prev(); }
+  else if (e.key.toLowerCase() === 'f') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+});
+
+document.addEventListener('click', e => {
+  if (e.target.closest('.progress') || e.target.closest('.cta-box')) return;
+  if (e.clientX / window.innerWidth > 0.5) next(); else prev();
+});
+
+document.addEventListener('dblclick', () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+});
+
+let cursorTimer;
+function showCursor() {
+  document.body.classList.remove('hide-cursor');
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => document.body.classList.add('hide-cursor'), 3000);
+}
+document.addEventListener('mousemove', showCursor);
+document.addEventListener('mousedown', showCursor);
+
+// 3R animation
+let rStep = 0;
+const rCards = [document.getElementById('r1'), document.getElementById('r2'), document.getElementById('r3')];
+setInterval(() => {
+  rCards.forEach(c => { if(c) c.classList.remove('active-r'); });
+  if(rCards[rStep]) rCards[rStep].classList.add('active-r');
+  rStep = (rStep + 1) % 3;
+}, 2000);
+</script>
+
+</body>
+</html>
