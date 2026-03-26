@@ -1,0 +1,83 @@
+ID_Reclamo,Fecha,Cliente,Pais_Destino,Fruta,Calibre,Contenedor,Tipo_Reclamo,Severidad,Cantidad_Kg,Valor_Reclamado,Moneda,Estado,Dias_Resolucion,Causa_Raiz
+REC-2025052,2025-10-06,Mediterranean Foods ES,Espana,Naranja Valencia,72,CONT-2703,Dano mecanico,Media,634,470.95,USD,Resuelto,5,Transporte inadecuado
+REC-2025032,2025-10-07,FreshDirect USA,USA,Naranja Valencia,56,CONT-7919,Madurez prematura,Media,611,232.42,USD,Pendiente,0,Error en seleccion
+REC-2025029,2025-10-08,Citrus World NL,Paises Bajos,Limon Tahiti,48,CONT-8479,Fruta con manchas,Baja,1098,1313.34,USD,Pendiente,0,Transporte inadecuado
+REC-2025039,2025-10-08,La 14,Colombia,Limon Tahiti,36,CONT-5295,Dano mecanico,Alta,198,424.08,COP,En proceso,11,Transporte inadecuado
+REC-2025079,2025-10-18,TropiFruit UK,Reino Unido,Limon Tahiti,48,CONT-4695,Calibre inconsistente,Alta,1124,151.6,USD,Resuelto,10,Error en seleccion
+REC-2025056,2025-10-19,TropiFruit UK,Reino Unido,Naranja Valencia,88,CONT-6145,Temperatura contenedor,Alta,928,921.79,USD,Resuelto,15,Manejo postcosecha
+REC-2025017,2025-10-23,Frutas del Pacifico,Colombia,Naranja Valencia,100,CONT-9281,Peso incorrecto,Media,1255,2519.09,COP,Resuelto,6,Error en seleccion
+REC-2025054,2025-10-23,Super Inter,Colombia,Naranja Valencia,56,CONT-2020,Temperatura contenedor,Baja,370,479.46,COP,Pendiente,0,Almacenamiento prolongado
+REC-2025072,2025-10-23,TropiFruit UK,Reino Unido,Limon Tahiti,40,CONT-8157,Madurez prematura,Alta,1197,554.43,USD,Resuelto,23,Manejo postcosecha
+REC-2025010,2025-10-27,Global Citrus Trading,Emiratos Arabes,Limon Tahiti,54,CONT-3858,Etiquetado erroneo,Alta,1422,1653.24,USD,Resuelto,13,Transporte inadecuado
+REC-2025016,2025-10-27,Carulla,Colombia,Naranja Valencia,64,CONT-4065,Pudricion,Baja,1568,3561.54,COP,Pendiente,0,Plaga en campo
+REC-2025023,2025-10-27,Jumbo,Colombia,Naranja Valencia,72,CONT-5380,Etiquetado erroneo,Baja,1714,1648.67,COP,Pendiente,0,Almacenamiento prolongado
+REC-2025034,2025-10-27,Carulla,Colombia,Naranja Valencia,64,CONT-3480,Temperatura contenedor,Baja,1134,1326.0,COP,Pendiente,0,Cadena de frio rota
+REC-2025011,2025-10-29,TropiFruit UK,Reino Unido,Naranja Valencia,88,CONT-1478,Residuos de agroquimicos,Baja,1151,790.27,USD,Resuelto,7,Cadena de frio rota
+REC-2025065,2025-10-29,FreshDirect USA,USA,Naranja Valencia,100,CONT-4588,Fruta con manchas,Baja,1957,690.3,USD,Pendiente,0,Error de empaque
+REC-2025070,2025-10-31,Mediterranean Foods ES,Espana,Limon Tahiti,42,CONT-3907,Pudricion,Alta,412,384.9,USD,Resuelto,4,Almacenamiento prolongado
+REC-2025041,2025-11-01,Mediterranean Foods ES,Espana,Limon Tahiti,54,CONT-6353,Temperatura contenedor,Media,1920,1698.92,USD,En proceso,5,Transporte inadecuado
+REC-2025073,2025-11-03,TropiFruit UK,Reino Unido,Limon Tahiti,54,CONT-3872,Fruta con manchas,Alta,828,613.8,USD,En proceso,5,Error en seleccion
+REC-2025046,2025-11-07,Mediterranean Foods ES,Espana,Limon Tahiti,54,CONT-2889,Dano mecanico,Media,56,60.08,USD,Resuelto,2,Plaga en campo
+REC-2025021,2025-11-08,Jumbo,Colombia,Limon Tahiti,48,CONT-2923,Dano mecanico,Media,1857,3661.13,COP,Pendiente,0,Error de empaque
+REC-2025012,2025-11-10,Mediterranean Foods ES,Espana,Limon Tahiti,54,CONT-2667,Etiquetado erroneo,Alta,849,604.31,USD,Resuelto,28,Plaga en campo
+REC-2025053,2025-11-10,Citrus World NL,Paises Bajos,Limon Tahiti,40,CONT-9515,Temperatura contenedor,Media,963,1133.55,USD,Resuelto,4,Error de empaque
+REC-2025030,2025-11-13,TropiFruit UK,Reino Unido,Naranja Valencia,56,CONT-6905,Presencia de plagas,Alta,1678,1483.39,USD,Resuelto,21,Manejo postcosecha
+REC-2025069,2025-11-14,TropiFruit UK,Reino Unido,Naranja Valencia,56,CONT-2478,Fruta con manchas,Alta,586,453.45,USD,Resuelto,30,Error de empaque
+REC-2025033,2025-11-15,Jumbo,Colombia,Naranja Valencia,64,CONT-7270,Madurez prematura,Baja,1709,1565.96,COP,En proceso,10,Transporte inadecuado
+REC-2025038,2025-11-15,TropiFruit UK,Reino Unido,Naranja Valencia,100,CONT-7895,Pudricion,Media,473,342.41,USD,Pendiente,0,Error en seleccion
+REC-2025076,2025-11-15,TropiFruit UK,Reino Unido,Limon Tahiti,40,CONT-2453,Madurez prematura,Alta,887,412.64,USD,En proceso,7,Error en seleccion
+REC-2025080,2025-11-15,TropiFruit UK,Reino Unido,Limon Tahiti,42,CONT-2715,Calibre inconsistente,Alta,900,219.07,USD,En proceso,6,Error en seleccion
+REC-2025028,2025-11-18,Makro,Colombia,Limon Tahiti,54,CONT-8951,Pudricion,Baja,1918,1684.2,COP,En proceso,14,Plaga en campo
+REC-2025066,2025-11-20,Mediterranean Foods ES,Espana,Limon Tahiti,40,CONT-2640,Dano mecanico,Media,703,727.36,USD,Pendiente,0,Error en seleccion
+REC-2025047,2025-11-21,PriceSmart,Colombia,Limon Tahiti,40,CONT-1579,Etiquetado erroneo,Baja,1799,3444.54,COP,Resuelto,8,Plaga en campo
+REC-2025062,2025-11-23,Super Inter,Colombia,Naranja Valencia,64,CONT-6799,Dano mecanico,Baja,724,1128.15,COP,Resuelto,20,Error de empaque
+REC-2025015,2025-11-24,PriceSmart,Colombia,Limon Tahiti,54,CONT-7286,Temperatura contenedor,Media,1607,3179.99,COP,En proceso,3,Error de empaque
+REC-2025001,2025-11-25,Jumbo,Colombia,Naranja Valencia,88,CONT-4971,Pudricion,Media,2050,3009.38,COP,Resuelto,19,Cadena de frio rota
+REC-2025055,2025-11-25,Olimpica,Colombia,Naranja Valencia,72,CONT-8417,Presencia de plagas,Media,2362,2436.14,COP,En proceso,2,Cadena de frio rota
+REC-2025058,2025-11-25,Makro,Colombia,Limon Tahiti,42,CONT-5262,Madurez prematura,Alta,1041,1633.06,COP,En proceso,4,Error en seleccion
+REC-2025049,2025-11-26,Citrus World NL,Paises Bajos,Naranja Valencia,72,CONT-6090,Pudricion,Alta,1169,738.84,USD,Resuelto,26,Manejo postcosecha
+REC-2025024,2025-11-27,Global Citrus Trading,Emiratos Arabes,Limon Tahiti,42,CONT-3078,Madurez prematura,Alta,1793,1874.82,USD,En proceso,11,Plaga en campo
+REC-2025042,2025-11-30,Olimpica,Colombia,Limon Tahiti,36,CONT-5005,Calibre inconsistente,Baja,334,614.86,COP,Resuelto,22,Transporte inadecuado
+REC-2025007,2025-12-02,Jumbo,Colombia,Naranja Valencia,88,CONT-9199,Madurez prematura,Media,110,107.55,COP,Resuelto,3,Error en seleccion
+REC-2025059,2025-12-04,Citrus World NL,Paises Bajos,Limon Tahiti,36,CONT-1195,Fruta con manchas,Baja,2457,1026.15,USD,Pendiente,0,Manejo postcosecha
+REC-2025025,2025-12-07,TropiFruit UK,Reino Unido,Naranja Valencia,88,CONT-7146,Peso incorrecto,Alta,1997,1981.02,USD,Resuelto,24,Manejo postcosecha
+REC-2025019,2025-12-08,Makro,Colombia,Limon Tahiti,54,CONT-2871,Presencia de plagas,Baja,2067,2942.72,COP,Pendiente,0,Error en seleccion
+REC-2025040,2025-12-09,Mediterranean Foods ES,Espana,Naranja Valencia,88,CONT-7590,Calibre inconsistente,Media,1367,597.94,USD,Resuelto,3,Error de empaque
+REC-2025013,2025-12-12,Super Inter,Colombia,Naranja Valencia,100,CONT-7367,Residuos de agroquimicos,Media,330,461.46,COP,Resuelto,6,Almacenamiento prolongado
+REC-2025045,2025-12-12,Citrus World NL,Paises Bajos,Naranja Valencia,100,CONT-2262,Peso incorrecto,Media,932,698.67,USD,En proceso,6,Cadena de frio rota
+REC-2025064,2025-12-12,Frutas del Pacifico,Colombia,Limon Tahiti,48,CONT-6883,Peso incorrecto,Baja,1237,2908.87,COP,En proceso,7,Manejo postcosecha
+REC-2025071,2025-12-12,TropiFruit UK,Reino Unido,Limon Tahiti,42,CONT-2188,Fruta con manchas,Alta,1010,510.21,USD,En proceso,10,Manejo postcosecha
+REC-2025081,2025-12-15,TropiFruit UK,Reino Unido,Limon Tahiti,36,CONT-6536,Madurez prematura,Alta,1456,725.26,USD,Pendiente,1,Manejo postcosecha
+REC-2025018,2025-12-17,FreshDirect USA,USA,Limon Tahiti,42,CONT-1535,Presencia de plagas,Alta,757,759.02,USD,En proceso,13,Almacenamiento prolongado
+REC-2025002,2025-12-20,Makro,Colombia,Limon Tahiti,54,CONT-1440,Peso incorrecto,Baja,564,1216.02,COP,Pendiente,0,Error en seleccion
+REC-2025004,2025-12-21,Carulla,Colombia,Naranja Valencia,100,CONT-9300,Temperatura contenedor,Baja,1987,2804.05,COP,Pendiente,0,Error de empaque
+REC-2025005,2025-12-21,Super Inter,Colombia,Limon Tahiti,36,CONT-5067,Pudricion,Media,1551,2725.84,COP,En proceso,11,Plaga en campo
+REC-2025063,2025-12-23,Frutas del Pacifico,Colombia,Naranja Valencia,88,CONT-7750,Etiquetado erroneo,Media,265,384.55,COP,Resuelto,21,Almacenamiento prolongado
+REC-2025022,2025-12-25,PriceSmart,Colombia,Limon Tahiti,54,CONT-3281,Dano mecanico,Baja,2023,3578.94,COP,En proceso,10,Error de empaque
+REC-2025075,2025-12-26,TropiFruit UK,Reino Unido,Limon Tahiti,54,CONT-2705,Fruta con manchas,Alta,488,331.82,USD,Resuelto,8,Manejo postcosecha
+REC-2025082,2025-12-28,TropiFruit UK,Reino Unido,Limon Tahiti,40,CONT-8113,Calibre inconsistente,Alta,309,170.88,USD,Resuelto,7,Manejo postcosecha
+REC-2025043,2025-12-29,Olimpica,Colombia,Limon Tahiti,36,CONT-1207,Madurez prematura,Baja,451,1091.48,COP,En proceso,13,Almacenamiento prolongado
+REC-2025027,2025-12-30,Olimpica,Colombia,Naranja Valencia,56,CONT-9756,Temperatura contenedor,Media,1103,1279.64,COP,Resuelto,27,Manejo postcosecha
+REC-2025014,2025-12-31,Olimpica,Colombia,Naranja Valencia,100,CONT-2388,Madurez prematura,Media,635,634.25,COP,Resuelto,5,Error de empaque
+REC-2025060,2026-01-01,Super Inter,Colombia,Limon Tahiti,54,CONT-5240,Calibre inconsistente,Alta,208,485.52,COP,Resuelto,5,Error en seleccion
+REC-2025026,2026-01-02,Global Citrus Trading,Emiratos Arabes,Naranja Valencia,88,CONT-8996,Pudricion,Media,2179,2315.08,USD,Resuelto,15,Transporte inadecuado
+REC-2025077,2026-01-02,TropiFruit UK,Reino Unido,Limon Tahiti,36,CONT-6742,Fruta con manchas,Alta,421,604.29,USD,Resuelto,13,Manejo postcosecha
+REC-2025009,2026-01-03,Carulla,Colombia,Naranja Valencia,56,CONT-5919,Fruta con manchas,Baja,332,744.88,COP,En proceso,11,Almacenamiento prolongado
+REC-2025068,2026-01-04,Olimpica,Colombia,Naranja Valencia,100,CONT-3328,Residuos de agroquimicos,Baja,2100,4573.13,COP,Pendiente,0,Error de empaque
+REC-2025031,2026-01-06,Olimpica,Colombia,Limon Tahiti,48,CONT-2494,Calibre inconsistente,Alta,1218,1249.17,COP,Resuelto,22,Plaga en campo
+REC-2025036,2026-01-06,La 14,Colombia,Naranja Valencia,56,CONT-5942,Dano mecanico,Baja,1298,2688.59,COP,Resuelto,2,Almacenamiento prolongado
+REC-2025044,2026-01-06,Exito,Colombia,Limon Tahiti,42,CONT-3079,Presencia de plagas,Baja,339,789.81,COP,Resuelto,14,Manejo postcosecha
+REC-2025048,2026-01-06,Jumbo,Colombia,Naranja Valencia,56,CONT-7108,Calibre inconsistente,Baja,2260,2497.04,COP,Pendiente,0,Error en seleccion
+REC-2025074,2026-01-07,TropiFruit UK,Reino Unido,Limon Tahiti,36,CONT-7415,Madurez prematura,Alta,266,227.46,USD,En proceso,20,Error en seleccion
+REC-2025078,2026-01-07,TropiFruit UK,Reino Unido,Limon Tahiti,48,CONT-3725,Fruta con manchas,Alta,1209,717.24,USD,En proceso,18,Manejo postcosecha
+REC-2025050,2026-01-08,La 14,Colombia,Limon Tahiti,48,CONT-7033,Residuos de agroquimicos,Baja,2495,5286.92,COP,En proceso,9,Almacenamiento prolongado
+REC-2025006,2026-01-10,Jumbo,Colombia,Naranja Valencia,56,CONT-1172,Calibre inconsistente,Media,1301,2188.23,COP,En proceso,10,Cadena de frio rota
+REC-2025035,2026-01-10,Citrus World NL,Paises Bajos,Naranja Valencia,72,CONT-8035,Pudricion,Media,657,578.26,USD,Resuelto,20,Error de empaque
+REC-2025020,2026-01-11,Olimpica,Colombia,Naranja Valencia,100,CONT-4580,Temperatura contenedor,Alta,2084,4329.07,COP,Resuelto,2,Plaga en campo
+REC-2025067,2026-01-11,Frutas del Pacifico,Colombia,Naranja Valencia,72,CONT-3846,Madurez prematura,Media,829,1703.41,COP,Resuelto,19,Error en seleccion
+REC-2025037,2026-01-15,Frutas del Pacifico,Colombia,Naranja Valencia,88,CONT-2847,Dano mecanico,Media,1505,2555.62,COP,Pendiente,0,Manejo postcosecha
+REC-2025051,2026-01-15,Frutas del Pacifico,Colombia,Limon Tahiti,36,CONT-7718,Fruta con manchas,Media,899,2002.32,COP,Pendiente,0,Manejo postcosecha
+REC-2025003,2026-01-18,FruitOne DE,Alemania,Naranja Valencia,88,CONT-3280,Presencia de plagas,Alta,1664,1570.34,USD,En proceso,2,Plaga en campo
+REC-2025008,2026-01-20,Olimpica,Colombia,Limon Tahiti,42,CONT-6110,Pudricion,Media,557,902.88,COP,Resuelto,15,Transporte inadecuado
+REC-2025061,2026-01-22,FruitOne DE,Alemania,Naranja Valencia,56,CONT-1699,Peso incorrecto,Alta,2314,1596.29,USD,En proceso,8,Error en seleccion
+REC-2025057,2026-01-23,Citrus World NL,Paises Bajos,Limon Tahiti,40,CONT-5984,Residuos de agroquimicos,Alta,2098,1248.34,USD,Resuelto,8,Manejo postcosecha

@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía del Estudiante — S1 · Son del Cauca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0A0C;
+  --bg-card: #111111;
+  --bg-card-hover: #171717;
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(68,243,152,0.4);
+  --text: #F5F3EF;
+  --muted: #86868b;
+  --accent: #44F398;
+  --accent-glow: rgba(68,243,152,0.12);
+  --accent-dim: rgba(68,243,152,0.3);
+  --error: #f87171;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter Tight', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,12,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.nav-logo .x { color: var(--accent); }
+.nav-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky;
+  top: 57px;
+  z-index: 99;
+  background: rgba(10,10,12,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-bar .container { display: flex; gap: 0; }
+.tab {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 14px 20px;
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  user-select: none;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab.locked { opacity: 0.45; cursor: default; }
+.tab .lock-icon { margin-left: 6px; font-size: 11px; }
+
+/* ── Session Panels ── */
+.session-panel { display: none; }
+.session-panel.active { display: block; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 0px;
+}
+.badge-muted {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 0px;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  position: relative;
+}
+.hero-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 40px;
+  position: relative;
+}
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #a8edce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Outcomes ── */
+.outcomes {
+  position: relative;
+  margin-bottom: 40px;
+}
+.outcomes-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.outcome-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 0px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.outcome-card .oc-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.outcome-card .oc-text { font-size: 14px; line-height: 1.5; }
+
+/* ── CTA ── */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.cta-link:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+
+/* ── Sections ── */
+section {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+.section-header { margin-bottom: 40px; }
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* ── Content Blocks ── */
+h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 36px;
+}
+h3:first-child { margin-top: 0; }
+p { margin-bottom: 16px; font-size: 15px; }
+p.content-text { color: var(--text); opacity: 0.9; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 28px;
+  border: 1px solid var(--border);
+  border-radius: 0px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--bg-card);
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg-card); }
+
+/* ── Tip Box ── */
+.tip-box {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-glow);
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0px;
+}
+.tip-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+/* ── Hack Box ── */
+.hack-box {
+  border-left: 3px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 0px;
+  position: relative;
+}
+.hack-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.hack-box .hack-prompt {
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ── Formula Box ── */
+.formula-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 24px;
+  margin: 24px 0;
+  border-radius: 0px;
+  text-align: center;
+}
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+}
+.formula .part {
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  padding: 8px 16px;
+  border-radius: 0px;
+  color: var(--accent);
+}
+.formula .eq { color: var(--muted); font-size: 20px; }
+
+/* ── Comparison ── */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.comparison-bad, .comparison-good {
+  padding: 20px;
+  border-radius: 0px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.comparison-bad {
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.3);
+}
+.comparison-good {
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+}
+.comparison-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.comparison-bad .comparison-label { color: var(--error); }
+.comparison-good .comparison-label { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .comparison { grid-template-columns: 1fr; }
+}
+
+/* ── Gem Cards ── */
+.gem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.gem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 0px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.gem-card:hover { background: var(--bg-card-hover); }
+.gem-card.highlighted { border-color: var(--accent); }
+.gem-area {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.gem-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.gem-card.highlighted .gem-name { color: var(--accent); }
+.gem-desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 700px) {
+  .gem-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Exercises ── */
+.exercise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  margin: 28px 0;
+  transition: border-color 0.3s;
+}
+.exercise-card:hover { border-color: var(--accent-dim); }
+.exercise-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.exercise-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 12px;
+  border-radius: 0px;
+  white-space: nowrap;
+}
+.exercise-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+}
+.exercise-body { padding: 24px; }
+.exercise-body > p { font-size: 14px; color: var(--muted); }
+
+.tool-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border: 1px solid var(--border-accent);
+  border-radius: 0px;
+  margin-bottom: 16px;
+}
+
+/* ── Prompt Block ── */
+.exercise-prompt {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  position: relative;
+  margin: 16px 0;
+}
+.prompt-inner {
+  padding: 20px 56px 20px 20px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+.example-block {
+  background: var(--accent-glow);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  border-radius: 0px;
+}
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: color 0.2s, border-color 0.2s;
+  z-index: 2;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+.copy-btn.copied { color: var(--accent); border-color: var(--accent); }
+
+/* ── Steps ── */
+.step-list { margin: 16px 0; }
+.step-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-glow);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 0px;
+}
+
+/* ── Iterations ── */
+.iteration-list { margin: 16px 0; }
+.iteration-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  align-items: flex-start;
+}
+.iter-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.iteration-prompt {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+  padding: 14px 50px 14px 16px;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.6;
+  position: relative;
+  border-radius: 0px;
+  flex: 1;
+}
+
+/* ── Downloads ── */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.download-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 0px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.download-card:hover { border-color: var(--accent-dim); background: var(--bg-card-hover); }
+.dl-icon { font-size: 24px; }
+.dl-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  word-break: break-all;
+}
+.dl-desc { font-size: 12px; color: var(--muted); }
+
+/* ── Rating + Yes/No ── */
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.rating-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.rating-dots { display: flex; gap: 8px; }
+.rating-dot {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  transition: all 0.2s;
+  background: transparent;
+}
+.rating-dot:hover, .rating-dot.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+.yesno {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.yesno button {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 0px;
+  transition: all 0.2s;
+}
+.yesno button:hover, .yesno button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+/* ── Coming Soon (placeholder) ── */
+.coming-soon {
+  text-align: center;
+  padding: 120px 24px;
+}
+.cs-icon { font-size: 48px; margin-bottom: 24px; opacity: 0.5; }
+.coming-soon h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.coming-soon p { color: var(--muted); font-size: 15px; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.footer-logo .x { color: var(--accent); }
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero { padding: 60px 0 40px; }
+  .hero h1 { font-size: 28px; }
+  section { padding: 40px 0; }
+  .exercise-header { flex-direction: column; gap: 8px; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .tab { padding: 12px 14px; font-size: 12px; }
+  .nav-label { display: none; }
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero > * { animation: fadeInUp 0.6s ease forwards; }
+.hero > *:nth-child(1) { animation-delay: 0s; }
+.hero > *:nth-child(2) { animation-delay: 0.1s; }
+.hero > *:nth-child(3) { animation-delay: 0.15s; }
+.hero > *:nth-child(4) { animation-delay: 0.2s; }
+.hero > *:nth-child(5) { animation-delay: 0.25s; }
+.hero > *:nth-child(6) { animation-delay: 0.3s; }
+.hero > *:nth-child(7) { animation-delay: 0.35s; }
+
+/* ── Collapsible Theory Sections ── */
+.theory-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  margin-bottom: 0;
+  margin-top: 24px;
+  user-select: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.theory-toggle:first-of-type { margin-top: 0; }
+.theory-toggle:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
+.theory-toggle h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 17px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+.theory-toggle .toggle-icon {
+  font-size: 18px;
+  color: var(--accent);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.theory-toggle.open .toggle-icon { transform: rotate(180deg); }
+.theory-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 0 20px;
+  background: rgba(17,17,17,0.4);
+}
+.theory-content.open {
+  max-height: 2000px;
+  padding: 20px 20px 24px;
+}
+.theory-content h3 { display: none; }
+.theory-content p:first-child { margin-top: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ NAV ══════════════════════════════════════════════ -->
+<nav>
+  <div class="container">
+    <div class="nav-logo">kyto<span class="x">&times;</span>sondelcauca</div>
+    <div class="nav-label">Guia del Estudiante</div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════ TAB BAR ══════════════════════════════════════════════ -->
+<div class="tab-bar">
+  <div class="container">
+    <div class="tab active" data-session="1">S1 — IA + Prompting</div>
+    <div class="tab locked" data-session="2">S2 — Google AI Ecosystem <span class="lock-icon">&#128274;</span></div>
+    <div class="tab locked" data-session="3">S3 — Make Automation <span class="lock-icon">&#128274;</span></div>
+    <div class="tab locked" data-session="4">S4 — Proyecto Final <span class="lock-icon">&#128274;</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ SESSION 1 ═══════════════════════════════════════════════ -->
+<div class="session-panel active" data-session="1">
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="badge">Sesion 1</span>
+        <span class="badge-muted">15 participantes</span>
+      </div>
+      <h1>IA + Prompt Engineering<br>+ <span class="gradient-text">Gemini</span></h1>
+      <p class="hero-sub">Sesion 1 &middot; Programa de IA y Automatizacion</p>
+      <p class="hero-date">Marzo 2026</p>
+
+      <div class="outcomes">
+        <p class="outcomes-label">Al finalizar esta sesion podras</p>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <div class="oc-icon">&#129504;</div>
+            <div class="oc-text">Entender como funciona la IA generativa y sus limitaciones reales</div>
+          </div>
+          <div class="outcome-card">
+            <div class="oc-icon">&#9997;&#65039;</div>
+            <div class="oc-text">Dominar las tecnicas de Prompt Engineering para obtener mejores respuestas</div>
+          </div>
+          <div class="outcome-card">
+            <div class="oc-icon">&#128202;</div>
+            <div class="oc-text">Usar Gemini para analizar datos, investigar y generar reportes de tu operacion</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="cta-link" href="https://gemini.google.com" target="_blank" rel="noopener">Abrir Gemini &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ SECCION 01 — CONCEPTOS CLAVE ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 01</p>
+        <h2 class="section-title">Conceptos Clave</h2>
+        <p class="section-desc">Lo que necesitas saber antes de escribir tu primer prompt.</p>
+      </div>
+
+      <!-- Que es un LLM -->
+      <div class="theory-toggle"><h3>&#129302; &iquest;Que es un LLM?</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text">Un Large Language Model (LLM) es un sistema de inteligencia artificial entrenado con cantidades masivas de texto. Su funcion es simple: <strong>predecir la siguiente palabra mas probable</strong> dada una secuencia de texto. No "piensa" ni "entiende" como un humano &mdash; es un motor de prediccion estadistica extremadamente sofisticado.</p>
+        <p class="content-text">Por eso la calidad de lo que recibes depende directamente de la calidad de lo que le das. Si tu pregunta es vaga, la prediccion sera generica. Si le das contexto rico y especifico, la prediccion sera mucho mas util.</p>
+      </div>
+
+      <!-- Memoria de la IA -->
+      <div class="theory-toggle"><h3>&#129504; Memoria de la IA</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text">Los LLMs tienen dos niveles de memoria que funcionan de manera muy diferente:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tipo</th><th>Que guarda</th><th>Duracion</th><th>Analogia</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Memoria global</strong></td>
+                <td>Tu nombre, rol, preferencias, instrucciones clave</td>
+                <td>Persiste entre conversaciones</td>
+                <td>Como tomar apuntes en clase &mdash; guarda lo que considera importante, pero mucho se pierde</td>
+              </tr>
+              <tr>
+                <td><strong>Memoria de conversacion</strong></td>
+                <td>Todo lo dicho en el chat actual (la ventana de contexto)</td>
+                <td>Solo dentro del chat abierto</td>
+                <td>Como una pizarra &mdash; rica en detalle pero temporal</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">Tip</p>
+          <p>Si un tema es complejo, trabaja en un solo chat largo en lugar de abrir muchos chats cortos. La memoria de conversacion es mucho mas rica que la memoria global.</p>
+        </div>
+      </div>
+
+      <!-- Tokens y ventana de contexto -->
+      <div class="theory-toggle"><h3>&#128207; Tokens y Ventana de Contexto</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text">Los LLMs procesan texto en <strong>tokens</strong> (fragmentos de ~4 caracteres). La ventana de contexto es la cantidad maxima de tokens que el modelo puede "ver" en una sola conversacion.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Modelo</th><th>Ventana de Contexto</th><th>Proveedor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gemini 3.1 Pro</td><td>~1M tokens</td><td>Google</td></tr>
+              <tr><td>Claude 4.6 Opus / Sonnet</td><td>~1M tokens</td><td>Anthropic</td></tr>
+              <tr><td>ChatGPT 5.4</td><td>~1M tokens</td><td>OpenAI</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="content-text">Dos problemas que debes conocer:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Problema</th><th>Que pasa</th><th>Como mitigarlo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lost in the Middle</strong></td>
+                <td>En conversaciones largas con mucho contexto acumulado, la IA presta mas atencion al inicio y al final. La informacion del medio pierde relevancia.</td>
+                <td>Abre un chat nuevo para cada tema. Si un dato es clave, repitelo &mdash; no asumas que lo recuerda.</td>
+              </tr>
+              <tr>
+                <td><strong>FIFO (First In, First Out)</strong></td>
+                <td>Cuando la conversacion excede la ventana, el modelo descarta los mensajes mas antiguos.</td>
+                <td>En conversaciones largas, resume los puntos clave periodicamente.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Alucinaciones -->
+      <div class="theory-toggle"><h3>&#9888;&#65039; Alucinaciones</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text">Los LLMs a veces generan informacion que suena convincente pero es <strong>falsa</strong>. Esto se llama una alucinacion. No es un "error" &mdash; es una consecuencia de como funcionan: predicen la siguiente palabra mas probable, no verifican hechos.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Estrategia</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><strong>Dale datos reales</strong></td><td>Sube tu CSV de produccion en lugar de pedirle que "invente" datos</td></tr>
+              <tr><td>2</td><td><strong>Pide fuentes</strong></td><td>"Cita las fuentes con URLs verificables"</td></tr>
+              <tr><td>3</td><td><strong>Usa Deep Research</strong></td><td>Para investigaciones, usa el modo Deep Research de Gemini que navega la web</td></tr>
+              <tr><td>4</td><td><strong>Verifica lo critico</strong></td><td>Numeros financieros, datos legales, cifras de produccion &mdash; siempre verifica</td></tr>
+              <tr><td>5</td><td><strong>Pide que diga "no se"</strong></td><td>"Si no tienes certeza, dilo. Prefiero un 'no se' a una respuesta inventada."</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Ingenieria de contexto -->
+      <div class="theory-toggle"><h3>&#128218; Ingenieria de Contexto</h3><span class="toggle-icon">&#9660;</span></div>
+      <div class="theory-content">
+        <p class="content-text">La calidad de la respuesta depende directamente de <strong>cuanta informacion relevante</strong> le das a la IA. Mas contexto = respuestas mas precisas, personalizadas y utiles.</p>
+        <p class="content-text"><strong>&iquest;Que tipo de contexto puedes darle?</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tipo de contexto</th><th>Ejemplo en Son del Cauca</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Archivos y datos</strong></td><td>CSVs de produccion, reportes en PDF, actas de junta</td></tr>
+              <tr><td><strong>Contexto de negocio</strong></td><td>Tu rol, la empresa, la industria, los KPIs relevantes</td></tr>
+              <tr><td><strong>Historial</strong></td><td>Decisiones previas, resultados anteriores, tendencias</td></tr>
+              <tr><td><strong>Ejemplos</strong></td><td>"Asi se ve un buen reporte" o "Este es el formato que usa la junta"</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="content-text"><strong>&iquest;Como gestionarlo?</strong> La ventana de contexto no es infinita. Se selectivo: un resumen de 2 paginas es mejor que un PDF de 50. Abre un chat nuevo para cada tema distinto &mdash; no mezcles contextos.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 02 — PROMPT ENGINEERING ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 02</p>
+        <h2 class="section-title">Prompt Engineering</h2>
+        <p class="section-desc">Las 5 piezas de un prompt efectivo y las tecnicas para dominarlas.</p>
+      </div>
+
+      <h3>Los 5 Componentes de un Prompt</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Componente</th><th>Que hace</th><th>Ejemplo (Son del Cauca)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Rol</strong></td><td>Define quien es la IA</td><td>"Eres un ingeniero agronomo especializado en citricos tropicales"</td></tr>
+            <tr><td><strong>Proposito</strong></td><td>Que necesitas lograr</td><td>"Necesito un analisis de rendimiento por finca"</td></tr>
+            <tr><td><strong>Contexto</strong></td><td>Informacion de fondo relevante</td><td>"Tenemos 6 fincas en Antioquia y Cordoba que producen limon Tahiti y naranja Valencia"</td></tr>
+            <tr><td><strong>Restricciones</strong></td><td>Limites y reglas</td><td>"Maximo 1 pagina. Sin jerga tecnica. Para la junta directiva."</td></tr>
+            <tr><td><strong>Output</strong></td><td>Formato de la respuesta</td><td>"Tabla con finca, rendimiento, tendencia, y semaforo de alerta"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula">
+          <span class="part">Rol</span>
+          <span class="eq">+</span>
+          <span class="part">Proposito</span>
+          <span class="eq">+</span>
+          <span class="part">Contexto</span>
+          <span class="eq">+</span>
+          <span class="part">Restricciones</span>
+          <span class="eq">+</span>
+          <span class="part">Output</span>
+          <span class="eq">=</span>
+          <span class="part" style="border-color: var(--accent); color: var(--accent);">Prompt efectivo</span>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p class="tip-label">Pro Tip</p>
+        <p><strong>DICTA, no escribas.</strong> No redactes el resultado tu mismo para luego pedirle a la IA que lo "mejore". Dale el contexto, los parametros y las restricciones &mdash; y deja que la IA genere desde cero. Tu trabajo es dirigir, no escribir.</p>
+      </div>
+
+      <div class="hack-box">
+        <p class="hack-label">El Hack &#9889;</p>
+        <p class="hack-prompt">"Antes de responder, hazme las preguntas que necesites para darme la mejor respuesta posible."</p>
+        <button class="copy-btn" data-text="Antes de responder, hazme las preguntas que necesites para darme la mejor respuesta posible.">Copiar</button>
+      </div>
+
+      <p class="content-text">Este prompt invierte la dinamica: en lugar de tu adivinar que contexto necesita la IA, le pides que te diga que le falta. Funciona increiblemente bien.</p>
+
+      <h3>4 Tipos de Prompt</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tipo</th><th>Que es</th><th>Cuando usarlo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Zero Shot</strong></td><td>Una instruccion directa sin ejemplos</td><td>Preguntas simples, tareas claras</td></tr>
+            <tr><td><strong>Few Shot</strong></td><td>Das 2-3 ejemplos del formato esperado</td><td>Clasificaciones, formatos especificos</td></tr>
+            <tr><td><strong>Chain of Thought</strong></td><td>Pides razonamiento paso a paso</td><td>Analisis complejos, decisiones con multiples variables</td></tr>
+            <tr><td><strong>Role Playing</strong></td><td>Le asignas un personaje o rol experto</td><td>Perspectivas especializadas, comunicaciones formales</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── EJ 1.1 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 1.1</span>
+          <span class="exercise-title">Zero Shot &mdash; Pregunta directa</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9998; Gemini</span>
+          <p>Escribe este prompt en Gemini sin dar ejemplos ni contexto adicional. Observa la calidad de la respuesta con una instruccion directa.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">&iquest;Cuales son las principales plagas que afectan los cultivos de limon Tahiti en clima tropical colombiano y que protocolos preventivos recomiendas?</div>
+            <button class="copy-btn" data-text="¿Cuáles son las principales plagas que afectan los cultivos de limón Tahití en clima tropical colombiano y qué protocolos preventivos recomiendas?">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 1.2 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 1.2</span>
+          <span class="exercise-title">Few Shot &mdash; Clasificar incidentes</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9998; Gemini</span>
+          <p>Dale ejemplos del formato de clasificacion que esperas y luego pide que clasifique nuevos incidentes.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Clasifica los siguientes incidentes operativos de una finca de citricos en Colombia. Usa estas categorias: Fitosanitario, Climatico, Logistico, Insumos. Y asigna severidad: Alta, Media, Baja.
+
+<div class="example-block"><strong>Ejemplos:</strong>
+Incidente: "Acaros detectados en lote L2 de limon Tahiti"
+Clasificacion: Fitosanitario | Severidad: Alta
+
+Incidente: "Lluvia excesiva durante 5 dias seguidos"
+Clasificacion: Climatico | Severidad: Media</div>
+Ahora clasifica estos:
+1. "Deficiencia de zinc en suelo del lote L4"
+2. "Camino intransitable por lluvias en finca San Jose"
+3. "Gomosis en tronco de arboles jovenes"
+4. "Precio de carton subio 12% este mes"</div>
+            <button class="copy-btn" data-text="Clasifica los siguientes incidentes operativos de una finca de cítricos en Colombia. Usa estas categorías: Fitosanitario, Climático, Logístico, Insumos. Y asigna severidad: Alta, Media, Baja.
+
+Ejemplos:
+Incidente: &quot;Ácaros detectados en lote L2 de limón Tahití&quot;
+Clasificación: Fitosanitario | Severidad: Alta
+
+Incidente: &quot;Lluvia excesiva durante 5 días seguidos&quot;
+Clasificación: Climático | Severidad: Media
+
+Ahora clasifica estos:
+1. &quot;Deficiencia de zinc en suelo del lote L4&quot;
+2. &quot;Camino intransitable por lluvias en finca San José&quot;
+3. &quot;Gomosis en tronco de árboles jóvenes&quot;
+4. &quot;Precio de cartón subió 12% este mes&quot;">Copiar</button>
+          </div>
+          <div class="rating-row">
+            <span class="rating-label">&iquest;Clasifico correctamente?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 1.3 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 1.3</span>
+          <span class="exercise-title">Chain of Thought &mdash; Analisis paso a paso</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9998; Gemini</span>
+          <p>Fuerza al modelo a razonar en pasos antes de dar una conclusion. Esto mejora significativamente la calidad del analisis.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Analiza paso a paso el rendimiento del Lote L3 de La Esperanza que cayo de 3.2 a 1.6 ton/ha en las ultimas semanas.
+
+Paso 1: Identifica al menos 5 posibles causas de esta caida (fitosanitarias, climaticas, de suelo, operativas, de mantenimiento).
+Paso 2: Evalua cada causa en terminos de probabilidad e impacto.
+Paso 3: Recomienda un plan de accion con costos estimados y cronograma para las proximas 8 semanas.</div>
+            <button class="copy-btn" data-text="Analiza paso a paso el rendimiento del Lote L3 de La Esperanza que cayó de 3.2 a 1.6 ton/ha en las últimas semanas.
+
+Paso 1: Identifica al menos 5 posibles causas de esta caída (fitosanitarias, climáticas, de suelo, operativas, de mantenimiento).
+Paso 2: Evalúa cada causa en términos de probabilidad e impacto.
+Paso 3: Recomienda un plan de acción con costos estimados y cronograma para las próximas 8 semanas.">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 1.4 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 1.4</span>
+          <span class="exercise-title">Role Playing &mdash; Director Operativo</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9998; Gemini</span>
+          <p>Asignale un rol con contexto detallado para obtener una respuesta desde esa perspectiva profesional.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Eres el Director Operativo de una comercializadora de citricos colombiana con 6 fincas en Antioquia y Cordoba. La empresa produce 20,000 toneladas anuales de limon Tahiti y 12,000 de naranja Valencia para exportacion.
+
+Un cliente de exportacion (TropiFruit UK) ha presentado 4 reclamos de alta severidad en el ultimo trimestre por problemas de calidad (fruta con manchas, calibre inconsistente, y daño mecanico en empaque).
+
+Redacta un plan de accion para presentar a la junta directiva que incluya:
+1. Analisis de causa raiz
+2. Acciones correctivas inmediatas (proximos 30 dias)
+3. Acciones preventivas a mediano plazo (90 dias)
+4. Impacto estimado si se pierde la cuenta de TropiFruit UK
+5. KPIs de seguimiento</div>
+            <button class="copy-btn" data-text="Eres el Director Operativo de una comercializadora de cítricos colombiana con 6 fincas en Antioquia y Córdoba. La empresa produce 20,000 toneladas anuales de limón Tahití y 12,000 de naranja Valencia para exportación.
+
+Un cliente de exportación (TropiFruit UK) ha presentado 4 reclamos de alta severidad en el último trimestre por problemas de calidad (fruta con manchas, calibre inconsistente, y daño mecánico en empaque).
+
+Redacta un plan de acción para presentar a la junta directiva que incluya:
+1. Análisis de causa raíz
+2. Acciones correctivas inmediatas (próximos 30 días)
+3. Acciones preventivas a mediano plazo (90 días)
+4. Impacto estimado si se pierde la cuenta de TropiFruit UK
+5. KPIs de seguimiento">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 1.5 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 1.5</span>
+          <span class="exercise-title">Tu Propio Prompt + El Hack</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9998; Gemini</span>
+          <p>Ahora es tu turno. Piensa en una tarea real de tu dia a dia en Son del Cauca y escribe un prompt usando los 5 componentes. Luego agrega <strong>El Hack</strong> al final.</p>
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Identifica una tarea real que haces frecuentemente (reporte, analisis, correo, informe)</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Escribe un prompt con: Rol + Proposito + Contexto + Restricciones + Output</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Agrega al final: <em>"Antes de responder, hazme las preguntas que necesites para darme la mejor respuesta posible."</em></div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <div>Responde las preguntas que te haga la IA y evalua el resultado final</div>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span class="rating-label">&iquest;El Hack mejoro la respuesta?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 03 — MODELOS GEMINI ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 03</p>
+        <h2 class="section-title">Modelos de Gemini</h2>
+        <p class="section-desc">Tres modelos, tres niveles. Elige el correcto para cada tarea.</p>
+      </div>
+
+      <div class="gem-grid">
+        <div class="gem-card">
+          <p class="gem-area">Rapido</p>
+          <p class="gem-name">Flash</p>
+          <p class="gem-desc">El mas rapido. Ideal para tareas simples: resumenes, traducciones, preguntas directas, borradores rapidos. Respuesta casi instantanea.</p>
+        </div>
+        <div class="gem-card">
+          <p class="gem-area">Balanceado</p>
+          <p class="gem-name">Thinking</p>
+          <p class="gem-desc">Mezcla velocidad con profundidad. Razona antes de responder. Bueno para analisis moderados, clasificaciones y comparaciones.</p>
+        </div>
+        <div class="gem-card highlighted">
+          <p class="gem-area">Frontera</p>
+          <p class="gem-name">Pro</p>
+          <p class="gem-desc">El mas capaz. Para tareas complejas: analisis de datos grandes, reportes ejecutivos, investigacion profunda, razonamiento multi-paso.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p class="tip-label">Regla del 80/20</p>
+        <p>El <strong>80% de tus tareas diarias</strong> se resuelven bien con Flash o Thinking. Reserva Pro para lo que realmente lo necesita: analisis de datos con muchas variables, investigaciones de mercado, o reportes que van a junta directiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 04 — DEEP RESEARCH ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 04</p>
+        <h2 class="section-title">Deep Research</h2>
+        <p class="section-desc">Investigacion profunda con busqueda web integrada.</p>
+      </div>
+
+      <p class="content-text">Deep Research es una funcion de Gemini que navega la web en tiempo real, busca multiples fuentes, y genera un reporte estructurado. Es como tener un analista de investigacion que revisa docenas de paginas en minutos.</p>
+
+      <!-- ── EJ 4.1 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.1</span>
+          <span class="exercise-title">Investigar competidor &mdash; Frudelca</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128270; Deep Research</span>
+          <p>Activa el modo <strong>Deep Research</strong> en Gemini y ejecuta esta investigacion. Descarga primero el archivo de pipeline para tener contexto.</p>
+
+          <div class="download-grid">
+            <a class="download-card" href="pipeline-exportacion.csv" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">pipeline-exportacion.csv</div>
+              <div class="dl-desc">30 prospectos de exportacion</div>
+            </a>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Investiga a Frudelca (frudelca.com), una comercializadora de citricos colombiana. Quiero un reporte de inteligencia competitiva con:
+
+1. Modelo de negocio: &iquest;que producen, procesan o comercializan? &iquest;Cual es su cadena de valor?
+2. Mercados de exportacion: &iquest;a que paises exportan? &iquest;Que volumenes manejan?
+3. Certificaciones: &iquest;Tienen GlobalGAP, HACCP, BRC, u otras certificaciones relevantes?
+4. Fortalezas y debilidades: &iquest;en que son fuertes? &iquest;Donde tienen gaps?
+5. Diferenciacion estrategica: Si yo soy Son del Cauca (20k ton/anio limon Tahiti, 12k naranja Valencia, certificacion ICA y GlobalGAP en proceso), &iquest;como puedo diferenciarme de Frudelca en el mercado internacional?
+
+Cita las fuentes con URLs verificables.</div>
+            <button class="copy-btn" data-text="Investiga a Frudelca (frudelca.com), una comercializadora de cítricos colombiana. Quiero un reporte de inteligencia competitiva con:
+
+1. Modelo de negocio: ¿qué producen, procesan o comercializan? ¿Cuál es su cadena de valor?
+2. Mercados de exportación: ¿a qué países exportan? ¿Qué volúmenes manejan?
+3. Certificaciones: ¿Tienen GlobalGAP, HACCP, BRC, u otras certificaciones relevantes?
+4. Fortalezas y debilidades: ¿en qué son fuertes? ¿Dónde tienen gaps?
+5. Diferenciación estratégica: Si yo soy Son del Cauca (20k ton/año limón Tahití, 12k naranja Valencia, certificación ICA y GlobalGAP en proceso), ¿cómo puedo diferenciarme de Frudelca en el mercado internacional?
+
+Cita las fuentes con URLs verificables.">Copiar</button>
+          </div>
+
+          <div class="tip-box">
+            <p class="tip-label">Anti-alucinacion</p>
+            <p>Abre al menos 2 de las fuentes citadas y verifica que la informacion coincida. Deep Research es bueno pero no infalible &mdash; la verificacion humana sigue siendo esencial.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 4.2 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 4.2</span>
+          <span class="exercise-title">Inteligencia de mercado &mdash; Limon Tahiti</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128270; Deep Research</span>
+          <p>Investiga las tendencias globales del mercado de limon Tahiti usando Deep Research.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Investiga las tendencias del mercado global de limon Tahiti para 2025-2026. Incluye:
+
+1. Principales paises exportadores y su participacion de mercado
+2. Precios promedio FOB y tendencias de los ultimos 12 meses
+3. Regulaciones fitosanitarias emergentes en los principales mercados de destino (EU, UK, USA)
+4. Oportunidades especificas para productores colombianos con certificacion GlobalGAP
+5. Riesgos de mercado que deberiamos monitorear
+
+Cita las fuentes con URLs verificables.</div>
+            <button class="copy-btn" data-text="Investiga las tendencias del mercado global de limón Tahití para 2025-2026. Incluye:
+
+1. Principales países exportadores y su participación de mercado
+2. Precios promedio FOB y tendencias de los últimos 12 meses
+3. Regulaciones fitosanitarias emergentes en los principales mercados de destino (EU, UK, USA)
+4. Oportunidades específicas para productores colombianos con certificación GlobalGAP
+5. Riesgos de mercado que deberíamos monitorear
+
+Cita las fuentes con URLs verificables.">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 05 — DATA ANALYSIS ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 05</p>
+        <h2 class="section-title">Analisis de Datos</h2>
+        <p class="section-desc">Sube tus archivos a Gemini y extrae insights accionables en minutos.</p>
+      </div>
+
+      <p class="content-text">Gemini puede analizar archivos CSV directamente. Solo arrastra el archivo al chat, escribe tu prompt, y obtendras analisis, graficos y recomendaciones. Lo importante: <strong>itera</strong>. El primer analisis es el punto de partida, no el final.</p>
+
+      <!-- ── EJ 5.1 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 5.1</span>
+          <span class="exercise-title">Analisis de produccion por finca</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128202; Gemini + CSV</span>
+
+          <div class="download-grid">
+            <a class="download-card" href="operaciones-fincas.csv" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">operaciones-fincas.csv</div>
+              <div class="dl-desc">210 registros de produccion semanal</div>
+            </a>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Descarga el archivo CSV</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Abre Gemini y arrastra el archivo al chat</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Copia y pega el prompt a continuacion</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Analiza estos datos de produccion semanal de 6 fincas de citricos de Son del Cauca. Identifica:
+
+1. Las 3 anomalias mas criticas en los datos (caidas de rendimiento, problemas de calidad, patrones inusuales)
+2. Tendencias de rendimiento por finca &mdash; &iquest;cuales mejoran y cuales empeoran?
+3. Correlacion entre lluvia y calidad de exportacion &mdash; &iquest;hay un patron claro?
+4. Top 3 hallazgos accionables para la direccion operativa
+
+Presenta los resultados con tablas y graficos donde sea posible.</div>
+            <button class="copy-btn" data-text="Analiza estos datos de producción semanal de 6 fincas de cítricos de Son del Cauca. Identifica:
+
+1. Las 3 anomalías más críticas en los datos (caídas de rendimiento, problemas de calidad, patrones inusuales)
+2. Tendencias de rendimiento por finca — ¿cuáles mejoran y cuáles empeoran?
+3. Correlación entre lluvia y calidad de exportación — ¿hay un patrón claro?
+4. Top 3 hallazgos accionables para la dirección operativa
+
+Presenta los resultados con tablas y gráficos donde sea posible.">Copiar</button>
+          </div>
+
+          <p style="font-size:14px; color:var(--muted); margin-top:20px; margin-bottom:8px;">Ahora itera &mdash; pide mas a partir del analisis inicial:</p>
+
+          <div class="iteration-list">
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 1</span>
+              <div class="iteration-prompt">
+                Genera un grafico comparativo de rendimiento por finca (ton/ha promedio) para presentar en la proxima junta directiva. Formato visual, limpio, con colores que distingan cada finca.
+                <button class="copy-btn" data-text="Genera un gráfico comparativo de rendimiento por finca (ton/ha promedio) para presentar en la próxima junta directiva. Formato visual, limpio, con colores que distingan cada finca.">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 2</span>
+              <div class="iteration-prompt">
+                Redacta un correo al equipo de agronomia con los hallazgos criticos y las acciones recomendadas. Tono profesional pero directo. Incluye datos especificos del analisis.
+                <button class="copy-btn" data-text="Redacta un correo al equipo de agronomía con los hallazgos críticos y las acciones recomendadas. Tono profesional pero directo. Incluye datos específicos del análisis.">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 3</span>
+              <div class="iteration-prompt">
+                Si La Esperanza L3 no mejora en 8 semanas, &iquest;cual seria el impacto en toneladas anuales? Proyecta el escenario pesimista vs el escenario de recuperacion con las acciones propuestas.
+                <button class="copy-btn" data-text="Si La Esperanza L3 no mejora en 8 semanas, ¿cuál sería el impacto en toneladas anuales? Proyecta el escenario pesimista vs el escenario de recuperación con las acciones propuestas.">Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 5.2 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 5.2</span>
+          <span class="exercise-title">Analisis de reclamos de calidad</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128202; Gemini + CSV</span>
+
+          <div class="download-grid">
+            <a class="download-card" href="reclamos-calidad.csv" download>
+              <div class="dl-icon">&#128196;</div>
+              <div class="dl-name">reclamos-calidad.csv</div>
+              <div class="dl-desc">82 reclamos de calidad</div>
+            </a>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Analiza los reclamos de calidad de Son del Cauca. Identifica:
+
+1. Distribucion por cliente y tipo de reclamo &mdash; &iquest;que patrones hay?
+2. El cliente con mas reclamos y el detalle de sus quejas
+3. Correlaciones entre destino de exportacion y severidad de los reclamos
+4. Un plan de accion concreto para reducir reclamos en un 30% en el proximo trimestre
+
+Usa tablas y graficos para visualizar los patrones.</div>
+            <button class="copy-btn" data-text="Analiza los reclamos de calidad de Son del Cauca. Identifica:
+
+1. Distribución por cliente y tipo de reclamo — ¿qué patrones hay?
+2. El cliente con más reclamos y el detalle de sus quejas
+3. Correlaciones entre destino de exportación y severidad de los reclamos
+4. Un plan de acción concreto para reducir reclamos en un 30% en el próximo trimestre
+
+Usa tablas y gráficos para visualizar los patrones.">Copiar</button>
+          </div>
+
+          <div class="iteration-list">
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 1</span>
+              <div class="iteration-prompt">
+                Redacta una comunicacion para el gerente de la planta empacadora con los hallazgos y las acciones correctivas prioritarias. Incluye datos especificos y un cronograma de implementacion de 30 dias.
+                <button class="copy-btn" data-text="Redacta una comunicación para el gerente de la planta empacadora con los hallazgos y las acciones correctivas prioritarias. Incluye datos específicos y un cronograma de implementación de 30 días.">Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 06 — CANVAS ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 06</p>
+        <h2 class="section-title">Canvas</h2>
+        <p class="section-desc">Genera documentos largos y editables directamente en Gemini.</p>
+      </div>
+
+      <p class="content-text">Canvas es el modo de edicion de documentos de Gemini. Ideal para reportes, informes y documentos que necesitas iterar y refinar. Puedes editar secciones individualmente, pedir cambios parciales, y exportar el resultado final.</p>
+
+      <!-- ── EJ 6.1 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 6.1</span>
+          <span class="exercise-title">Informe ejecutivo trimestral</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128221; Canvas</span>
+
+          <div class="download-grid">
+            <a class="download-card" href="notas-operativas.txt" download>
+              <div class="dl-icon">&#128221;</div>
+              <div class="dl-name">notas-operativas.txt</div>
+              <div class="dl-desc">Notas del Director Operativo (4 semanas)</div>
+            </a>
+          </div>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Descarga el archivo de notas operativas</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Sube el archivo a Gemini</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Ejecuta el prompt y observa como genera el informe en Canvas</div>
+            </div>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Genera un informe ejecutivo trimestral para la junta directiva de Son del Cauca basado en las notas operativas adjuntas. Incluye:
+
+1. Resumen ejecutivo (1 parrafo)
+2. Analisis de produccion por finca con tabla comparativa
+3. Estado de calidad de exportacion y reclamos
+4. KPIs clave del trimestre (rendimiento, calidad, exportacion)
+5. Las 5 recomendaciones prioritarias del Director Operativo
+6. Riesgos identificados y plan de mitigacion
+
+Formato formal, con tablas y secciones claras. Listo para presentar a junta directiva.</div>
+            <button class="copy-btn" data-text="Genera un informe ejecutivo trimestral para la junta directiva de Son del Cauca basado en las notas operativas adjuntas. Incluye:
+
+1. Resumen ejecutivo (1 párrafo)
+2. Análisis de producción por finca con tabla comparativa
+3. Estado de calidad de exportación y reclamos
+4. KPIs clave del trimestre (rendimiento, calidad, exportación)
+5. Las 5 recomendaciones prioritarias del Director Operativo
+6. Riesgos identificados y plan de mitigación
+
+Formato formal, con tablas y secciones claras. Listo para presentar a junta directiva.">Copiar</button>
+          </div>
+
+          <div class="iteration-list">
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 1</span>
+              <div class="iteration-prompt">
+                Agrega una seccion comparativa con el trimestre anterior (inventa datos razonables del trimestre pasado que muestren una mejora del 5-8% en rendimiento pero un deterioro en reclamos de calidad).
+                <button class="copy-btn" data-text="Agrega una sección comparativa con el trimestre anterior (inventa datos razonables del trimestre pasado que muestren una mejora del 5-8% en rendimiento pero un deterioro en reclamos de calidad).">Copiar</button>
+              </div>
+            </div>
+            <div class="iteration-item">
+              <span class="iter-num">Iteracion 2</span>
+              <div class="iteration-prompt">
+                Traduce el resumen ejecutivo al ingles para compartir con los clientes internacionales. Mantén el tono formal y los datos clave.
+                <button class="copy-btn" data-text="Traduce el resumen ejecutivo al inglés para compartir con los clientes internacionales. Mantén el tono formal y los datos clave.">Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 6.2 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 6.2</span>
+          <span class="exercise-title">Infografia del proceso productivo</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128221; Canvas</span>
+          <p>Pide a Gemini que visualice el proceso completo de produccion de limon Tahiti.</p>
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Crea una infografia del proceso de produccion de limon Tahiti de Son del Cauca, desde la siembra hasta la exportacion. Etapas:
+
+1. Siembra y establecimiento del cultivo
+2. Mantenimiento (fertilizacion, riego, control fitosanitario)
+3. Cosecha (seleccion en campo, corte)
+4. Seleccion en planta (clasificacion por calibre y calidad)
+5. Empaque (cajas para exportacion)
+6. Logistica y exportacion (cadena de frio, transporte, puerto)
+
+Para cada etapa incluye:
+- Los KPIs clave (rendimiento, % de rechazo, tiempos)
+- Los principales riesgos
+- Las buenas practicas
+
+Formato visual con flujo claro de izquierda a derecha o de arriba a abajo.</div>
+            <button class="copy-btn" data-text="Crea una infografía del proceso de producción de limón Tahití de Son del Cauca, desde la siembra hasta la exportación. Etapas:
+
+1. Siembra y establecimiento del cultivo
+2. Mantenimiento (fertilización, riego, control fitosanitario)
+3. Cosecha (selección en campo, corte)
+4. Selección en planta (clasificación por calibre y calidad)
+5. Empaque (cajas para exportación)
+6. Logística y exportación (cadena de frío, transporte, puerto)
+
+Para cada etapa incluye:
+- Los KPIs clave (rendimiento, % de rechazo, tiempos)
+- Los principales riesgos
+- Las buenas prácticas
+
+Formato visual con flujo claro de izquierda a derecha o de arriba a abajo.">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SECCION 07 — CONNECTORS ═══════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-number">Seccion 07</p>
+        <h2 class="section-title">Conectores y Acciones Programadas</h2>
+        <p class="section-desc">Conecta Gemini con Gmail, Drive y Calendar para trabajar entre aplicaciones.</p>
+      </div>
+
+      <p class="content-text">Gemini puede conectarse con tus herramientas de Google Workspace para buscar archivos, leer correos y consultar tu calendario &mdash; todo desde el mismo chat. Tambien puedes programar acciones automaticas que se ejecutan en horarios definidos.</p>
+
+      <!-- ── EJ 7.1 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 7.1</span>
+          <span class="exercise-title">Consultas entre aplicaciones</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#128279; Conectores</span>
+          <p>Observa como el instructor usa Gemini para consultar informacion entre aplicaciones de Google en tiempo real. Cada consulta activa un conector diferente.</p>
+
+          <div class="tip-box" style="margin-bottom:16px;">
+            <p class="tip-label">Nota</p>
+            <p>Los conectores acceden a <strong>tus herramientas de Google Workspace</strong>. Vamos a hacer estos ejercicios en vivo desde la cuenta del instructor para que veas como funcionan.</p>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner"><strong>Drive:</strong> Busca en mi Drive documentos relacionados con "propuesta de automatizacion" y hazme un resumen de los 3 mas recientes.</div>
+            <button class="copy-btn" data-text="Busca en mi Drive documentos relacionados con &quot;propuesta de automatización&quot; y hazme un resumen de los 3 más recientes.">Copiar</button>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner"><strong>Gmail:</strong> Revisa mi Gmail y encuentra los correos mas recientes de clientes que mencionan "workshop" o "capacitacion". Resume los temas y si requieren respuesta.</div>
+            <button class="copy-btn" data-text="Revisa mi Gmail y encuentra los correos más recientes de clientes que mencionan &quot;workshop&quot; o &quot;capacitación&quot;. Resume los temas y si requieren respuesta.">Copiar</button>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner"><strong>Calendar:</strong> &iquest;Que reuniones tengo esta semana? Dame un resumen con fecha, hora, participantes y tema de cada una.</div>
+            <button class="copy-btn" data-text="¿Qué reuniones tengo esta semana? Dame un resumen con fecha, hora, participantes y tema de cada una.">Copiar</button>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">&iquest;Conecto correctamente?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EJ 7.2 ── -->
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <span class="exercise-num">EJ 7.2</span>
+          <span class="exercise-title">Acciones programadas</span>
+        </div>
+        <div class="exercise-body">
+          <span class="tool-tag">&#9200; Scheduled Actions</span>
+          <p>Programa acciones que se ejecuten automaticamente. Gemini te enviara los resultados por correo o notificacion.</p>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Todos los lunes a las 7am, revisa mi Gmail por correos de clientes de exportacion recibidos el fin de semana y hazme un resumen con:
+- Tema de cada correo
+- Si requiere accion urgente
+- Acciones pendientes por mi parte</div>
+            <button class="copy-btn" data-text="Todos los lunes a las 7am, revisa mi Gmail por correos de clientes de exportación recibidos el fin de semana y hazme un resumen con:
+- Tema de cada correo
+- Si requiere acción urgente
+- Acciones pendientes por mi parte">Copiar</button>
+          </div>
+
+          <div class="exercise-prompt">
+            <div class="prompt-inner">Cada viernes a las 4pm, busca en mi Drive el reporte semanal de operaciones mas reciente y genera 3 preguntas clave que deberia hacer en la reunion del lunes con el equipo directivo.</div>
+            <button class="copy-btn" data-text="Cada viernes a las 4pm, busca en mi Drive el reporte semanal de operaciones más reciente y genera 3 preguntas clave que debería hacer en la reunión del lunes con el equipo directivo.">Copiar</button>
+          </div>
+
+          <div class="tip-box">
+            <p class="tip-label">Tip</p>
+            <p>Empieza con una o dos acciones programadas simples. Una vez que veas el valor, ve agregando mas. La clave es que sean acciones que realmente te ahorren tiempo cada semana.</p>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">&iquest;Te resulto util?</span>
+            <div class="yesno">
+              <button data-val="si">Si</button>
+              <button data-val="no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- end session-panel 1 -->
+
+<!-- ══════════════════════════════════════ SESSION 2 PLACEHOLDER ═══════════════════════════════════ -->
+<div class="session-panel" data-session="2">
+  <div class="coming-soon">
+    <div class="cs-icon">&#128274;</div>
+    <h2><span class="gradient-text">Google AI Ecosystem</span></h2>
+    <p>Herramientas de IA integradas en tu flujo de trabajo diario con Google Workspace.</p>
+    <p style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--muted);">Se habilitara antes de la Sesion 2</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ SESSION 3 PLACEHOLDER ═══════════════════════════════════ -->
+<div class="session-panel" data-session="3">
+  <div class="coming-soon">
+    <div class="cs-icon">&#128274;</div>
+    <h2><span class="gradient-text">Make Automation</span></h2>
+    <p>Conecta tus herramientas y automatiza procesos sin codigo.</p>
+    <p style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--muted);">Se habilitara antes de la Sesion 3</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ SESSION 4 PLACEHOLDER ═══════════════════════════════════ -->
+<div class="session-panel" data-session="4">
+  <div class="coming-soon">
+    <div class="cs-icon">&#128274;</div>
+    <h2><span class="gradient-text">Proyecto Final</span></h2>
+    <p>Aplica todo lo aprendido en un caso real de Son del Cauca.</p>
+    <p style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--muted);">Se habilitara antes de la Sesion 4</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ FOOTER ═══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p class="footer-logo">kyto<span class="x">&times;</span>sondelcauca</p>
+    <p class="footer-copy">&copy; 2026 Kyto &mdash; AI & Automation Consultancy</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════ JAVASCRIPT ═════════════════════════════════════════════ -->
+<script>
+(function() {
+  // ── Tab switching ──
+  document.querySelectorAll('.tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.classList.contains('locked')) return;
+      var s = tab.dataset.session;
+      document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.session-panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = document.querySelector('.session-panel[data-session="' + s + '"]');
+      if (panel) panel.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // ── Copy buttons ──
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var text = btn.getAttribute('data-text');
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopied(btn);
+        }).catch(function() {
+          fallbackCopy(text, btn);
+        });
+      } else {
+        fallbackCopy(text, btn);
+      }
+    });
+  });
+
+  function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showCopied(btn); }
+    catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  function showCopied(btn) {
+    var orig = btn.textContent;
+    btn.textContent = 'Copiado';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 1500);
+  }
+
+  // ── Rating dots ──
+  document.querySelectorAll('.rating-dots').forEach(function(group) {
+    group.querySelectorAll('.rating-dot').forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        group.querySelectorAll('.rating-dot').forEach(function(d) { d.classList.remove('active'); });
+        var val = parseInt(dot.dataset.val);
+        group.querySelectorAll('.rating-dot').forEach(function(d) {
+          if (parseInt(d.dataset.val) <= val) d.classList.add('active');
+        });
+      });
+    });
+  });
+
+  // ── Yes/No buttons ──
+  document.querySelectorAll('.yesno').forEach(function(group) {
+    group.querySelectorAll('button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        group.querySelectorAll('button').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+      });
+    });
+  });
+})();
+
+// Collapsible theory toggles
+document.querySelectorAll('.theory-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const content = toggle.nextElementSibling;
+    toggle.classList.toggle('open');
+    content.classList.toggle('open');
+  });
+  // Open first one by default
+});
+// Open first toggle in section 01 by default
+const firstToggle = document.querySelector('.theory-toggle');
+if (firstToggle) {
+  firstToggle.classList.add('open');
+  firstToggle.nextElementSibling.classList.add('open');
+}
+
+</script>
+
+</body>
+</html>
